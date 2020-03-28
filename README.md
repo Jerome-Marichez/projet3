@@ -1,4 +1,4 @@
-#  PROJET 3 Icademie
+#  PROJET 3 ICADEMIE
 Projet 3 en collaboration avec: 
 .....
 .....
@@ -9,7 +9,7 @@ Projet 3 en collaboration avec:
 
 Création d'un site de cabinet d'avocat. 
 
-# FRAMEWORK JavaScript
+# FRAMEWORK JAVASCRIPT
 Jquery
 BootStrap
 
