@@ -3,5 +3,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <h1>Bonjour</h1>
 <p>
-	Ceci est mon paragraphe!
+	Vous voulez savoir ce que nous faisons? Vous êtes sur la bonne page.
 </p>
