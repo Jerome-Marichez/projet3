@@ -1,4 +1,4 @@
-###### PROJET 3 ######
+# PROJET 3
  Projet 3 Icademie
 
 # FRAMEWORK JavaScript
