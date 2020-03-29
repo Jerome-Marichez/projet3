@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
       <div class="navbar-header col-md-12">
         <ul class="nav navbar-nav ">
-          <li><img src="/projet3/application/assets/images/logo1.jpg" alt="lelogo"/></li>
+          <li><img class="lelogo" src="/projet3/application/assets/images/logo1.jpg" alt="lelogo"/></li>
 
 
 <!-- CODE MODIFIE -->

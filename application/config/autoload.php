@@ -41,6 +41,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $autoload['packages'] = array();
 
+
+// CODE DE CHARGEMENT CONFIG CUSTOM
+$autoload['database'] = array();
+$autoload['memcached'] = array();
+$autoload['routes'] = array();
+$autoload['useragents'] = array();
+// FIN CODE DE CHARGEMENT CUSTOM
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
