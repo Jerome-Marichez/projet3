@@ -9,6 +9,9 @@ function envoyer_mail($APIKEY,$TEMPLATE_MAIL,$email_from,$email_to)
   $mail_html=file_get_contents('../projet3/application/template_mail/'.$TEMPLATE_MAIL.'');
 
 
+
+  
+
   $date_day=date('d/m/Y');
 
   $data = array( "to" => array($email_to=>""),
