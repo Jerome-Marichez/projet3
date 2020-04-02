@@ -42,12 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $autoload['packages'] = array();
 
 
-// CODE DE CHARGEMENT CONFIG CUSTOM
-$autoload['database'] = array();
-$autoload['memcached'] = array();
+// CODE DE CHARGEMENT CONFIG CUSTOM  ///////////////////////////////
+$autoload['database'] = array();     // Pour les fonction database
+$autoload['memcached'] = array();    // Pour le cache
 $autoload['routes'] = array();
-$autoload['useragents'] = array();
-// FIN CODE DE CHARGEMENT CUSTOM
+$autoload['useragents'] = array();    // Pour les useragents
+$autoload['mimes'] = array();        // Pour le file upload
+// FIN CODE DE CHARGEMENT CUSTOM    ////////////////////////////////
 
 /*
 | -------------------------------------------------------------------
@@ -66,7 +67,7 @@ $autoload['useragents'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database');
 
 /*
 | -------------------------------------------------------------------
@@ -97,7 +98,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+$autoload['helper'] = array('global');
 
 /*
 | -------------------------------------------------------------------

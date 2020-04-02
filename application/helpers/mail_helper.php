@@ -27,7 +27,7 @@ function envoyer_mail($APIKEY,$TEMPLATE_MAIL,$sujet,$email_from,$email_to,$sourc
     }
     else
     {
-      return false; 
+      return false;
     }
 
 }
