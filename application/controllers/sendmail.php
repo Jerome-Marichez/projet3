@@ -9,32 +9,44 @@ public function index()
 
 {
 
-
-  //
-  $valeur_final = "";
   $this->load->helper('global');
-  $this->load->model('newsletter_model');
-  $afficher_mail = $this->newsletter_model->afficher_les_emails(1,1,1);
- foreach($afficher_mail as $row)
- {
-   $valeur_final = $valeur_final . $row->email . ";"."\n";
-
- }
-
-//echo $valeur_final;
-
-$nom_fichier = random_nom_fichier('.csv');
-
-
-// EXPORTATION
-exporter_vers_fichier_texte($valeur_final,$nom_fichier);
-
-
+echo encrypt("test","45");
+echo decrypt("",""); 
 }
 
 /// CODE A REPLACER BIEN + TARD ///////////////////////
 
 
+
+
+///////////////////////////////
+public function Exporter_Newsletter()
+
+
+{
+
+
+    //
+    $valeur_final = "";
+    $this->load->helper('global');
+    $this->load->model('newsletter_model');
+    $afficher_mail = $this->newsletter_model->afficher_les_emails(1,1,1);
+   foreach($afficher_mail as $row)
+   {
+     $valeur_final = $valeur_final . $row->email . ";"."\n";
+
+   }
+
+  //echo $valeur_final;
+
+  $nom_fichier = random_nom_fichier('.csv');
+
+
+  // EXPORTATION
+  exporter_vers_fichier_texte($valeur_final,$nom_fichier);
+
+
+}
 ////////////////////////////////////////////////////////////////////////////////////
 public function TEST2()
 {
