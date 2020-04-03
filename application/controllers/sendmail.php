@@ -9,15 +9,23 @@ public function index()
 
 {
 
-  $this->load->helper('global');
-echo encrypt("test","45");
-echo decrypt("",""); 
 }
 
 /// CODE A REPLACER BIEN + TARD ///////////////////////
 
 
 
+
+//////////////////
+public function encryptage()
+
+// pour encrypt,decrypt
+{
+
+    $this->load->helper('global');
+  echo encrypt("test");
+  echo decrypt("eSpoQiUFZW2zwIzbPkF3ggdXKNYkwxRmX8n8R+Uvux6+3fISImBjUnPuVQ7OMwPYi+dfzRym8s+MhCqF85SDOw==");
+}
 
 ///////////////////////////////
 public function Exporter_Newsletter()

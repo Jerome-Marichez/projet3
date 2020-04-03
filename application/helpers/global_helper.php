@@ -28,7 +28,7 @@ function random_nom_fichier($extension_file)
 
 
 // ENCRYPTER UNE DONNEE
-function encrypt($value,$key)
+function encrypt($value,$key = '45')
 {
   $plaintext = $value;
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
@@ -43,7 +43,7 @@ return $ciphertext;
 
 
 // DECRYPTER UNE DONNEE
-function decrypt($value,$key)
+function decrypt($value,$key = '45')
 {
   $c = base64_decode($value);
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
