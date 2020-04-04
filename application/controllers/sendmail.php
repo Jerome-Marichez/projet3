@@ -15,12 +15,19 @@ public function index()
 
 $email = "admin@digitstudio.fr";
 $password = "test";
-$password = encrypt($password,'45');
+$password = encrypt($password,45);
 
-echo $otherthing;
 echo $password;
-echo $this->client_model->connexion_client($email,$password);
-echo $test;
+
+//echo $password;
+$tableau_donne_client = $this->client_model->connexion_client($email,$password);
+
+foreach($tableau_donne_client as $row)
+{
+  $valeur_final = $valeur_final . $row->email . ";"."\n";
+  echo $valeur_final;
+}
+
 
 }
 
