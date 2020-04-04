@@ -34,7 +34,10 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
    $this->db->close();
   }
 
+public function connexion_client($email,$password)
+{
 
+}
  public function supprimer_client($id = "erreur")
  {
 

@@ -19,6 +19,22 @@ public function index()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
 public function supprimer_un_client()
 
 {
@@ -64,7 +80,22 @@ public function CLIENT_TEST_CREATION()
 
 
 }
-//////////////////
+///////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public function TEST_encryptage()
 
 // pour encrypt,decrypt
