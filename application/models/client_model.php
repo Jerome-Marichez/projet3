@@ -4,7 +4,7 @@ class client_model extends CI_Model
 
 {
 
-  public function sortir_base_client()
+  public function afficher_base_client()
   {
 
     $requete_resultat = $this->db->get('client');
@@ -13,7 +13,7 @@ class client_model extends CI_Model
 
   }
 
-// AJOUTER VERIFICATION CLIENT DEJA EXISTANT 
+// AJOUTER VERIFICATION CLIENT DEJA EXISTANT
 public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$autre_champ = 'NULL')
 
  {
@@ -35,14 +35,23 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
   }
 
 
- public function supprimer_client($droit_public,$droit_prive,$droit_affaires)
+ public function supprimer_client($id = "erreur")
  {
- $requete_resultat = $this->db->where('droit_public',$droit_public);
- $requete_resultat = $this->db->where('droit_prive',$droit_prive);
- $requete_resultat = $this->db->where('droit_affaires',$droit_affaires);
- $requete_resultat = $this->db->get('newsletter');
- return $requete_resultat->result();
- $this->db->close();
+
+
+   if ($id == "erreur")
+   {
+    return $id;
+   }
+   else
+   {
+
+     $this->db->delete('client', array('id' => $id));
+     $this->db->close();
+     return $id;
+   }
+
+
  }
 
 

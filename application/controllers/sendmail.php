@@ -9,16 +9,9 @@ public function index()
 
 
 {
-$this->load->helper('global');
-$this->load->helper('client');
-$this->load->model('client_model');
 
-//echo sortir_base_client();
-$test = generer_numero_client('entreprise');
 
- echo $test;
 
-$this->client_model->cree_client('',generer_numero_client('particulier'),encrypt('test'),'charles','jean','0771651588','admin@digitstudio.fr','59140','dunkerque','');
 
 }
 
@@ -26,9 +19,53 @@ $this->client_model->cree_client('',generer_numero_client('particulier'),encrypt
 
 
 
+public function supprimer_un_client()
 
+{
+
+        $this->load->helper('global');
+        $this->load->model('client_model');
+
+        echo $this->client_model->supprimer_client(1);
+
+
+}
+public function TEST_AFFICHER_CLIENT()
+
+{
+
+      $valeur_final = "";
+      $this->load->helper('global');
+      $this->load->model('client_model');
+
+
+  $valeur_base_donne_client = $this->client_model->afficher_base_client();
+ foreach($valeur_base_donne_client as $row)
+ {
+   echo $row->nom;
+   echo $row->client_id;
+
+
+ }
+
+}
+public function CLIENT_TEST_CREATION()
+{
+  $this->load->helper('global');
+  $this->load->helper('client');
+  $this->load->model('client_model');
+
+  //echo sortir_base_client();
+  $test = generer_numero_client('entreprise');
+
+   echo $test;
+
+  $this->client_model->cree_client('',generer_numero_client('particulier'),encrypt('test'),'charles','jean','0771651588','admin@digitstudio.fr','59140','dunkerque','');
+
+
+}
 //////////////////
-public function encryptage()
+public function TEST_encryptage()
 
 // pour encrypt,decrypt
 {
