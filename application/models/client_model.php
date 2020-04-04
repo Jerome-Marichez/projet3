@@ -4,6 +4,8 @@ class client_model extends CI_Model
 
 {
 
+
+// RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS
   public function afficher_base_client()
   {
 
@@ -13,7 +15,8 @@ class client_model extends CI_Model
 
   }
 
-// AJOUTER VERIFICATION CLIENT DEJA EXISTANT
+// TODO_AJOUTER VERIFICATION CLIENT DEJA EXISTANT
+// CREE UN CLIENT DANS LA BASE DE DONNES
 public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$autre_champ = 'NULL')
 
  {
@@ -36,8 +39,17 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
 
 public function connexion_client($email,$password)
 {
+  $requete_resultat = $this->db->where('email',$email);
+  $requete_resultat = $this->db->where('password',$password);
 
+  $requete_resultat = $this->db->get('client');
+  return $requete_resultat->result();
+  $this->db->close();
 }
+
+
+
+// SUPPRIMER UN CLIENT AVEC SON ID
  public function supprimer_client($id = "erreur")
  {
 

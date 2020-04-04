@@ -21,7 +21,7 @@ public function cree_dossier()
 
 }
 
-
+// SUPPRIMER UN DOSSIER AVEC SON ID 
 public function supprimer_dossier($id)
 {
   $this->db->delete('dossier', array('id' => $id));

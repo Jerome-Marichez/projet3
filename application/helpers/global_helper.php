@@ -28,11 +28,11 @@ function random_nom_fichier($extension_file)
 
 
 // ENCRYPTER UNE DONNEE
-function encrypt($value,$key = '45')
+function encrypt($value,$key = '45',$iv='1234567824546542')
 {
   $plaintext = $value;
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
-  $iv = openssl_random_pseudo_bytes($ivlen);
+// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans la base à chaque encryptage afin davoir des IV uniques
   $ciphertext_raw = openssl_encrypt($plaintext, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
   $hmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
   $ciphertext = base64_encode( $iv.$hmac.$ciphertext_raw );
@@ -43,11 +43,11 @@ return $ciphertext;
 
 
 // DECRYPTER UNE DONNEE
-function decrypt($value,$key = '45')
+function decrypt($value,$key = '45',$iv='1234567824546542')
 {
   $c = base64_decode($value);
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
-  $iv = substr($c, 0, $ivlen);
+// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans la base à chaque encryptage afin davoir des IV uniques
   $hmac = substr($c, $ivlen, $sha2len=32);
   $ciphertext_raw = substr($c, $ivlen+$sha2len);
   $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
