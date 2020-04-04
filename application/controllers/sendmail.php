@@ -15,7 +15,7 @@ public function index()
 
 $email = "admin@digitstudio.fr";
 $password = "test";
-$password = encrypt($password,45);
+$password = encrypt($password);
 
 echo $password;
 
@@ -24,10 +24,14 @@ $tableau_donne_client = $this->client_model->connexion_client($email,$password);
 
 foreach($tableau_donne_client as $row)
 {
+
+  // CLIENT EXISTE
   $valeur_final = $valeur_final . $row->email . ";"."\n";
   echo $valeur_final;
 }
 
+
+// A CODER SESSION TEMPORAIRE DE 6 HEURE 
 
 }
 
