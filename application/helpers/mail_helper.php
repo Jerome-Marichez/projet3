@@ -5,7 +5,7 @@
 /** APIKEY = CLE DE API SEND IN BLUE  $TEMPLATE_MAIL = TEMPLATE HTML MAIL / $sujet = "Le Sujet" /  $email_from = Adresse d'envoie / $email_to = Adresse de réception  **/
 /** $source_origine = element à rechercher / $source_modifier elements à modifier  **/
 
-function envoyer_mail($APIKEY,$TEMPLATE_MAIL,$sujet,$email_from,$email_to,$source_origine,$source_modifier)
+function envoyer_mail($TEMPLATE_MAIL,$sujet,$email_from,$email_to,$source_origine,$source_modifier,$APIKEY = "jh15xzcpO9tYH3rv")
 {
 
   require_once('../projet3/application/libraries/Mailing/Mailin.php');

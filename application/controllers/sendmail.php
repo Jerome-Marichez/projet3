@@ -1,4 +1,19 @@
 <?php
+
+session_start();
+// SESSION JOB PHP
+
+
+
+$_SESSION["email"]="test";
+$_SESSION["time"] = time();
+$_SESSION["password"] = "password";
+$_SESSION["client_id"] = "";
+
+
+
+
+
 class sendmail extends CI_Controller {
 
 
@@ -10,28 +25,6 @@ public function index()
 
 {
 
-  $this->load->helper('global');
-  $this->load->model('client_model');
-
-$email = "admin@digitstudio.fr";
-$password = "test";
-$password = encrypt($password);
-
-echo $password;
-
-//echo $password;
-$tableau_donne_client = $this->client_model->connexion_client($email,$password);
-
-foreach($tableau_donne_client as $row)
-{
-
-  // CLIENT EXISTE
-  $valeur_final = $valeur_final . $row->email . ";"."\n";
-  echo $valeur_final;
-}
-
-
-// A CODER SESSION TEMPORAIRE DE 6 HEURE 
 
 }
 
@@ -50,7 +43,33 @@ foreach($tableau_donne_client as $row)
 
 
 
+public function client_existe_verification()
+{
 
+  $this->load->helper('global');
+  $this->load->model('client_model');
+
+  $email = "admin@digitstudio.fr";
+  $password = "test";
+  $password = encrypt($password);
+
+  echo $password;
+
+  //echo $password;
+  $tableau_donne_client = $this->client_model->connexion_client($email,$password);
+
+  foreach($tableau_donne_client as $row)
+  {
+
+    // CLIENT EXISTE
+    $valeur_final = $valeur_final . $row->email;
+    echo $valeur_final;
+  }
+
+
+  // A CODER SESSION TEMPORAIRE DE 6 HEURE
+
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -180,7 +199,7 @@ public function TEST2()
       $this->load->helper('mail');
       $source_origine = array('[NOM]','[PRENOM]','[MESSAGE]');
       $source_modifier = array('MARICHEZ','JEROME','Merci pour votre inscription');
-      envoyer_mail("jh15xzcpO9tYH3rv","bienvenue_email.php","CABINET AVOCAT","admin@digitstudio.fr","admin@digitstudio.fr",$source_origine,$source_modifier);
+      envoyer_mail("bienvenue_email.php","CABINET AVOCAT","admin@digitstudio.fr","admin@digitstudio.fr",$source_origine,$source_modifier);
 // FIN
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////
