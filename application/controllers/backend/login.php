@@ -50,7 +50,7 @@ public function connexion() {
     $password = $this->input->post('password');
 
 // ON TESTE LA CONNEXION AVEC BASE DE DONNE
-  $resultat = $this->client_model->connexion_client($email,$password);
+  $resultat = $this->client_model->connexion_client($email,encrypt($password));
 
 
 
