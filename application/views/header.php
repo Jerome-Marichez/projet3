@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/projet3/application/assets/css/styles.css">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div class="container">

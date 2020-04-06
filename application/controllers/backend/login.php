@@ -13,7 +13,7 @@ $this->load->helper('form');
 $this->load->library('form_validation');
 $this->load->library('session');
 $this->load->model('client_model');
-
+$this->load->view('header');
 }
 
 // PAGE CONNEXION
@@ -60,6 +60,7 @@ public function connexion() {
     $data = array(
     'erreur_message' => 'Mauvais Email ou Mot de Passe'
     );
+
     $this->load->view('backend/login_form', $data);
   }
   else

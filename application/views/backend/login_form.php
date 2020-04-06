@@ -1,45 +1,48 @@
-<html>
+
 <?php
 if (isset($this->session->userdata['isConnected'])) {
 
 header("location: http://localhost/login/index.php/user_authentication/user_login_process");
 }
 ?>
-<head>
-<title>Accès à votre espace client</title>
 
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<?php
-if (isset($deconnexion_message)) {
-echo "<div class='message'>";
-echo $deconnexion_message;
-echo "</div>";
-}
-?>
+
 
 <div id="main">
-<div id="login">
-<h2>Accès à votre espace client</h2>
-<hr/>
-<?php echo form_open('backend/login/connexion'); ?>
-<?php
-echo "<div class='error_msg'>";
 
-if (isset($erreur_message)) {
-echo $erreur_message;
-}
-echo validation_errors();
-echo "</div>";
-?>
-<label>E-MAIL: </label>
-<input type="text" name="email" id="email" placeholder="E-MAIL"/><br /><br />
-<label>MOT DE PASSE: </label>
-<input type="password" name="password" id="password" placeholder="MOT DE PASSE"/><br/><br />
-<input type="submit" value="Se connecter" name="submit"/><br />
-<?php echo form_close(); ?>
+
+  <div id="login" class="form">
+
+      <div class="titre_login"><h3>Accès à votre espace client</h3></div>
+      <?php echo form_open('backend/login/connexion'); ?>
+
+    <div class="padding">
+    <form class="login-form">
+      <input type="text" name="email" id="email" placeholder="E-MAIL" class="login_input_style" />
+
+      <input type="password" name="password" id="password" placeholder="MOT DE PASSE" class="login_input_style"/>  </div>
+      <div class="padding2">
+      <button type="submit" value="Se connecter" name="submit">Se connecter</button>  </div>
+      <?php
+      if (isset($deconnexion_message)) {
+      echo "<div class='valide_message'>";
+      echo $deconnexion_message;
+      echo "</div>";
+      }
+      ?>
+      <?php
+      echo "<div class='erreur_message'>";
+
+      if (isset($erreur_message)) {
+      echo $erreur_message;
+      }
+      echo validation_errors();
+      echo "</div>";
+      ?>
+      <div class="padding3"><p class="message"><a href="#">Mot de passe oublié ? </a></p></div>
+      <?php echo form_close(); ?>
+    </form>
+
 </div>
+
 </div>
-</body>
-</html>

@@ -12,3 +12,129 @@ footer {
 {
 width: 100px !important;
 }
+
+
+
+/* CSS POUR LA FORM LOGIN */
+
+.form {
+  position: relative;
+	border-radius: 25px;
+  z-index: 1;
+  background: #E6EAED;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+.form .padding
+
+{
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right:  10px;
+	padding-bottom: 0px;
+}
+.form .valide_message
+{
+color: green;
+padding-top: 10px;
+}
+.form .erreur_message
+{
+	color: red;
+	padding-top: 10px;
+}
+.form .padding2
+{
+	padding-top: 0px;
+	padding-left: 100px;
+	padding-right:  100px;
+	padding-bottom: 0px;
+}
+.form .padding3
+{
+	padding-bottom: 10px;
+	text-align: right;
+	padding-right: 30px;
+}
+.form input {
+
+  font-family: "Raleway", sans-serif;
+  outline: 0;
+  background: #E6EAED;
+  width: 100%;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 1px solid;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+.form button {
+	border-radius: 10px;
+	font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0E02BC;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.6;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: white;
+	color: #0E02BC;
+}
+
+.form .titre_login
+{
+ padding-bottom: 1px;
+ padding-top: 1px;
+  border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	color: white;
+	background-color: #0E02BC;
+	font-weight: bold !important;
+	 font-family: "Raleway" !important;
+}
+
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+	font-style: italic;
+  color: #0E02BC;
+  text-decoration: none;
+}
+.form .message a:hover
+{
+	  color: white;
+}
+
+
+
+::placeholder {
+
+color: #0E02BC;
+opacity: 0.7;
+}
+.login_input_style
+{
+	 color: #0E02BC !important;
+}
+
+
+/* FIN  DU CSS FORM LOGIN  */
