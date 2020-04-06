@@ -48,7 +48,56 @@ echo "<br/>";
 
 <b id=""> <a href=""> </a> </b>
 
+
+
+
+
+<table class="table table-striped ">
+   <thead>
+     <tr class="haut_du_tableau_tr">
+       <th class="haut_du_tableau_th"> </th>
+       <th>Nom du client</th>
+       <th>E-mail</th>
+       <th>Date</th>
+       <th>N° de compte</th>
+     </tr>
+
+   </thead>
+
+   <tbody>
+     <tr class="supprimer_ligne_tableau_tr">
+       <td class="col-md-1 supprimer_ligne_tableau_td"> qsdqdqd </td>
+       <td>John</td>
+       <td>Doe</td>
+       <td>john@example.com</td>
+       <td>john@example.com</td>
+     </tr>
+     <tr class="supprimer_ligne_tableau_tr">
+       <td class="supprimer_ligne_tableau_td"> qsdqdqd</td>
+       <td>Mary</td>
+       <td>Moe</td>
+       <td>mary@example.com</td>
+        <td>john@example.com</td>
+     </tr>
+     <tr class="supprimer_ligne_tableau_tr">
+       <td class="supprimer_ligne_tableau_td">qsqqs </td>
+       <td>July</td>
+       <td>Dooley</td>
+       <td>july@example.com</td>
+       <td>john@example.com</td>
+     </tr>
+     <tr class="supprimer_ligne_tableau_tr">
+       <td class="supprimer_ligne_tableau_td">qsqqs </td>
+       <td>July</td>
+       <td>Dooley</td>
+       <td>july@example.com</td>
+       <td>john@example.com</td>
+     </tr>
+   </tbody>
+ </table>
+
+
+
 </div>
-<br/>
 </body>
 </html>

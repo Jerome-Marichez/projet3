@@ -138,3 +138,57 @@ opacity: 0.7;
 
 
 /* FIN  DU CSS FORM LOGIN  */
+
+
+
+
+
+/**  TABLE CSS   STYLE  **/
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #E6EAED;
+}
+
+
+
+/** PAS BIEN  A RETRAVAILLER AVEC SELECTEUR ICI COMME PLUS HAUT */
+
+
+table.table tr th{
+
+	background-color:#0E02BC !important; color:white !important;
+}
+
+.table.table td {
+	 color: #0E02BC !important;
+}
+
+.haut_du_tableau_tr {
+
+/*border: 0px !important;*/
+background-color:white !important;
+}
+
+.haut_du_tableau_th {
+/*	border: 1px !important;*/
+	background-color: white !important;
+}
+
+.tableau_tbody {
+	 padding-bottom: 20px !important;
+}
+.supprimer_ligne_tableau_tr {
+
+border: 0px !important;
+background-color:white !important;
+}
+
+
+.supprimer_ligne_tableau_td {
+	text-align: center;
+		border-top: 0px !important;
+	border: 0px !important;
+  background-color: white !important;
+}
+
+/* FIN DU TABLE CSS STYLE */
