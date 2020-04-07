@@ -16,7 +16,7 @@ $this->load->model('client_model');
 $this->load->view('header');
 }
 
-// PAGE CONNEXION
+////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
 $this->load->view('backend/login_form');
 }
@@ -34,6 +34,8 @@ public function deconnexion() {
   $this->load->view('backend/login_form', $data);
 
 }
+
+
 public function connexion() {
 
   $this->form_validation->set_rules('email', 'email', 'trim|required');
@@ -91,7 +93,69 @@ public function connexion() {
 
 }
 
+
+
+
+
+
+/////////////////////// FIN PAGE LOGIN ////////////////////////////
+
+
+
+
+
+///////////////////// Fonction Afficher page VIEW via le backend //////////////
+
+
+
+
+
+public function admin_dossier()
+{
+
+$this->load->view('backend/admin_dossiers');
 }
+
+public function admin_formation()
+{
+  $this->load->view('backend/admin_formation');
+
+}
+
+public function admin_rendezvous()
+{
+  $this->load->view('backend/admin_rendezvous');
+
+}
+
+public function admin_newsletter()
+{
+  $this->load->view('backend/admin_newsletter');
+
+}
+
+
+
+public function admin_clients()
+{
+  $this->load->view('backend/admin_clients');
+
+}
+
+
+public function admin_parametre()
+{
+  $this->load->view('backend/admin_parametre');
+
+}
+
+///////////// Fin des fonctions afficher pages /////////////////////
+
+
+
+
+}
+
 
 
 ?>

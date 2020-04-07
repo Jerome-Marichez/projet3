@@ -58,16 +58,16 @@ echo "<br/>";
     <div class="col-md-12 lightgray">
       <ul class="nav nav-pills nav-stacked ">
 
-        <li><a href="#" class="blue_lien_profile"><i class="fa fa-user-circle fa-1x"></i> Léa AMIC</a></li>
+        <li class="padding"><a id="index" href="index" class="blue_lien_profile"><i class="fa fa-user-circle fa-1x"></i> Léa AMIC</a></li>
 
       <!--  <li><a href="#" class="blue_lien">Accueil</a></li>-->
-        <li><a href="#" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Newsletter <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Clients <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Paramètres <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a href="#" class="blue_lien">Déconnecter <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_dossier" href="admin_rendezvous" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_formation" href="admin_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_rendezvvous" href="admin_rendezvvous"  class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_newsletter" href="admin_newsletter" class="blue_lien">Newsletter <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_clients" href="admin_clients"  class="blue_lien">Clients <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_parametre" href="admin_parametre"  class="blue_lien">Paramètres <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="deconnexion" href="deconnexion" class="blue_lien">Déconnecter <i class="fa fa-chevron-right fa-1x"></i></a></li>
       </ul>
     </div>
   </div>
