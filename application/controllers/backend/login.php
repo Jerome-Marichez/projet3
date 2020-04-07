@@ -137,6 +137,7 @@ public function admin_rendezvous()
 
 public function admin_newsletter()
 {
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
 
@@ -146,7 +147,14 @@ public function admin_newsletter()
 
 public function admin_clients()
 {
-  $this->load->view('backend/admin_clients');
+
+  $resultat = $this->client_model->afficher_base_client();
+
+  var_dump($resultat);
+  $data['tableau_client'] = $resultat;
+
+  $this->load->view('backend/menu_backend');
+  $this->load->view('backend/admin_clients', $data);
 
 }
 

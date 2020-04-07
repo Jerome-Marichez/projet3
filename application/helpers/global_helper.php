@@ -6,7 +6,7 @@
 function site_link_base()
 {
   $ma_page_home = "http://localhost/projet3/index.php/";
-  return $ma_page_home; 
+  return $ma_page_home;
 }
 
 
