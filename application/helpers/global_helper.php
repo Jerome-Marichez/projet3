@@ -2,6 +2,14 @@
 // Des fonction en vracs qui peuvent etre utile dans plein de petit contexte
 
 
+
+function site_link_base()
+{
+  $ma_page_home = "http://localhost/projet3/index.php/";
+  return $ma_page_home; 
+}
+
+
 // EXPORTER UN FICHIER TEXTE DEPUIS UN STRING
 function exporter_vers_fichier_texte($notre_texte,$nom_fichier)
 {
@@ -57,6 +65,10 @@ function decrypt($value,$key = '45',$iv='1234567824546542')
       return $original_plaintext;
   }
 }
+
+
+
+
 
 
 

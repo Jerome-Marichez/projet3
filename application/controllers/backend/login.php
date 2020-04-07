@@ -3,7 +3,7 @@
 
 session_start(); //START SESSION
 
-Class login extends CI_Controller {
+Class Login extends CI_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -12,6 +12,7 @@ parent::__construct();
 $this->load->helper('form');
 $this->load->library('form_validation');
 $this->load->library('session');
+$this->load->model('newsletter_model');
 $this->load->model('client_model');
 $this->load->view('header');
 }
@@ -42,6 +43,7 @@ public function connexion() {
   $this->form_validation->set_rules('password', 'Password', 'trim|required');
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
+  $this->load->view('menu_backend');
   $this->load->view('main');
   }else{
   $this->load->view('backend/login_form');
@@ -85,6 +87,7 @@ public function connexion() {
       );
 
       $this->session->set_userdata('isConnected', $data_session);
+      $this->load->view('backend/menu_backend');
       $this->load->view('backend/main');
 
 
@@ -134,6 +137,7 @@ public function admin_rendezvous()
 
 public function admin_newsletter()
 {
+  $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
 
 }
@@ -158,8 +162,22 @@ public function admin_parametre()
 
 
 
+
+//////////// FONCTION NEWSLETTER //////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
 ?>

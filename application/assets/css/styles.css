@@ -242,10 +242,17 @@ background: #E6EAED;
 	text-align:center;
 }
 
-.espace_titre_menu_admin
+.espace_backend_30
 {
 		width: 100%;
 	 	margin-bottom: 30px;
+}
+
+
+.espace_backend_60
+{
+		width: 100%;
+	 	margin-top: 60px;
 }
 
 .titre_menu_admin p

@@ -1,5 +1,10 @@
 <?php
 
+  // Les Requetes SQL sont de base protéger via Active Directory utilisé par CodeInginiter en librarie sinon on aurait du ou pu les escape
+  // via $db->escape() par exemple si on utilise des requetes personalisé
+  // Voir lien: https://codeigniter.com/userguide2/database/active_record.html
+
+
 class client_model extends CI_Model
 
 {
