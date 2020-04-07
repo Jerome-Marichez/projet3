@@ -50,6 +50,14 @@ echo "<br/>";
 
 
 
+<div class="row ">
+  <div class="col-md-10">  <div class="titre_menu_admin"><p> Mes Clients  </p></div></div>
+  <div class="col-md-2">  <div class="titre_menu_admin"> <i class="fa fa-plus-circle fa-2x"></i></div></div>
+</div>
+
+
+
+
 
 
 <table class="table table-striped ">
@@ -66,28 +74,28 @@ echo "<br/>";
 
    <tbody>
      <tr class="supprimer_ligne_tableau_tr">
-       <td class="col-md-1 supprimer_ligne_tableau_td"> qsdqdqd </td>
+       <td class="col-md-1 supprimer_ligne_tableau_td"><i class="fa fa-trash fa-2x"></i>  </td>
        <td>John</td>
        <td>Doe</td>
        <td>john@example.com</td>
        <td>john@example.com</td>
      </tr>
      <tr class="supprimer_ligne_tableau_tr">
-       <td class="supprimer_ligne_tableau_td"> qsdqdqd</td>
+       <td class="supprimer_ligne_tableau_td"> <i class="fa fa-trash fa-2x"></i></td>
        <td>Mary</td>
        <td>Moe</td>
        <td>mary@example.com</td>
         <td>john@example.com</td>
      </tr>
      <tr class="supprimer_ligne_tableau_tr">
-       <td class="supprimer_ligne_tableau_td">qsqqs </td>
+       <td class="supprimer_ligne_tableau_td"><i class="fa fa-trash fa-2x"></i> </td>
        <td>July</td>
        <td>Dooley</td>
        <td>july@example.com</td>
        <td>john@example.com</td>
      </tr>
      <tr class="supprimer_ligne_tableau_tr">
-       <td class="supprimer_ligne_tableau_td">qsqqs </td>
+       <td class="supprimer_ligne_tableau_td"><i class="fa fa-trash fa-2x"></i> </td>
        <td>July</td>
        <td>Dooley</td>
        <td>july@example.com</td>

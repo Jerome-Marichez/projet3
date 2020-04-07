@@ -141,7 +141,40 @@ opacity: 0.7;
 
 
 
+/****************************************** BACKEND CSS STYLE ***********************************/
 
+
+
+/**   MENU BARRE AU DESSUS DU TABLEAU STYLE  **/
+
+.lightgray {
+background: #E6EAED;
+}
+.titre_menu_admin
+{
+	width: 100%;
+	height: 80px;
+	background-color: #E6EAED;
+	margin-bottom: 30px;
+	font-family: "Raleway";
+	color: #0E02BC;
+	text-align:center;
+}
+
+.titre_menu_admin p
+{
+	 	text-align:left;
+	 padding-left: 50px;
+	 padding-top: 19px;
+	 font-size: 30px;
+}
+
+.titre_menu_admin i
+{
+font-size: 60px;
+padding-top: 10px;
+text-align: center;
+}
 
 /**  TABLE CSS   STYLE  **/
 
@@ -160,6 +193,7 @@ table.table tr th{
 }
 
 .table.table td {
+
 	 color: #0E02BC !important;
 }
 
@@ -175,6 +209,7 @@ background-color:white !important;
 }
 
 .tableau_tbody {
+
 	 padding-bottom: 20px !important;
 }
 .supprimer_ligne_tableau_tr {
@@ -192,3 +227,7 @@ background-color:white !important;
 }
 
 /* FIN DU TABLE CSS STYLE */
+
+
+
+/****************************************** FIN  BACKEND CSS STYLE ***********************************/
