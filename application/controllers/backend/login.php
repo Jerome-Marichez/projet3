@@ -78,6 +78,10 @@ public function connexion() {
       'email' => $row->email,
       'client_id' => $row->client_id,
       'password' => $row->password,
+      'nom' => $row->nom,
+      'prenom' => $row->prenom,
+      'id' => $row->id
+
       );
 
       $this->session->set_userdata('isConnected', $data_session);
