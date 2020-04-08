@@ -63,8 +63,8 @@ public function connexion() {
     $email =  $this->input->post('email');
     $password = $this->input->post('password');
 
-// ON TESTE LA CONNEXION AVEC BASE DE DONNE
-  $resultat = $this->client_model->connexion_client($email,encrypt($password));
+    // ON TESTE LA CONNEXION AVEC BASE DE DONNE
+    $resultat = $this->client_model->connexion_client($email,encrypt($password));
 
 
 
@@ -149,8 +149,9 @@ $this->load->view('backend/admin_dossiers');
 public function admin_formation()
 {
   $this->load->view('backend/admin_formation');
-
 }
+
+
 
 public function admin_rendezvous()
 {
@@ -158,6 +159,8 @@ public function admin_rendezvous()
 
 }
 
+
+/** ADMIN NEWSLETTER **/
 public function admin_newsletter()
 {
 
@@ -165,9 +168,10 @@ public function admin_newsletter()
   $this->load->view('backend/admin_newsletter');
 
 }
+/** FIN ADMIN NEWSLETTER **/
 
 
-
+/** ADMIN CLIENT **/
 public function admin_clients()
 {
 
@@ -182,46 +186,43 @@ public function admin_clients()
 }
 
 
-public function ajouter_client() {
+public function ajouter_client()
+{
 
-print_r($_POST);
+  print_r($_POST);
 
-$cree_nom =  $this->input->post('cree_nom');
-$cree_prenom =  $this->input->post('cree_prenom');
-$cree_telephone =  $this->input->post('cree_telephone');
-$cree_email =  $this->input->post('cree_email');
-$cree_adresse_postal =  $this->input->post('cree_adresse_postal');
-$cree_code_postal =  $this->input->post('cree_code_postal');
-$cree_ville=  $this->input->post('cree_ville');
-
-echo "<br><br>";
-echo $cree_nom;
-echo "<br>";
-echo $cree_prenom;
-echo "<br>";
-echo $cree_telephone;
-echo "<br>";
-echo $cree_email;
-echo "<br>";
-echo $cree_adresse_postal;
-echo "<br>";
-echo $cree_code_postal;
-echo "<br>";
-echo $cree_ville;
-echo "<br>";
-
-$password = generer_numero_client();
-echo $password;
-$client_id = generer_numero_client('particulier');
+  $cree_nom =  $this->input->post('cree_nom');
+  $cree_prenom =  $this->input->post('cree_prenom');
+  $cree_telephone =  $this->input->post('cree_telephone');
+  $cree_email =  $this->input->post('cree_email');
+  $cree_adresse_postal =  $this->input->post('cree_adresse_postal');
+  $cree_code_postal =  $this->input->post('cree_code_postal');
+  $cree_ville=  $this->input->post('cree_ville');
 
 
-$resultat = $this->client_model->cree_client('',$client_id,encrypt($password),$cree_nom,$cree_prenom,$cree_telephone,$cree_email,$cree_code_postal,$cree_ville,$cree_adresse_postal);
+
+  $password = generer_numero_client();
+  echo $password;
+  $client_id = generer_numero_client('particulier');
 
 
-redirect('backend/login/admin_clients', 'refresh');
+  $resultat = $this->client_model->cree_client('',$client_id,encrypt($password),$cree_nom,$cree_prenom,$cree_telephone,$cree_email,$cree_code_postal,$cree_ville,$cree_adresse_postal);
 
-$this->load->view('backend/menu_backend');
-$this->load->view('backend/admin_clients');
+
+  $source_origine = array("[MESSAGE]","[NAME]");
+  $NAME = $cree_nom.' '.$cree_prenom;
+  $sujet = "Compte Client ".$cree_nom." ".$cree_prenom;
+  $source_modifier = array("Nous vous confirmons la création de votre espace client vous pouvez vous connecter via vos identifiants<br><br>E-mail: ".$cree_email."<br><br>Mot de passe: ".$password,$NAME);
+
+  //envoyer_mail($sujet,"avocat@test.fr",$cree_email,$source_origine,$source_modifier); POUR LE CLIENT
+  //envoyer_mail($sujet,"avocat@test.fr",$cree_email,$source_origine,$source_modifier); POUR LAVOCAT
+
+
+
+    redirect('backend/login/admin_clients', 'refresh');
+
+    $this->load->view('backend/menu_backend');
+    $this->load->view('backend/admin_clients');
 }
 
 
@@ -229,9 +230,16 @@ $this->load->view('backend/admin_clients');
 
 public function admin_parametre()
 {
+
+  $this->load->view('backend/menu_backend');
+  $this->load->view('backend/modifer_mot_de_passe_form');
   $this->load->view('backend/admin_parametre');
 
 }
+
+/** FIN ADMIN CLIENT **/
+
+
 
 ///////////// Fin des fonctions afficher pages /////////////////////
 
