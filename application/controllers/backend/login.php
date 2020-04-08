@@ -248,8 +248,8 @@ public function ajouter_client()
 public function modifer_password()
 
 {
-
-var_dump($_POST); 
+echo "test"; 
+var_dump($_POST);
 // PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
 
 

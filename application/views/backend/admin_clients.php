@@ -15,7 +15,7 @@
   <div class="modal fade" id="creationclient_fenetre" tabindex="-1" role="dialog" aria-labelledby="creationclient_fenetre" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form action="ajouter_client" method="POST">
+        <form <?php echo form_open('backend/login/ajouter_client'); ?>>
 
         <div class="modal-header">
           <h5 class="modal-title" id="creationclient_fenetre">Création client</h5>
@@ -69,7 +69,7 @@
 
           <button type="submit" class="btn btn-primary">Enregistrer</button>
 
-
+<?php echo form_close(); ?>
         </form>
 
       </div>
