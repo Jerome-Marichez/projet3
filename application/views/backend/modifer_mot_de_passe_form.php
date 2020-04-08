@@ -33,21 +33,21 @@
 <div class="espace_backend_30"> </div>
 
 
-<form id="modifer_password" <?php echo form_open('backend/login/modifer_password'); ?>>
+<form id="modifer_password" <?php echo form_open('backend/login/modifer_password'); ?>
   <div class="form-group row">
     <div class="col-md-4 input-lg"><label class="label_form_modifier_password" for="password">Mot de passe actuel</label></div>
-      <div class="col-md-8"><input type="password" class="form-control input-lg" id="password" placeholder="" required="true"></div>
+      <div class="col-md-8"><input type="password" class="form-control input-lg" name="password" id="password" placeholder="" required="true"></div>
   </div>
 
   <div class="form-group row">
     <div class="col-md-4 input-lg"><label class="label_form_modifier_password" for="nouveau_password">Nouveau mot de passe</label></div>
-      <div class="col-md-8"><input type="password" class="form-control input-lg" id="nouveau_password" pattern=".{8,}"   required title="8 caractères minimum" placeholder=""></div>
+      <div class="col-md-8"><input type="password" class="form-control input-lg" name="nouveau_password" id="nouveau_password" pattern=".{8,}"   required title="8 caractères minimum" placeholder=""></div>
 
   </div>
 
   <div class="form-group row">
     <div class="col-md-4 input-lg"><label class="label_form_modifier_password" for="nouveau_password2">Nouveau mot de passe</label></div>
-      <div class="col-md-8"><input type="password" class="form-control input-lg" id="nouveau_password2" pattern=".{8,}"   required title="8 caractères minimum" placeholder=""></div>
+      <div class="col-md-8"><input type="password" class="form-control input-lg" name="nouveau_password2" id="nouveau_password2" pattern=".{8,}"   required title="8 caractères minimum" placeholder=""></div>
 
   </div>
 

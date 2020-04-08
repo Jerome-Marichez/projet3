@@ -248,14 +248,36 @@ public function ajouter_client()
 public function modifer_password()
 
 {
-echo "test"; 
+echo "test";
 var_dump($_POST);
 // PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
 
 
-// DEUXIEME REQUETE ON UPDATE LE MOT DE PASSE
+
+$ancien_motpasse =  $this->input->post('password');
+$nouveau_password= $this->input->post('password');
+$nouveau_password2=$this->input->post('nouveau_password2');
+
+// ON recupere nos champs avec nos règles
+$this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required');
+$this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required');
 
 
+
+  if ($nouveau_password == $nouveau_password2 ) // DONC SI les 2 champs sont égaux pour les nouveaux mot de passe
+		{
+      $data = array(
+      'erreur_message' => 'Erreur: Les deux nouveau mot de passe ne sont pas identique.'
+      );
+			$this->load->view('backend/modifer_mot_de_passe_form',$data);
+		}
+		else
+		{
+      $data = array(
+      'valide_message' => 'Vos deux nouveau mot de passe sont identique'
+      );
+			$this->load->view('backend/modifer_mot_de_passe_form',$data);
+    }
 
 
 }
