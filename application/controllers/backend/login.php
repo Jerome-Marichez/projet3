@@ -53,8 +53,8 @@ public function connexion() {
   $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
-  $this->load->view('menu_backend');
-  $this->load->view('main');
+  $this->load->view('backend/menu_backend');
+  $this->load->view('main/login_form');
   }else{
   $this->load->view('backend/login_form');
   }
@@ -261,75 +261,75 @@ public function ajouter_client()
 public function modifer_password()
 
 {
-echo "test";
-var_dump($_POST);
-// PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
+    echo "test";
+    var_dump($_POST);
+    // PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
 
 
 
-$ancien_motpasse =  $this->input->post('password');
-$nouveau_password= $this->input->post('nouveau_password');
-$nouveau_password2=$this->input->post('nouveau_password2');
+    $ancien_motpasse =  $this->input->post('password');
+    $nouveau_password= $this->input->post('nouveau_password');
+    $nouveau_password2=$this->input->post('nouveau_password2');
 
-// ON recupere nos champs avec nos règles
-$this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required|xss_clean');
-$this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required|xss_clean');
-
-
-$echec_modifier_password = true; // PAR DEFAULT On considere que l'opération sera un echec
+    // ON recupere nos champs avec nos règles
+    $this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required|xss_clean');
+    $this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required|xss_clean');
 
 
-  if ($nouveau_password == $nouveau_password2 )
-		{
-      // SI ET SEULEMENT SI LES 2 CHAMPS NOUVEAU MDP SONT IDENTIQUE ON PROCEDE A LA VERIFICATION DE LA SESSION
-      if (isset($this->session->userdata['isConnected']))
-      {
-      $password = ($this->session->userdata['isConnected']['password']);
-      $email = ($this->session->userdata['isConnected']['email']);
-      $id = ($this->session->userdata['isConnected']['id']);
+    $echec_modifier_password = true; // PAR DEFAULT On considere que l'opération sera un echec
 
-      // Verification de la connexion
-      $resultat = $this->client_model->connexion_client($email,encrypt($ancien_motpasse));
+    if ($this->form_validation->run() == TRUE) {
+      if ($nouveau_password == $nouveau_password2 )
+    		{
+          // SI ET SEULEMENT SI LES 2 CHAMPS NOUVEAU MDP SONT IDENTIQUE ON PROCEDE A LA VERIFICATION DE LA SESSION
+          if (isset($this->session->userdata['isConnected']))
+          {
+          $password = ($this->session->userdata['isConnected']['password']);
+          $email = ($this->session->userdata['isConnected']['email']);
+          $id = ($this->session->userdata['isConnected']['id']);
+
+          // Verification de la connexion
+          $resultat = $this->client_model->connexion_client($email,encrypt($ancien_motpasse));
 
 
-        // verification de la connexion ?
-        if (!empty($resultat))
+            // verification de la connexion ?
+            if (!empty($resultat))
 
-        {
-          $echec_modifier_password = false;
-          // EXECUTER LUPDATE DU NOUVEAU MOT DE PASSE
-        //  $update = $this->client_model->update_client($id,encrypt($nouveau_password));
-          // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
+            {
+              $echec_modifier_password = false;
+              // EXECUTER LUPDATE DU NOUVEAU MOT DE PASSE
+            //  $update = $this->client_model->update_client($id,encrypt($nouveau_password));
+              // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
 
+            }
+
+          }
         }
+      }
+
+      // ON AFFICHE LA FORM
+
+      if ($echec_modifier_password == false)
+      {
+        $data = array(
+        'valide_message' => 'Votre nouveau mot de passe à bien était pris en compte.'
+        );
+      }
+      else
+      {
+        $data = array(
+        'erreur_message' => 'Vos nouveau mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
+        );
+
+
 
       }
-    }
-
-
-  // ON AFFICHE LA FORM
-
-  if ($echec_modifier_password == false)
-  {
-    $data = array(
-    'valide_message' => 'Votre nouveau mot de passe à bien était pris en compte.'
-    );
-  }
-  else
-  {
-    $data = array(
-    'erreur_message' => 'Vos nouveau mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
-    );
-
-
-
-  }
 
 
 
 
-  $this->load->view('backend/menu_backend');
-  $this->load->view('backend/modifer_mot_de_passe_form',$data);
+      $this->load->view('backend/menu_backend');
+      $this->load->view('backend/modifer_mot_de_passe_form',$data);
 }
 
 

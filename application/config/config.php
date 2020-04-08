@@ -420,7 +420,7 @@ $config['cookie_httponly'] 	= FALSE;
 */
 $config['standardize_newlines'] = FALSE;
 
-
+// ACTIVER LE XSS ON VERRA APRES 
 $config['global_xss_filtering'] = TRUE;
 
 /*
@@ -440,7 +440,7 @@ $config['global_xss_filtering'] = TRUE;
 $config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
-$config['csrf_expire'] = 7200;
+$config['csrf_expire'] = 21600;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
 
