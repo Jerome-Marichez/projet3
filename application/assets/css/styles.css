@@ -150,25 +150,17 @@ opacity: 0.7;
 /*** CARD STYLE ***********/
 .counter1
 {
-
-	 height: 25px;
-   width: 25px;
+	 margin-left: 125px;
+	 height: 50px;
+   width: 50px;
    background-color: #0E02BC;
    border-radius: 50%;
 	 text-align: center;
 	 color: white;
-
+	 font-family: "Raleway";
+	 font-size: 30px;
 }
-.counter2
-
-{
-
-}
-
-.counter3
-{
-
-}
+ 
 .card_blue_text
 {
 	 padding-top: 20px;
@@ -184,7 +176,7 @@ opacity: 0.7;
 		color: #0E02BC;
 		text-align: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     margin-right: 10px !important;
     margin-left: 10px !important;
 

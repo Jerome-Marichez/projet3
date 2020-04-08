@@ -21,16 +21,19 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card " style="width: 18rem;">
-        <div class="lightgraycard"><i class="fa fa-users fa-5x"></i></div>
+        <div class="lightgraycard"><i class="fa fa-users fa-5x"></i><div class="counter1">50</div></div>
+
         <div class="card-body">
           <p class="card_blue_text">Clients</p>
         </div>
       </div>
     </div>
 
+
+
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
-    <div class="lightgraycard"><i class="fa fa-folder-open fa-5x"></i></div>
+        <div class="lightgraycard"><i class="fa fa-folder-open fa-5x"></i><div class="counter1">50</div></div>
         <div class="card-body">
           <p class="card_blue_text">Dossiers en cours</p>
         </div>
@@ -39,7 +42,7 @@
 
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
-        <div class="lightgraycard"><i class="fa fa-archive fa-5x"></i></div>
+        <div class="lightgraycard"><i class="fa fa-archive fa-5x"></i><div class="counter1">50</div></div>
         <div class="card-body">
           <p class="card_blue_text">Dossiers classés</p>
         </div>
