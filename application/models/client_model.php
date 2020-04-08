@@ -22,7 +22,7 @@ class client_model extends CI_Model
 
 // TODO_AJOUTER VERIFICATION CLIENT DEJA EXISTANT
 // CREE UN CLIENT DANS LA BASE DE DONNES
-public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$autre_champ = 'NULL')
+public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$adresse)
 
  {
    // date du jour pas marche
@@ -37,7 +37,7 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
      'email'=>$email,
      'code_postale'=>$code_postale,
      'ville'=>$ville,
-     'autre_champ'=>$autre_champ,
+     'adresse'=>$adresse,
      'date'=>$date_du_jour);
    //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
    $this->db->insert('client',$data);

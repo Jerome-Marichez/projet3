@@ -11,6 +11,8 @@ parent::__construct();
 
 $this->load->helper('form');
 $this->load->helper('mail_helper');
+$this->load->helper('client_helper');
+$this->load->helper('url');
 $this->load->library('form_validation');
 $this->load->library('session');
 $this->load->model('newsletter_model');
@@ -206,7 +208,20 @@ echo "<br>";
 echo $cree_code_postal;
 echo "<br>";
 echo $cree_ville;
-//$this->load->view('backend/ajouter_client');
+echo "<br>";
+
+$password = generer_numero_client();
+echo $password;
+$client_id = generer_numero_client('particulier');
+
+
+$resultat = $this->client_model->cree_client('',$client_id,encrypt($password),$cree_nom,$cree_prenom,$cree_telephone,$cree_email,$cree_code_postal,$cree_ville,$cree_adresse_postal);
+
+
+redirect('backend/login/admin_clients', 'refresh');
+
+$this->load->view('backend/menu_backend');
+$this->load->view('backend/admin_clients');
 }
 
 
