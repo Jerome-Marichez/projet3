@@ -420,8 +420,8 @@ $config['cookie_httponly'] 	= FALSE;
 */
 $config['standardize_newlines'] = FALSE;
 
-// ACTIVER LE XSS ON VERRA APRES 
-$config['global_xss_filtering'] = TRUE;
+// ACTIVER LE XSS ON VERRA APRES
+$config['global_xss_filtering'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------

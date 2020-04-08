@@ -46,6 +46,21 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
   }
 
 
+public function update_client_password($id,$password)
+{
+
+  $data = array(
+               'id' => $id,
+               'password' => $password,
+            );
+
+$requete_resultat = $this->db->where('id', $id);
+$requete_resultat = $this->db->update('client', $data);
+
+return $requete_resultat;
+$this->db->close();
+}
+
 
 
 

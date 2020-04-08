@@ -35,12 +35,13 @@ $this->load->view('backend/login_form');
 
 public function deconnexion() {
 
-  $data_array = array(
-  'email' => '',
-  'password' => '',
-  'client_id' => ''
-  );
-  $this->session->unset_userdata('isConnected', $data_array);
+//  $data_array = array(
+//  'email' => '',
+//  'password' => '',
+//  'client_id' => ''
+//  );
+  //$this->session->unset_userdata('isConnected', $data_array);
+  $this->session->sess_destroy();
   $data['deconnexion_message'] = 'Déconnexion avec succès';
   $this->load->view('backend/login_form', $data);
 
@@ -50,8 +51,8 @@ public function deconnexion() {
 
 public function connexion() {
 
-  $this->form_validation->set_rules('email', 'email', 'trim|required|xss_clean');
-  $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+  $this->form_validation->set_rules('email', 'email', 'trim|required');
+  $this->form_validation->set_rules('password', 'Password', 'trim|required');
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
   $this->load->view('backend/menu_backend');
@@ -268,13 +269,17 @@ public function modifer_password()
 
 
 
-    $ancien_motpasse =  $this->input->post('password');
-    $nouveau_password= $this->input->post('nouveau_password');
-    $nouveau_password2=$this->input->post('nouveau_password2');
 
-    // ON recupere nos champs avec nos règles
-    $this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required|xss_clean');
-    $this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required|xss_clean');
+  // ON recupere nos champs avec nos règles
+$this->form_validation->set_rules('password', 'mot de passe', 'trim|required');
+$this->form_validation->set_rules('nouveau_password', 'mot de passe', 'trim|required');
+$this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|required');
+
+
+
+    $ancien_motpasse =  $this->input->post('password');
+    $nouveau_password = $this->input->post('nouveau_password');
+    $nouveau_password2 =$this->input->post('nouveau_password2');
 
 
     $echec_modifier_password = true; // PAR DEFAULT On considere que l'opération sera un echec
@@ -282,6 +287,8 @@ public function modifer_password()
     if ($this->form_validation->run() == TRUE) {
       if ($nouveau_password == $nouveau_password2 )
     		{
+        //  echo "bon pass";
+
           // SI ET SEULEMENT SI LES 2 CHAMPS NOUVEAU MDP SONT IDENTIQUE ON PROCEDE A LA VERIFICATION DE LA SESSION
           if (isset($this->session->userdata['isConnected']))
           {
@@ -299,7 +306,11 @@ public function modifer_password()
             {
               $echec_modifier_password = false;
               // EXECUTER LUPDATE DU NOUVEAU MOT DE PASSE
-            //  $update = $this->client_model->update_client($id,encrypt($nouveau_password));
+              $update = $this->client_model->update_client_password($id,encrypt($nouveau_password));
+              // UPDATE SESSION
+
+              
+
               // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
 
             }

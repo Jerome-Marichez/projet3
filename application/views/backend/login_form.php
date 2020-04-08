@@ -29,8 +29,8 @@ header("location: http://localhost/projet3/backend/login/");
       echo $deconnexion_message;
       echo "</div>";
       }
-      ?>
-      <?php
+
+
       echo "<div class='erreur_message'>";
 
       if (isset($erreur_message)) {
@@ -38,7 +38,9 @@ header("location: http://localhost/projet3/backend/login/");
       }
       echo validation_errors();
       echo "</div>";
+
       ?>
+
       <div class="padding3"><p class="message"><a href="#">Mot de passe oublié ? </a></p></div>
       <?php echo form_close(); ?>
     </form>
