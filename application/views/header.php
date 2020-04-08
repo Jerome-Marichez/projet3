@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span class="glyphicon glyphicon-log-in"></span>Connexion
               </button>
               <ul class="dropdown-menu">
-                <li><?=empty($_SESSION['username']) ? "invité" : $_SESSION['username']?></li>
+                <li></li>
                 <li><a href="login">Connectez vous</a></li>
                 <li><a href="inscription">Inscrivez vous</a></li>
               </ul>

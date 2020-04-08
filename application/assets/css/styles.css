@@ -144,7 +144,31 @@ opacity: 0.7;
 
 
 
+
 /****************************************** BACKEND CSS STYLE ***********************************/
+
+/*** CARD STYLE ***********/
+
+.card_blue_text
+{
+	 text-align: center;
+	 font-family: "Raleway";
+	 font-size: 18px;
+	 	color: #0E02BC;
+}
+.lightgraycard
+
+{
+		background-color: #E6EAED;
+		color: #0E02BC;
+		text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+
+}
+
 
 /***  INPUT STYLE CUSTOM POUR BOOTSTRAP ****/
 

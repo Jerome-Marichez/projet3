@@ -35,15 +35,15 @@ $this->load->view('backend/login_form');
 
 public function deconnexion() {
 
-//  $data_array = array(
-//  'email' => '',
-//  'password' => '',
-//  'client_id' => ''
-//  );
-  //$this->session->unset_userdata('isConnected', $data_array);
   $this->session->sess_destroy();
   $data['deconnexion_message'] = 'Déconnexion avec succès';
+  //print_r($this->session->all_userdata());
+
+
   $this->load->view('backend/login_form', $data);
+
+
+
 
 }
 
@@ -56,7 +56,7 @@ public function connexion() {
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
   $this->load->view('backend/menu_backend');
-  $this->load->view('backend/main');
+  $this->load->view('backend/admin_main');
   }else{
   $this->load->view('backend/login_form');
   }
@@ -106,14 +106,14 @@ public function connexion() {
 
 
 
-    $source_origine = array("[MESSAGE]","[NAME]");
+          $source_origine = array("[MESSAGE]","[NAME]");
 
-    $source_modifier = array("Bonjour, vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom);
+          $source_modifier = array("Vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom.' '.$row->prenom);
 
-    //      envoyer_mail("Connexion","avocat@test.fr",$row->email,$source_origine,$source_modifier);
+          envoyer_mail("Connexion","avocat@test.fr",$row->email,$source_origine,$source_modifier);
           $this->session->set_userdata('isConnected', $data_session);
           $this->load->view('backend/menu_backend');
-          $this->load->view('backend/main');
+          $this->load->view('backend/admin_main');
 
 
 
@@ -234,8 +234,8 @@ public function ajouter_client()
   $sujet = "Compte Client ".$cree_nom." ".$cree_prenom;
   $source_modifier = array("Nous vous confirmons la création de votre espace client vous pouvez vous connecter via vos identifiants<br><br>E-mail: ".$cree_email."<br><br>Mot de passe: ".$password,$NAME);
 
-  //envoyer_mail($sujet,"avocat@test.fr",$cree_email,$source_origine,$source_modifier); POUR LE CLIENT
-  //envoyer_mail($sujet,"avocat@test.fr",$cree_email,$source_origine,$source_modifier); POUR LAVOCAT
+  envoyer_mail($sujet,"avocat@test.fr",$cree_email,$source_origine,$source_modifier); // POUR LE CLIENT
+  envoyer_mail($sujet,"avocat@test.fr","avocat@test.fr",$source_origine,$source_modifier); // POUR LAVOCAT
 
 
 
@@ -263,8 +263,8 @@ public function ajouter_client()
 public function modifer_password()
 
 {
-    echo "test";
-    var_dump($_POST);
+    //echo "test";
+    //var_dump($_POST);
     // PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
 
 
@@ -294,6 +294,8 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
           {
           $password = ($this->session->userdata['isConnected']['password']);
           $email = ($this->session->userdata['isConnected']['email']);
+          $nom = ($this->session->userdata['isConnected']['nom']);
+          $prenom = ($this->session->userdata['isConnected']['prenom']);
           $id = ($this->session->userdata['isConnected']['id']);
 
           // Verification de la connexion
@@ -309,9 +311,15 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
               $update = $this->client_model->update_client_password($id,encrypt($nouveau_password));
               // UPDATE SESSION
 
-              
 
-              // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
+                // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
+              $source_origine = array("[MESSAGE]","[NAME]");
+
+              $source_modifier = array("Vous venez de changer votre mot de passe, voici ce dernier: ".$nouveau_password,$nom." ".$prenom);
+
+              envoyer_mail("Changement mot de passe","avocat@test.fr",$email,$source_origine,$source_modifier);
+
+
 
             }
 
@@ -324,14 +332,19 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
       if ($echec_modifier_password == false)
       {
         $data = array(
-        'valide_message' => 'Votre nouveau mot de passe à bien était pris en compte.'
+        'deconnexion_message' => 'Votre mot de passe est modifié avec succès'
         );
+          $this->session->sess_destroy(); // Oui voila ici on détruit la session
+          $this->load->view('backend/login_form', $data);
       }
       else
       {
         $data = array(
-        'erreur_message' => 'Vos nouveau mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
+        'erreur_message' => 'Vos nouveaux mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
         );
+
+              $this->load->view('backend/menu_backend');
+              $this->load->view('backend/modifer_mot_de_passe_form',$data);
 
 
 
@@ -340,8 +353,6 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
 
 
 
-      $this->load->view('backend/menu_backend');
-      $this->load->view('backend/modifer_mot_de_passe_form',$data);
 }
 
 

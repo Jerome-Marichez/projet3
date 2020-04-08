@@ -2,7 +2,7 @@
 <?php
 if (isset($this->session->userdata['isConnected'])) {
 
-header("location: http://localhost/projet3/backend/login/");
+//header("location: http://localhost/projet3/backend/login/");
 }
 ?>
 
