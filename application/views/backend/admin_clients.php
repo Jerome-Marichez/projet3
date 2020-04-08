@@ -12,12 +12,11 @@
 
 
 
-
-
   <div class="modal fade" id="creationclient_fenetre" tabindex="-1" role="dialog" aria-labelledby="creationclient_fenetre" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form>
+        <form action="ajouter_client" method="POST">
+
         <div class="modal-header">
           <h5 class="modal-title" id="creationclient_fenetre">Création client</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -30,34 +29,34 @@
 
               <div class="form-group">
                 <div class="row"><div class="col-md-6">
-                <input type="text" class="form-control" id="cree_nom" aria-describedby="emailHelp" placeholder="Nom">
+                <input type="text" class="form-control" name="cree_nom" id="cree_nom" placeholder="Nom">
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" id="cree_prenom" aria-describedby="emailHelp" placeholder="Prenom">
+                <input type="text" class="form-control" name="cree_prenom" id="cree_prenom"  placeholder="Prenom">
               </div> </div>
               </div>
               <div class="form-group">
-                <input type="tel" class="form-control" id="cree_telephone" placeholder="Telephone">
+                <input type="tel" class="form-control" name="cree_telephone" id="cree_telephone" placeholder="Telephone">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" id="cree_email" placeholder="email">
+                <input type="email" class="form-control" name="cree_email" id="cree_email" placeholder="email">
               </div>
               <div class="form-group">
 
-                <input type="text" class="form-control" id="cree_adresse_postal" placeholder="adresse postale">
+                <input type="text" class="form-control" name="cree_adresse_postal" id="cree_adresse_postal" placeholder="adresse postale">
               </div>
               <div class="form-group">
                 <div class="row">
                 <div class="col-md-6">
-                <input type="text" class="form-control" id="cree_code_postal" placeholder="code postale">
+                <input type="text" class="form-control" name="cree_code_postal" id="cree_code_postal" placeholder="code postale">
               </div>
                 <div class="col-md-6">
-                <input type="text" class="form-control" id="cree_ville" placeholder="ville">    </div>
+                <input type="text" class="form-control" name="cree_ville" id="cree_ville" placeholder="ville">    </div>
               </div>
             </div>
               <div class="form-group">
 
-                <textarea class="form-control" id="question" rows="5" placeholder="Posez vos question"></textarea>
+                <textarea class="form-control" name="question" id="question" rows="5" placeholder="Posez vos question"></textarea>
 
               </div>
 
@@ -66,10 +65,10 @@
 
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+
+
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+
 
         </form>
 

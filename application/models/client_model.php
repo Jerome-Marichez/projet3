@@ -25,7 +25,7 @@ class client_model extends CI_Model
 public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$autre_champ = 'NULL')
 
  {
-   // date du jour pas marche 
+   // date du jour pas marche
    $date_du_jour =  date("d/m/Y");
    $data = array(
      'id'=>$id,

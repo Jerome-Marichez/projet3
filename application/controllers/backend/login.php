@@ -106,7 +106,7 @@ public function connexion() {
 
     $source_modifier = array("Bonjour, vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom);
 
-          envoyer_mail("Connexion","avocat@test.fr",$row->email,$source_origine,$source_modifier);
+    //      envoyer_mail("Connexion","avocat@test.fr",$row->email,$source_origine,$source_modifier);
           $this->session->set_userdata('isConnected', $data_session);
           $this->load->view('backend/menu_backend');
           $this->load->view('backend/main');
@@ -169,7 +169,6 @@ public function admin_newsletter()
 public function admin_clients()
 {
 
-
   $resultat = $this->client_model->afficher_base_client();
 
 
@@ -182,7 +181,32 @@ public function admin_clients()
 
 
 public function ajouter_client() {
-$this->load->view('backend/ajouter_client');
+
+print_r($_POST);
+
+$cree_nom =  $this->input->post('cree_nom');
+$cree_prenom =  $this->input->post('cree_prenom');
+$cree_telephone =  $this->input->post('cree_telephone');
+$cree_email =  $this->input->post('cree_email');
+$cree_adresse_postal =  $this->input->post('cree_adresse_postal');
+$cree_code_postal =  $this->input->post('cree_code_postal');
+$cree_ville=  $this->input->post('cree_ville');
+
+echo "<br><br>";
+echo $cree_nom;
+echo "<br>";
+echo $cree_prenom;
+echo "<br>";
+echo $cree_telephone;
+echo "<br>";
+echo $cree_email;
+echo "<br>";
+echo $cree_adresse_postal;
+echo "<br>";
+echo $cree_code_postal;
+echo "<br>";
+echo $cree_ville;
+//$this->load->view('backend/ajouter_client');
 }
 
 
