@@ -49,8 +49,8 @@ public function deconnexion() {
 
 public function connexion() {
 
-  $this->form_validation->set_rules('email', 'email', 'trim|required');
-  $this->form_validation->set_rules('password', 'Password', 'trim|required');
+  $this->form_validation->set_rules('email', 'email', 'trim|required|xss_clean');
+  $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
   $this->load->view('menu_backend');
@@ -272,8 +272,8 @@ $nouveau_password= $this->input->post('nouveau_password');
 $nouveau_password2=$this->input->post('nouveau_password2');
 
 // ON recupere nos champs avec nos règles
-$this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required');
-$this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required');
+$this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required|xss_clean');
+$this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required|xss_clean');
 
 
 $echec_modifier_password = true; // PAR DEFAULT On considere que l'opération sera un echec
@@ -282,12 +282,10 @@ $echec_modifier_password = true; // PAR DEFAULT On considere que l'opération se
   if ($nouveau_password == $nouveau_password2 )
 		{
       // SI ET SEULEMENT SI LES 2 CHAMPS NOUVEAU MDP SONT IDENTIQUE ON PROCEDE A LA VERIFICATION DE LA SESSION
-      echo "les 2 champs sont OK";
       if (isset($this->session->userdata['isConnected']))
       {
       $password = ($this->session->userdata['isConnected']['password']);
       $email = ($this->session->userdata['isConnected']['email']);
-
       $id = ($this->session->userdata['isConnected']['id']);
 
       // Verification de la connexion
@@ -300,7 +298,7 @@ $echec_modifier_password = true; // PAR DEFAULT On considere que l'opération se
         {
           $echec_modifier_password = false;
           // EXECUTER LUPDATE DU NOUVEAU MOT DE PASSE
-
+        //  $update = $this->client_model->update_client($id,encrypt($nouveau_password));
           // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
 
         }
