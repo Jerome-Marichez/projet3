@@ -25,6 +25,8 @@ class client_model extends CI_Model
 public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$autre_champ = 'NULL')
 
  {
+   // date du jour pas marche 
+   $date_du_jour =  date("d/m/Y");
    $data = array(
      'id'=>$id,
      'client_id'=> $client_id,
@@ -35,7 +37,8 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
      'email'=>$email,
      'code_postale'=>$code_postale,
      'ville'=>$ville,
-     'autre_champ'=>$autre_champ);
+     'autre_champ'=>$autre_champ,
+     'date'=>$date_du_jour);
    //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
    $this->db->insert('client',$data);
 

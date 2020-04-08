@@ -25,6 +25,17 @@ public function index()
 
 {
 
+  $this->load->helper('global');
+  $this->load->helper('client');
+  $this->load->model('client_model');
+
+  //echo sortir_base_client();
+  $test = generer_numero_client('entreprise');
+
+   echo $test;
+
+  $this->client_model->cree_client('',generer_numero_client('particulier'),encrypt('test'),'charles','jean','0771651588','admin@digitstudio.fr','59140','dunkerque','');
+
 
 }
 

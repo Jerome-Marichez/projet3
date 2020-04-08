@@ -10,6 +10,7 @@ parent::__construct();
 
 
 $this->load->helper('form');
+$this->load->helper('mail_helper');
 $this->load->library('form_validation');
 $this->load->library('session');
 $this->load->model('newsletter_model');
@@ -17,10 +18,16 @@ $this->load->model('client_model');
 $this->load->view('header');
 }
 
+
+
+
+
 ////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
 $this->load->view('backend/login_form');
 }
+
+
 
 
 public function deconnexion() {
@@ -35,6 +42,7 @@ public function deconnexion() {
   $this->load->view('backend/login_form', $data);
 
 }
+
 
 
 public function connexion() {
@@ -65,10 +73,13 @@ public function connexion() {
     'erreur_message' => 'Mauvais Email ou Mot de Passe'
     );
 
+
     $this->load->view('backend/login_form', $data);
   }
   else
   {
+
+
     foreach($resultat as $row)
     {
 
@@ -86,12 +97,22 @@ public function connexion() {
 
       );
 
-      $this->session->set_userdata('isConnected', $data_session);
-      $this->load->view('backend/menu_backend');
-      $this->load->view('backend/main');
-
-
     }
+
+
+
+
+    $source_origine = array("[MESSAGE]","[NAME]");
+
+    $source_modifier = array("Bonjour, vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom);
+
+          envoyer_mail("Connexion","avocat@test.fr",$row->email,$source_origine,$source_modifier);
+          $this->session->set_userdata('isConnected', $data_session);
+          $this->load->view('backend/menu_backend');
+          $this->load->view('backend/main');
+
+
+
   }
 
 
@@ -148,15 +169,23 @@ public function admin_newsletter()
 public function admin_clients()
 {
 
+
   $resultat = $this->client_model->afficher_base_client();
 
-  var_dump($resultat);
+
   $data['tableau_client'] = $resultat;
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_clients', $data);
 
 }
+
+
+public function ajouter_client() {
+$this->load->view('backend/ajouter_client');
+}
+
+
 
 
 public function admin_parametre()
@@ -166,12 +195,6 @@ public function admin_parametre()
 }
 
 ///////////// Fin des fonctions afficher pages /////////////////////
-
-
-
-
-
-//////////// FONCTION NEWSLETTER //////////////////////////////////
 
 
 
