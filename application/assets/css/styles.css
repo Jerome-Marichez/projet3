@@ -148,13 +148,34 @@ opacity: 0.7;
 /****************************************** BACKEND CSS STYLE ***********************************/
 
 /*** CARD STYLE ***********/
+.counter1
+{
 
+	 height: 25px;
+   width: 25px;
+   background-color: #0E02BC;
+   border-radius: 50%;
+	 text-align: center;
+	 color: white;
+
+}
+.counter2
+
+{
+
+}
+
+.counter3
+{
+
+}
 .card_blue_text
 {
+	 padding-top: 20px;
 	 text-align: center;
 	 font-family: "Raleway";
 	 font-size: 18px;
-	 	color: #0E02BC;
+	 color: #0E02BC;
 }
 .lightgraycard
 
@@ -162,10 +183,11 @@ opacity: 0.7;
 		background-color: #E6EAED;
 		color: #0E02BC;
 		text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     margin-right: 10px !important;
     margin-left: 10px !important;
+
 
 }
 
