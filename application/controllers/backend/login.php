@@ -245,6 +245,19 @@ public function ajouter_client()
 
 //////////////////// FIN FONCTION CLIENTS ////////////////////////////////
 
+
+
+
+
+
+
+
+
+
+
+
+///////////////////// FONCTION  CONTROLLEUR  PARAMETRE /////////////////////////////////
+
 public function modifer_password()
 
 {
@@ -255,7 +268,7 @@ var_dump($_POST);
 
 
 $ancien_motpasse =  $this->input->post('password');
-$nouveau_password= $this->input->post('password');
+$nouveau_password= $this->input->post('nouveau_password');
 $nouveau_password2=$this->input->post('nouveau_password2');
 
 // ON recupere nos champs avec nos règles
@@ -263,29 +276,63 @@ $this->form_validation->set_rules($nouveau_password, 'Password', 'trim|required'
 $this->form_validation->set_rules($nouveau_password2, 'Password', 'trim|required');
 
 
+$echec_modifier_password = true; // PAR DEFAULT On considere que l'opération sera un echec
 
-  if ($nouveau_password == $nouveau_password2 ) // DONC SI les 2 champs sont égaux pour les nouveaux mot de passe
+
+  if ($nouveau_password == $nouveau_password2 )
 		{
-      $data = array(
-      'erreur_message' => 'Erreur: Les deux nouveau mot de passe ne sont pas identique.'
-      );
-			$this->load->view('backend/modifer_mot_de_passe_form',$data);
-		}
-		else
-		{
-      $data = array(
-      'valide_message' => 'Vos deux nouveau mot de passe sont identique'
-      );
-			$this->load->view('backend/modifer_mot_de_passe_form',$data);
+      // SI ET SEULEMENT SI LES 2 CHAMPS NOUVEAU MDP SONT IDENTIQUE ON PROCEDE A LA VERIFICATION DE LA SESSION
+      echo "les 2 champs sont OK";
+      if (isset($this->session->userdata['isConnected']))
+      {
+      $password = ($this->session->userdata['isConnected']['password']);
+      $email = ($this->session->userdata['isConnected']['email']);
+
+      $id = ($this->session->userdata['isConnected']['id']);
+
+      // Verification de la connexion
+      $resultat = $this->client_model->connexion_client($email,encrypt($ancien_motpasse));
+
+
+        // verification de la connexion ?
+        if (!empty($resultat))
+
+        {
+          $echec_modifier_password = false;
+          // EXECUTER LUPDATE DU NOUVEAU MOT DE PASSE
+
+          // ON ENVOIE LES IDENTIFIANTS AU EMAIL CONCERNE
+
+        }
+
+      }
     }
 
 
+  // ON AFFICHE LA FORM
+
+  if ($echec_modifier_password == false)
+  {
+    $data = array(
+    'valide_message' => 'Votre nouveau mot de passe à bien était pris en compte.'
+    );
+  }
+  else
+  {
+    $data = array(
+    'erreur_message' => 'Vos nouveau mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
+    );
+
+
+
+  }
+
+
+
+
+  $this->load->view('backend/menu_backend');
+  $this->load->view('backend/modifer_mot_de_passe_form',$data);
 }
-
-
-///////////////////// FONCTION PARAMETRE /////////////////////////////////
-
-
 
 
 ///////////////////// FIN FONCTION PARAMETRE ///////////////////////////////
