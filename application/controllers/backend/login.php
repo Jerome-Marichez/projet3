@@ -134,7 +134,7 @@ public function connexion() {
 
 
 
-///////////////////// Fonction Afficher page VIEW via le backend //////////////
+///////////////////// Fonction Afficher page VIEW pour le backend //////////////
 
 
 
@@ -142,8 +142,7 @@ public function connexion() {
 
 public function admin_dossier()
 {
-
-$this->load->view('backend/admin_dossiers');
+  $this->load->view('backend/admin_dossiers');
 }
 
 public function admin_formation()
@@ -186,6 +185,25 @@ public function admin_clients()
 }
 
 
+
+
+
+public function admin_parametre()
+{
+
+  $this->load->view('backend/menu_backend');
+  $this->load->view('backend/modifer_mot_de_passe_form');
+  $this->load->view('backend/admin_parametre');
+
+}
+
+
+
+///////////// Fin Fonction Afficher page VIEW pour le backend /////////////////////
+
+
+/////////////////// Fonction Controlleur CLIENTS //////////////////
+
 public function ajouter_client()
 {
 
@@ -225,23 +243,33 @@ public function ajouter_client()
     $this->load->view('backend/admin_clients');
 }
 
+//////////////////// FIN FONCTION CLIENTS ////////////////////////////////
 
+public function modifer_password()
 
-
-public function admin_parametre()
 {
 
-  $this->load->view('backend/menu_backend');
-  $this->load->view('backend/modifer_mot_de_passe_form');
-  $this->load->view('backend/admin_parametre');
+var_dump($_POST); 
+// PREMIERE REQUETE ON VERIFIE SI LE MOT DE PASSE EXISTE
+
+
+// DEUXIEME REQUETE ON UPDATE LE MOT DE PASSE
+
+
+
 
 }
 
-/** FIN ADMIN CLIENT **/
+
+///////////////////// FONCTION PARAMETRE /////////////////////////////////
 
 
 
-///////////// Fin des fonctions afficher pages /////////////////////
+
+///////////////////// FIN FONCTION PARAMETRE ///////////////////////////////
+
+
+
 
 
 
