@@ -26,6 +26,7 @@ $this->load->view('header');
 
 ////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
+
 $this->load->view('backend/login_form');
 }
 
@@ -54,7 +55,7 @@ public function connexion() {
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
   $this->load->view('backend/menu_backend');
-  $this->load->view('main/login_form');
+  $this->load->view('backend/main');
   }else{
   $this->load->view('backend/login_form');
   }

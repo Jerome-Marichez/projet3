@@ -100,11 +100,11 @@
 
        foreach($tableau_client as $row)
        {
-$id_specific = $row->id;
-$nom_tableau = $row->nom;
-$email_tableau = $row->email;
-$date_tableau = $row->date;
-$client_ID_tableau = $row->client_id;
+$id_specific = html_escape($row->id);
+$nom_tableau = html_escape($row->nom);
+$email_tableau = html_escape($row->email);
+$date_tableau = html_escape($row->date);
+$client_ID_tableau = html_escape($row->client_id);
       ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="<?php echo site_link_base();  ?>backend/admin_delete_clientid/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
 <?php
 echo '<td>';echo $email_tableau; echo '</td>';
