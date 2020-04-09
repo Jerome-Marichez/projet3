@@ -16,8 +16,8 @@ function envoyer_mail($sujet,$email_from = 'avocat@test.fr',$email_to,$source_or
   $date_day=date('d/m/Y');
 
   $data = array( "to" => array($email_to=>""),
-    "from" => array($email_from, $sujet),
-    "subject" => "Test (".$date_day.")",
+    "from" => array($email_from, 'A.G.D-Z Cabinet Avocat'),
+    "subject" => $sujet." (".$date_day.")",
     "html" => $mail_html,
   );
 

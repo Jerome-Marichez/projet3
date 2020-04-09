@@ -1,19 +1,26 @@
 
 /************************************************************************ CSS POUR LE BACKEND DE NOTRE SITE **************************************************/
 
-footer {
-	background-color: #999999;
-	color: white;
-	margin-top: 10px;
-	padding-top: 10px;
-	padding-bottom: 5px;
-	font-size: 20px;
+
+
+/** CUSTOM RULES MOBILE **/
+
+@media only screen and (max-width: 600px) {
+.espace_backend_30_for_mobile_only
+{
+	width: 100%;
+	margin-bottom: 30px;
+}
+.blue_lien_profile
+{
+	 text-align:center;
+}
+
+.blue_lien
+{
 	text-align: center;
 }
 
-.lelogo
-{
-width: 100px !important;
 }
 
 
@@ -147,7 +154,35 @@ opacity: 0.7;
 
 /****************************************** BACKEND CSS STYLE ***********************************/
 
-/*** CARD STYLE ***********/
+/*** RENDEZ VOUS CARD STYLE *******/
+
+
+
+.card-ligne2-rendezvous
+{
+	font-size: 20px;
+	font-family: "Raleway";
+}
+
+.card-ligne1-rendezvous
+{
+
+	font-size: 20px;
+	font-family: "Raleway";
+}
+.card_rendezvous
+{
+
+	-webkit-box-shadow:inset 0px 0px 0px 2px #0E02BC;
+    -moz-box-shadow:inset 0px 0px 0px 2px #0E02BC;
+    box-shadow:inset 0px 0px 0px 2px #0E02BC;
+		color: #0E02BC;
+		padding: 15px;
+
+
+}
+
+/*** ACCUEIL CARD STYLE ***********/
 .counter1
 {
 	 margin-left: 125px;
@@ -160,7 +195,7 @@ opacity: 0.7;
 	 font-family: "Raleway";
 	 font-size: 30px;
 }
- 
+
 .card_blue_text
 {
 	 padding-top: 20px;
@@ -182,6 +217,10 @@ opacity: 0.7;
 
 
 }
+
+/** FIN ACCUEIL CARD STYLE **/
+
+
 
 
 /***  INPUT STYLE CUSTOM POUR BOOTSTRAP ****/
@@ -247,7 +286,7 @@ opacity: 0.7;
 	font-weight: 600;
 	color: #0E02BC;
 	font-size: 28px;
-	text-align: left;
+/*	text-align: left;*/
 }
 .blue_lien
 
@@ -258,7 +297,7 @@ opacity: 0.7;
 	font-weight: 500;
 	color: #0E02BC;
 	font-size: 20px;
-	text-align: left;
+/*	text-align: left; */
 }
 /**   MENU BARRE AU DESSUS DU TABLEAU STYLE  **/
 

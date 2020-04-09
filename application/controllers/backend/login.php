@@ -156,6 +156,7 @@ public function admin_formation()
 
 public function admin_rendezvous()
 {
+  $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_rendezvous');
 
 }
