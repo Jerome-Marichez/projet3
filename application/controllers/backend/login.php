@@ -1,7 +1,6 @@
 
 <?php
 
-session_start(); //START SESSION
 
 Class Login extends CI_Controller {
 
@@ -38,17 +37,11 @@ $this->load->view('footer');
 
 public function deconnexion() {
 
-  $this->session->sess_destroy();
-  $data['deconnexion_message'] = 'Déconnexion avec succès';
-  //print_r($this->session->all_userdata());
+$this->session->sess_destroy();
+
+redirect('');
 
 
-
-  $this->load->view('header');
-
-  $this->load->view('backend/login_form', $data);
-
-  $this->load->view('footer');
 
 
 }
@@ -103,23 +96,23 @@ $this->load->view('backend/haut_page_backend');
     foreach($resultat as $row)
     {
 
+
       // SI CLIENT EXISTE CREE SESSION
       $isItAdmin = isIt_Admin_or_Client($row->client_id);
 
+        $data_session = array(
+        'email' => $row->email,
+        'client_id' => $row->client_id,
+        'password' => $row->password,
+        'nom' => $row->nom,
+        'prenom' => $row->prenom,
+        'id' => $row->id,
+        'isItAdmin' => $isItAdmin
 
-      $data_session = array(
-      'email' => $row->email,
-      'client_id' => $row->client_id,
-      'password' => $row->password,
-      'nom' => $row->nom,
-      'prenom' => $row->prenom,
-      'id' => $row->id,
-      'isItAdmin' => $isItAdmin
-
-      );
-
+        );
 
     }
+
 
 
           $source_origine = array("[MESSAGE]","[NAME]");
