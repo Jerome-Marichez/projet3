@@ -60,8 +60,6 @@ public function deconnexion() {
 
 
 
-
-
 public function connexion() {
 
 $this->load->view('header');
@@ -124,12 +122,6 @@ $this->load->view('backend/haut_page_backend');
     }
 
 
-
-
-
-
-
-
           $source_origine = array("[MESSAGE]","[NAME]");
 
           $source_modifier = array("Vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom.' '.$row->prenom);
@@ -177,6 +169,8 @@ $this->load->view('footer');
 
 public function admin_dossiers()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
@@ -188,13 +182,12 @@ public function admin_dossiers()
   $this->load->view('footer');
 
 
-
-
 }
 
 public function admin_formation()
 {
-
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
@@ -211,6 +204,8 @@ public function admin_formation()
 
 public function admin_rendezvous()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
@@ -227,7 +222,8 @@ public function admin_rendezvous()
 /** ADMIN NEWSLETTER **/
 public function admin_newsletter()
 {
-
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
@@ -246,6 +242,8 @@ public function admin_newsletter()
 /** ADMIN CLIENT **/
 public function admin_clients()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   $resultat = $this->client_model->afficher_base_client();
 
@@ -275,6 +273,9 @@ public function admin_clients()
 
 public function admin_parametre()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
+
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
 
@@ -295,6 +296,8 @@ public function admin_parametre()
 
 public function ajouter_client()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
 
   //print_r($_POST);
 

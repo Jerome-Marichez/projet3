@@ -2,6 +2,21 @@
 
 
 
+function autoriser_action($GRADE_USER,$minimum_grade = "client")
+{
+
+
+// Si l'utilisateur n'est pas = CLIENT ou ADMIN selon le parametre  alors erreur_404 (il n'est pas censé etre la)
+  if ($GRADE_USER != $minimum_grade)
+  {
+  show_404();
+  exit;
+  }
+
+
+
+
+}
 
 function isIt_Admin_or_Client($client_id)
 {
@@ -9,7 +24,8 @@ function isIt_Admin_or_Client($client_id)
 $returnvalue = "personne";
   if (!empty($client_id))
   {
-    if (strpos('SECRETADMIN007',$client_id))
+
+    if ($client_id == 'SECRETADMIN007')
     {
       $returnvalue = "admin";
     }

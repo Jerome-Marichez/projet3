@@ -1,10 +1,12 @@
 <?php
 if (isset($this->session->userdata['isConnected'])) {
 
-// FIX Jaime pas trop re assigner des variables utiliser par haut_page_backend il faudrait que je jete un oeil 
+// FIX Jaime pas trop re assigner des variables utiliser par haut_page_backend il faudrait que je jete un oeil
 $nom = ($this->session->userdata['isConnected']['nom']);
 $prenom = ($this->session->userdata['isConnected']['prenom']);
 $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+
+
 
 
 } else {
