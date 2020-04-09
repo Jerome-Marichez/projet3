@@ -1,6 +1,26 @@
 <?php
 
 
+
+
+function isIt_Admin_or_Client($client_id)
+{
+
+$returnvalue = "personne";
+  if (!empty($client_id))
+  {
+    if (strpos('SECRETADMIN007',$client_id))
+    {
+      $returnvalue = "admin";
+    }
+    else
+    {
+      $returnvalue = "client";
+    }
+  }
+return $returnvalue;
+}
+
 // GENERE SOIT LE NUMERO DE CLIENT EN FONCTION DU TYPE CLIENT OU SON MOT DE PASSE SI aucun parametre
 function generer_numero_client($data = "password")
 

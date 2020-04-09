@@ -1,4 +1,6 @@
 <?php
+
+
 var_dump($_SESSION);
 
 defined('BASEPATH') OR exit('No direct script access allowed');

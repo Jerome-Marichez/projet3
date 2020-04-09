@@ -4,7 +4,7 @@
 
 
   <div class="row lightgray">
-    <div class="col-md-10">  <div class="titre_menu_admin"><p> Rendez-vous  </p></div></div>
+    <div class="col-md-10">  <div class="titre_menu_admin"><p> Formation  </p></div></div>
     <div class="col-md-2">  <div class="titre_menu_admin"></div></div>
   </div>
 

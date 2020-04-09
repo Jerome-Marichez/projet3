@@ -91,17 +91,27 @@ public function connexion() {
       //$valeur_final = $valeur_final . $row->email;
       //echo $valeur_final;
 
+
+      $isItAdmin = isIt_Admin_or_Client($row->client_id);
+
+
       $data_session = array(
       'email' => $row->email,
       'client_id' => $row->client_id,
       'password' => $row->password,
       'nom' => $row->nom,
       'prenom' => $row->prenom,
-      'id' => $row->id
+      'id' => $row->id,
+      'isItAdmin' => $isItAdmin
 
       );
 
+
     }
+
+
+
+          echo $isItAdmin;
 
 
 
@@ -111,6 +121,12 @@ public function connexion() {
           $source_modifier = array("Vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom.' '.$row->prenom);
 
           envoyer_mail("Connexion",expediteur_mail_data(),$row->email,$source_origine,$source_modifier);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
           $this->session->set_userdata('isConnected', $data_session);
           $this->load->view('backend/menu_backend');
           $this->load->view('backend/admin_main');

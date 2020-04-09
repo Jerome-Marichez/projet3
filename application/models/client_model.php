@@ -10,6 +10,7 @@ class client_model extends CI_Model
 {
 
 
+
 // RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS
   public function afficher_base_client()
   {

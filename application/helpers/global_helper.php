@@ -8,7 +8,7 @@ function site_link_base($chemin = "")
 
   switch ($chemin) {
     case "js":
-        $ma_page_home = "http://localhost/projet3/application/assets/js/"; // CHEMIN JAVASCRIPT 
+        $ma_page_home = "http://localhost/projet3/application/assets/js/"; // CHEMIN JAVASCRIPT
         break;
     case "img":
         $ma_page_home = "http://localhost/projet3/application/assets/images/"; // CHEMIN IMAGES
