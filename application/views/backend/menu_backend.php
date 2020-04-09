@@ -33,23 +33,6 @@ echo "<br/>";
 ?>
 </div>
 
-<!-- POUR UN ADMIN -->
-<b id="admin_mesdossiers" class="menulien_backend"><a href="admin_mesdossiers">Mes dossiers</a></b>
-
-<b id="admin_formation" class="menulien_backend"><a href="admin_formation">Formation</a></b>
-
-<b id="admin_rendezvous" class="menulien_backend"><a href="admin_rendezvous">Rendez-vous</a></b>
-
-<b id="admin_newsletter"  class="menulien_backend"><a href="admin_newsletter">Newsletter</a></b>
-
-<b id="admin_clients"  class="menulien_backend"><a href="admin_clients">Clients</a></b>
-
-<b id="admin_parametre"  class="menulien_backend"><a href="admin_parametre">Paramètres </a></b>
-
-<b id="deconnexion"  class="menulien_backend"><a href="deconnexion">Déconnecter</a></b>
-<!-- Pour un client -->
-
-<b id=""> <a href=""> </a> </b>
 
 <div class="container">
 

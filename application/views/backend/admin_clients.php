@@ -131,10 +131,3 @@ echo '<td>';  echo $client_ID_tableau; echo '</td>';
 
 
 </div>
-
-<div class="clearfix visible-lg"></div>
-</div>
-
-</div>
-</body>
-</html>

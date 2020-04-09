@@ -29,7 +29,7 @@
       </div>
 
 
-<div class="espace_backend_30_for_mobile_only"></div>
+      <div class="espace_backend_30_for_mobile_only"></div>
        <div class="col-md-3 text-center">  <a href="#"  class="btn btn-primary btn-lg btn-block " ><b>Accepter </b></a></div>
        <div class="espace_backend_30_for_mobile_only"></div>
           <div class="col-md-3 text-center">   <a href="#" class="btn btn-primary btn-lg btn-block " ><b>Refusez </b></a> </div>
@@ -45,7 +45,7 @@
 
 
 
-  </div>
+</div>
 
 
 
@@ -54,20 +54,3 @@
 
 
     <div class="espace_backend_30"> </div>
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="clearfix visible-lg"></div>
-</div>
-
-</div>
-</body>
-</html>

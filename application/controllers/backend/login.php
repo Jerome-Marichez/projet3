@@ -123,6 +123,8 @@ public function connexion() {
 }
 
 
+
+    $this->load->view('backend/footer');
 }
 
 
@@ -145,11 +147,16 @@ public function connexion() {
 public function admin_dossier()
 {
   $this->load->view('backend/admin_dossiers');
+  $this->load->view('backend/footer');
+
+
+
 }
 
 public function admin_formation()
 {
   $this->load->view('backend/admin_formation');
+  $this->load->view('backend/footer');
 }
 
 
@@ -158,7 +165,7 @@ public function admin_rendezvous()
 {
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_rendezvous');
-
+  $this->load->view('backend/footer');
 }
 
 
@@ -168,7 +175,7 @@ public function admin_newsletter()
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
-
+  $this->load->view('backend/footer');
 }
 /** FIN ADMIN NEWSLETTER **/
 
@@ -184,7 +191,7 @@ public function admin_clients()
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_clients', $data);
-
+  $this->load->view('backend/footer');
 }
 
 
@@ -197,7 +204,7 @@ public function admin_parametre()
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/modifer_mot_de_passe_form');
   $this->load->view('backend/admin_parametre');
-
+  $this->load->view('backend/footer');
 }
 
 
@@ -244,6 +251,7 @@ public function ajouter_client()
 
     $this->load->view('backend/menu_backend');
     $this->load->view('backend/admin_clients');
+    $this->load->view('backend/footer');
 }
 
 //////////////////// FIN FONCTION CLIENTS ////////////////////////////////
@@ -346,7 +354,7 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
 
               $this->load->view('backend/menu_backend');
               $this->load->view('backend/modifer_mot_de_passe_form',$data);
-
+              $this->load->view('backend/footer');
 
 
       }
