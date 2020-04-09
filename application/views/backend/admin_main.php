@@ -52,6 +52,9 @@
 
   <canvas id="AdminGraph"></canvas>
        <script>
+
+       function cree_tableau_js(donne1,donne2,donne3)
+       {
             Chart.defaults.global.legend.display = false;
 
              var canvas_id = document.getElementById("AdminGraph");
@@ -61,11 +64,14 @@
                      labels: ["Clients", "Dossiers en cours", "Dossiers classés"],
                      datasets: [{
                          label: false,
-                         data: [50, 50, 50],
-                         
+                         data: [donne1, donne2, donne3],
+                         backgroundColor: ["blue", "lightgray", "gray"],
                      }]
                  }
              });
+        }
+        cree_tableau_js(30,30,30);
+
        </script>
 
 
