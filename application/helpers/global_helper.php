@@ -13,6 +13,9 @@ function site_link_base($chemin = "")
     case "img":
         $ma_page_home = "http://localhost/projet3/application/assets/images/"; // CHEMIN IMAGES
         break;
+    case "login":
+        $ma_page_home = "http://localhost/projet3/backend/login/"; // PATH TO LOGIN
+        break;
     case "css":
         $ma_page_home = "http://localhost/projet3/application/assets/css/"; // CHEMIN CSS
         break;
@@ -57,7 +60,7 @@ function encrypt($value,$key = '45',$iv='1234567824546542')
 {
   $plaintext = $value;
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
-// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans la base à chaque encryptage afin davoir des IV uniques
+// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans une base de donnée externe à chaque encryptage afin davoir des IV uniques
   $ciphertext_raw = openssl_encrypt($plaintext, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
   $hmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
   $ciphertext = base64_encode( $iv.$hmac.$ciphertext_raw );
@@ -72,7 +75,7 @@ function decrypt($value,$key = '45',$iv='1234567824546542')
 {
   $c = base64_decode($value);
   $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
-// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans la base à chaque encryptage afin davoir des IV uniques
+// todo IV specifique pour pouvoir decrypter, une solution plus securise serait de egalement stocker le IV dans une base de donnée externe à chaque encryptage afin davoir des IV uniques
   $hmac = substr($c, $ivlen, $sha2len=32);
   $ciphertext_raw = substr($c, $ivlen+$sha2len);
   $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);

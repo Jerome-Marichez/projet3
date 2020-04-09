@@ -27,7 +27,10 @@ $this->load->view('header');
 ////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
 
+
+$this->load->view('header');
 $this->load->view('backend/login_form');
+$this->load->view('footer');
 }
 
 
@@ -40,23 +43,38 @@ public function deconnexion() {
   //print_r($this->session->all_userdata());
 
 
+
+  $this->load->view('header');
+
   $this->load->view('backend/login_form', $data);
 
-
+  $this->load->view('footer');
 
 
 }
 
 
 
+
+
+
+
+
+
+
 public function connexion() {
+
+$this->load->view('header');
+$this->load->view('backend/haut_page_backend');
 
   $this->form_validation->set_rules('email', 'email', 'trim|required');
   $this->form_validation->set_rules('password', 'Password', 'trim|required');
   if ($this->form_validation->run() == FALSE) {
   if(isset($this->session->userdata['isConnected'])){
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_main');
+
   }else{
   $this->load->view('backend/login_form');
   }
@@ -88,10 +106,6 @@ public function connexion() {
     {
 
       // SI CLIENT EXISTE CREE SESSION
-      //$valeur_final = $valeur_final . $row->email;
-      //echo $valeur_final;
-
-
       $isItAdmin = isIt_Admin_or_Client($row->client_id);
 
 
@@ -111,7 +125,7 @@ public function connexion() {
 
 
 
-          echo $isItAdmin;
+
 
 
 
@@ -140,7 +154,8 @@ public function connexion() {
 
 
 
-    $this->load->view('backend/footer');
+$this->load->view('backend/bas_page_backend');
+$this->load->view('footer');
 }
 
 
@@ -162,9 +177,16 @@ public function connexion() {
 
 public function admin_dossiers()
 {
+
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_dossiers');
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
+
 
 
 
@@ -172,18 +194,33 @@ public function admin_dossiers()
 
 public function admin_formation()
 {
+
+
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_formation');
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
+
 }
 
 
 
 public function admin_rendezvous()
 {
+
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
+
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_rendezvous');
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
 }
 
 
@@ -191,9 +228,17 @@ public function admin_rendezvous()
 public function admin_newsletter()
 {
 
+
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
+
+
 }
 /** FIN ADMIN NEWSLETTER **/
 
@@ -207,9 +252,21 @@ public function admin_clients()
 
   $data['tableau_client'] = $resultat;
 
+
+
+
+
+
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_clients', $data);
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
+
+
 }
 
 
@@ -218,11 +275,15 @@ public function admin_clients()
 
 public function admin_parametre()
 {
+  $this->load->view('header');
+  $this->load->view('backend/haut_page_backend');
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/modifer_mot_de_passe_form');
   $this->load->view('backend/admin_parametre');
-  $this->load->view('backend/footer');
+
+  $this->load->view('backend/bas_page_backend');
+  $this->load->view('footer');
 }
 
 
@@ -235,7 +296,7 @@ public function admin_parametre()
 public function ajouter_client()
 {
 
-  print_r($_POST);
+  //print_r($_POST);
 
   $cree_nom =  $this->input->post('cree_nom');
   $cree_prenom =  $this->input->post('cree_prenom');
@@ -248,7 +309,7 @@ public function ajouter_client()
 
 
   $password = generer_numero_client();
-  echo $password;
+  //echo $password;
   $client_id = generer_numero_client('particulier');
 
 
@@ -265,11 +326,11 @@ public function ajouter_client()
 
 
 
-    redirect('backend/login/admin_clients', 'refresh');
+  redirect('backend/login/admin_clients', 'refresh');
 
-    $this->load->view('backend/menu_backend');
-    $this->load->view('backend/admin_clients');
-    $this->load->view('backend/footer');
+//    $this->load->view('backend/menu_backend');
+//    $this->load->view('backend/admin_clients');
+//    $this->load->view('backend/bas_page_backend');
 }
 
 //////////////////// FIN FONCTION CLIENTS ////////////////////////////////
@@ -370,10 +431,15 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
         'erreur_message' => 'Vos nouveaux mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
         );
 
+
+              $this->load->view('header');
+              $this->load->view('backend/haut_page_backend');
+
               $this->load->view('backend/menu_backend');
               $this->load->view('backend/modifer_mot_de_passe_form',$data);
-              $this->load->view('backend/footer');
 
+              $this->load->view('backend/bas_page_backend');
+              $this->load->view('footer');
 
       }
 
