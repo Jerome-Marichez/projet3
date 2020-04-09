@@ -3,24 +3,26 @@
 
 
 
-function site_link_base($chemin)
+function site_link_base($chemin = "")
 {
-  $ma_page_home = "http://localhost/projet3/index.php/";
+
   switch ($chemin) {
     case "js":
-        $ma_page_home = "http://localhost/projet3/application/assets/js/";
+        $ma_page_home = "http://localhost/projet3/application/assets/js/"; // CHEMIN JAVASCRIPT 
         break;
     case "img":
-        $ma_page_home = "http://localhost/projet3/application/assets/images/";
+        $ma_page_home = "http://localhost/projet3/application/assets/images/"; // CHEMIN IMAGES
         break;
     case "css":
-        $ma_page_home = "http://localhost/projet3/application/assets/css/";
+        $ma_page_home = "http://localhost/projet3/application/assets/css/"; // CHEMIN CSS
         break;
     case "video":
-        $ma_page_home = "http://localhost/projet3/application/assets/video/";
+        $ma_page_home = "http://localhost/projet3/application/assets/video/"; // CHEMIN VIDEO
         break;
-                    }
+     default:
+        $ma_page_home = "http://localhost/projet3/index.php/"; // CHEMIN URL
 
+                    }
   return $ma_page_home;
 }
 
