@@ -50,4 +50,28 @@
     </div>
   </div>
 
+  <canvas id="AdminGraph"></canvas>
+       <script>
+            Chart.defaults.global.legend.display = false;
+
+             var canvas_id = document.getElementById("AdminGraph");
+             var AdminGraph = new Chart(canvas_id, {
+                 type: 'bar',
+                 data: {
+                     labels: ["Clients", "Dossiers en cours", "Dossiers classés"],
+                     datasets: [{
+                         label: false,
+                         data: [50, 50, 50],
+                         
+                     }]
+                 }
+             });
+       </script>
+
+
+
+
+
+
+
 </div>

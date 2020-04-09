@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/projet3/application/assets/css/styles.css">
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script> <!-- Charger la librairie CHART JS -->
     <script src="https://kit.fontawesome.com/35388eb05f.js" crossorigin="anonymous"></script>
 	</head>
-<body> 
+<body>
