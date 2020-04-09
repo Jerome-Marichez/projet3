@@ -23,6 +23,7 @@
 
 }
 
+/** END CUSTOM RULES MOBILES **/
 
 
 /* CSS POUR LA FORM LOGIN */
@@ -154,6 +155,11 @@ opacity: 0.7;
 
 /****************************************** BACKEND CSS STYLE ***********************************/
 
+
+
+
+
+/** **/
 /*** RENDEZ VOUS CARD STYLE *******/
 
 
@@ -181,6 +187,7 @@ opacity: 0.7;
 
 
 }
+
 
 /*** ACCUEIL CARD STYLE ***********/
 .counter1
@@ -383,6 +390,12 @@ table.table tr th{
 	 color: #0E02BC !important;
 }
 
+
+.icon_noir
+{
+
+	color: black ;
+}
 .haut_du_tableau_tr {
 
 /*border: 0px !important;*/

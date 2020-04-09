@@ -33,4 +33,10 @@ function envoyer_mail($sujet,$email_from = 'avocat@test.fr',$email_to,$source_or
 }
 
 
+function expediteur_mail_data()
+{
+
+return "avocat@test.fr"; 
+}
+
 ?>

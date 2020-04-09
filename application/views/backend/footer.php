@@ -1,6 +1,8 @@
 <div class="clearfix visible-lg"></div>
-</div>
 
+<!-- FERMER DIV DU BACKEND -->
 </div>
+</div>
+<!-- FERMER DIV DU BACKEND --> 
 </body>
 </html>

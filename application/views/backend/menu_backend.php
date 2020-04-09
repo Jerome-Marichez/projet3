@@ -11,27 +11,8 @@ $id = ($this->session->userdata['isConnected']['id']);
 header("location: login");
 }
 ?>
-<head>
-<title>Admin Page</title>
 
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<div id="profile">
-<?php
-echo "Bonjour <b id='welcome'><i>" . $email . "</i> !</b>";
-echo "<br/>";
-echo "<br/>";
-echo "Voila le Admin Page";
-echo "<br/>";
-echo "<br/>";
-echo "Votre compte client: " . $client_id;
-echo "<br/>";
-echo "Votre email est: " . $email;
-echo "<br/>";
 
-?>
-</div>
 
 
 <div class="container">
@@ -44,9 +25,9 @@ echo "<br/>";
         <li class="padding"><a id="index" href="index" class="blue_lien_profile"><i class="fa fa-user-circle fa-1x"></i> <?php echo $prenom.' '.$nom; ?> </a></li>
 
       <!--  <li><a href="#" class="blue_lien">Accueil</a></li>-->
-        <li><a id="admin_dossier" href="admin_rendezvous" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_dossier" href="admin_dossiers" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_formation" href="admin_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a id="admin_rendezvvous" href="admin_rendezvvous"  class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="admin_rendezvvous" href="admin_rendezvous"  class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_newsletter" href="admin_newsletter" class="blue_lien">Newsletter <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_clients" href="admin_clients"  class="blue_lien">Clients <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_parametre" href="admin_parametre"  class="blue_lien">Paramètres <i class="fa fa-chevron-right fa-1x"></i></a></li>

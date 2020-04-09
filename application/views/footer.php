@@ -1,3 +1,10 @@
+
+
+
+
+</body>
+</div>
+
 <footer class="row">
   <ul class="nav navbar-nav col-md-12">
 
@@ -6,7 +13,3 @@
     <li>monsite@gmail.com</li>
   </ul>
 </footer>
-
-
-</body> 
-</div>
