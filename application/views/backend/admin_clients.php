@@ -69,7 +69,7 @@
 
           <button type="submit" class="btn btn-primary">Enregistrer</button>
 
-<?php echo form_close(); ?>
+          <?php echo form_close(); ?>
         </form>
 
       </div>

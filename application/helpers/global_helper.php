@@ -3,9 +3,24 @@
 
 
 
-function site_link_base()
+function site_link_base($chemin)
 {
   $ma_page_home = "http://localhost/projet3/index.php/";
+  switch ($chemin) {
+    case "js":
+        $ma_page_home = "http://localhost/projet3/application/assets/js/";
+        break;
+    case "img":
+        $ma_page_home = "http://localhost/projet3/application/assets/images/";
+        break;
+    case "css":
+        $ma_page_home = "http://localhost/projet3/application/assets/css/";
+        break;
+    case "video":
+        $ma_page_home = "http://localhost/projet3/application/assets/video/";
+        break;
+                    }
+
   return $ma_page_home;
 }
 
