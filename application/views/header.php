@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!doctype html>
 <html lang="fr">
 	<head>
-		<title>Mon  site</title>
+		<title><?php echo  titre_page_html(); ?> </title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

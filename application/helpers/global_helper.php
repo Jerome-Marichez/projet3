@@ -2,7 +2,12 @@
 // Des fonction en vracs qui peuvent etre utile dans plein de petit contexte
 
 
+// CREE LE TITRE HTML
+function titre_page_html()
+{
 
+return $_GET['']; 
+}
 function site_link_base($chemin = "")
 {
 

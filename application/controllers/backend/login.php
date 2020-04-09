@@ -235,8 +235,18 @@ public function admin_newsletter()
 /** ADMIN CLIENT **/
 public function admin_clients()
 {
+
+
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
+
+
+  if(!empty($this->uri->segment(4)) AND is_numeric($this->uri->segment(4)))
+  {
+    $this->client_model->supprimer_client($this->uri->segment(4));
+  }
+  
+
 
   $resultat = $this->client_model->afficher_base_client();
 

@@ -3,6 +3,8 @@
 
 // SA MARCHE MAIS CEST CHELOU  A REGARDER + TARD
 
+// CODE PAS SECURISER DU TOUT
+
 Class admin_export_newsletter extends CI_Controller {
 
 
