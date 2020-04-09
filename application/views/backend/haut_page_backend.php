@@ -8,8 +8,8 @@ if (isset($this->session->userdata['isConnected'])) {
 } else {
 
 
-header("Location: ".site_link_base('login'));
-exit; // Toujours mieux de stopper la suite du script si non autoriser. le header est censé rediriger correctement.
+//header("Location: ".site_link_base('login'));
+//exit; // Toujours mieux de stopper la suite du script si non autoriser. le header est censé rediriger correctement.
 }
 ?>
 
