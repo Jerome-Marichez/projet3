@@ -55,6 +55,26 @@ class Rendezvous_model extends CI_Model
       }
 
 
+      //SUPPRIMER UN RENDEZ VOUS AVEC SON ID
+      public function supprimer_rendezvous($id = "erreur")
+      {
+
+
+        if ($id == "erreur")
+        {
+         return $id;
+        }
+        else
+        {
+
+          $this->db->delete('rendezvous', array('id' => $id));
+          $this->db->close();
+          return $id;
+        }
+
+
+      }
+
 
     public function autoriser_action()
     {

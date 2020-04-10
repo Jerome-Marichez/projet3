@@ -21,7 +21,8 @@ $this->load->model('rendezvous_model');
 $this->load->view('header');
 }
 
-
+public function charger_haut_page() { $this->load->view('header'); $this->load->view('backend/haut_page_backend'); }
+public function charger_bas_page() { $this->load->view('backend/bas_page_backend'); $this->load->view('footer'); }
 
 
 
@@ -33,9 +34,9 @@ public function index() {
 //$this->rendezvous_model->cree_rendezvous_front("","","test","test2","0771651588","boby@yopmail.fr","59140","longuenesse","ma rue exemple",$date,1);
 //exit;
 
-$this->load->view('header');
+$this->charger_haut_page();
 $this->load->view('backend/login_form');
-$this->load->view('footer');
+$this->charger_bas_page();
 }
 
 
@@ -63,9 +64,7 @@ public function connexion() {
 
 
 
-$this->load->view('header');
-$this->load->view('backend/haut_page_backend');
-
+$this->charger_haut_page();
 
 // PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
  $this->client_model->count_all_client();
@@ -157,8 +156,7 @@ $this->load->view('backend/haut_page_backend');
 
 
 
-$this->load->view('backend/bas_page_backend');
-$this->load->view('footer');
+$this->charger_bas_page();
 }
 
 
@@ -183,14 +181,13 @@ public function admin_dossiers()
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+  $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_dossiers');
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
+
+  $this->charger_bas_page();
 
 
 }
@@ -200,43 +197,73 @@ public function admin_formation()
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+  $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_formation');
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
+  $this->charger_bas_page();
 
 }
 
 /** RENDEZ VOUS **/
 
-public function refuser_rendezvous()
+public function action_rendezvous()
 {
 
-  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
-  autoriser_action($isItAdmin,'admin');
+      $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+      autoriser_action($isItAdmin,'admin');
+      $client_ID = $this->input->post('client_id');
+      $id =  $this->input->post('id');
+      $email =  $this->input->post('email');
+      $date_tableau =  $this->input->post('date_tableau');
+
+
+      $source_origine = array("[MESSAGE]","[NAME]");
+
+      if($this->input->post('action') == "accepter")
+      {
+
+
+
+          $sujet = "Rendez vous accepté ".$date_tableau;
+          $source_modifier = array("Votre rendez vous pour le ".date_formater($date_tableau,'d-m-Y')." à ".date_formater($date_tableau,'H')."h".date_formater($date_tableau,'i')." est accepté.");
+
+          // SI LE EMAIL EXISTE DEJA DANS LA BASE CLIENT ALORS JE NE CREE PAS DE COMPTE CLIENT PAS CAR IL A UN COMPTE CLIENT
+
+          // IF NOT JE CREE LE COMPTE CLIENT AVEC LES INFO DU FORMULAIRE
+
+      }
+      if($this->input->post('action') == "refuser")
+      {
+
+          $sujet = "Rendez vous refuser ".$date_tableau;
+          $source_modifier = array("Votre rendez vous pour le ".date_formater($date_tableau,'d-m-Y')." à ".date_formater($date_tableau,'H')."h".date_formater($date_tableau,'i')." est refusé.");
+
+          $this->rendezvous_model->supprimer_rendezvous($id);
+
+      }
+
+
+  envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
+  envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
+  $this->rendezvous();
+
+
 
 }
 
-public function accepter_rendezvous()
-{
 
-  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
-  autoriser_action($isItAdmin,'admin');
 
-}
+
 
 public function rendezvous()
 {
-  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+    $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+    $this->charger_haut_page();
 
-  $this->load->view('backend/menu_backend');
+    $this->load->view('backend/menu_backend');
 
     if ($isItAdmin == 'admin'){
       $resultat = $this->rendezvous_model->afficher_rendezvous();
@@ -254,8 +281,8 @@ public function rendezvous()
       $this->load->view('backend/rendezvous',$data);
     }
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
+
+    $this->charger_bas_page();
 }
 
 
@@ -267,15 +294,13 @@ public function admin_newsletter()
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+  $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
 
+  $this->charger_bas_page();
 
 }
 /** FIN ADMIN NEWSLETTER **/
@@ -308,14 +333,13 @@ public function admin_clients()
 
 
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+  $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_clients', $data);
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
+
+  $this->charger_bas_page();
 
 
 }
@@ -329,15 +353,14 @@ public function admin_parametre()
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
-  $this->load->view('header');
-  $this->load->view('backend/haut_page_backend');
+  $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/modifer_mot_de_passe_form');
   $this->load->view('backend/admin_parametre');
 
-  $this->load->view('backend/bas_page_backend');
-  $this->load->view('footer');
+
+  $this->charger_bas_page();
 }
 
 
@@ -384,9 +407,7 @@ public function ajouter_client()
 
   redirect('backend/login/admin_clients', 'refresh');
 
-//    $this->load->view('backend/menu_backend');
-//    $this->load->view('backend/admin_clients');
-//    $this->load->view('backend/bas_page_backend');
+
 }
 
 //////////////////// FIN FONCTION CLIENTS ////////////////////////////////
@@ -487,15 +508,13 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
         'erreur_message' => 'Vos nouveaux mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
         );
 
-
-              $this->load->view('header');
-              $this->load->view('backend/haut_page_backend');
+              $this->charger_haut_page();
 
               $this->load->view('backend/menu_backend');
               $this->load->view('backend/modifer_mot_de_passe_form',$data);
 
-              $this->load->view('backend/bas_page_backend');
-              $this->load->view('footer');
+
+              $this->charger_bas_page();
 
       }
 
