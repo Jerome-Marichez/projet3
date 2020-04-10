@@ -9,9 +9,8 @@ class afficher_page extends CI_Controller {
 	public function accueil()
 	 {
 
-    $this->load->view('header');
-    $this->load->view('welcome_message');
-    $this->load->view('footer');
+    $this->load->view('front/contact');
+
 
    }
 

@@ -3,29 +3,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
+	/** FRONT CONTROLLER
 	 */
 	public function index()
 	{
-    $this->load->view('header');
-		$this->load->view('welcome_message');
+    $this->load->view('front/index');
+
 	}
-	public function apropos()
-	{
-    $this->load->view('header');
-		$this->load->view('vue');
-	}
+
+  public function actualite()
+  {
+    $this->load->view('front/actualite');
+  }
+
+  public function contact()
+  {
+    $this->load->view('front/contact');
+  }
+
+  public function Davocate()
+  {
+     $this->load->view('front/Davocate');
+  }
+
+  public function DCLigne()
+  {
+     $this->load->view('front/DCLigne');
+  }
+
+  public function DCPublique()
+  {
+     $this->load->view('front/DCPublique');
+  }
+
+  public function DDevis()
+  {
+     $this->load->view('front/DDevis');
+  }
+
+  public function Dformation()
+  {
+      $this->load->view('front/Dformation');
+  }
+
+  public function Dpublic()
+
+  {
+     $this->load->view('front/Dpublic');
+  }
+
+
+  public function faq()
+
+  {
+    $this->load->view('front/faq');
+  }
+
+  public function formation()
+
+  {
+  $this->load->view('front/formation');
+  }
+
+
+
+  public function leCabinet()
+  {
+    $this->load->view('front/leCabinet');
+  }
+
 }

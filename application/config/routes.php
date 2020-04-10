@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -27,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | There are three reserved routes:
 |
-|	$route['default_controller'] = 'welcome';
+
 |
 | This route indicates which controller class should be loaded if the
 | URI contains no data. In the above example, the "welcome" class

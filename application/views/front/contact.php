@@ -13,25 +13,21 @@
 <body onload="init();">
 
 
-	
-			<?php
-		include 'header.php';
-	?>
 
          <div class="container">
           <!-- menu -->
 
-	 
+
 	<div class="demande"><h5>Contact</h5></div>
 	   <div class="row">
 		<div class="col-md-5">
-					<HR color="#0000a0" width="100%" size="5px"  />	
+					<HR color="#0000a0" width="100%" size="5px"  />
 		</div>
 		<div class="col-md-2" style="text-align: center; color: #0000a0;" >
 			<i class="far fa-address-book"></i>
 		</div>
           <div class="col-md-5">
-					<HR color="#0000a0" width="100%" size="5px"  />	
+					<HR color="#0000a0" width="100%" size="5px"  />
 		</div>
 	</div>
 	       <br>
@@ -52,8 +48,8 @@ function init() {
 	loader.loadManifest(lib.properties.manifest);
 }
 function handleFileLoad(evt, comp) {
-	var images=comp.getImages();	
-	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+	var images=comp.getImages();
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
 }
 function handleComplete(evt,comp) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
@@ -65,15 +61,15 @@ function handleComplete(evt,comp) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
 	exportRoot = new lib.phone();
-	stage = new lib.Stage(canvas);	
+	stage = new lib.Stage(canvas);
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
-	}	    
+	}
 	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
@@ -82,7 +78,7 @@ function handleComplete(evt,comp) {
 		<canvas id="canvas" width="506" height="398" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:506px; height:398px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
-	</div> 
+	</div>
 
 
 
@@ -95,20 +91,20 @@ function handleComplete(evt,comp) {
 		              	<i class="fas fa-clock"></i>
               		</div>
               	</div>
-              	
+
               </div>
 		</div>
 		<br><br>
 		<div class="demande"><h5>Formulaire</h5></div><br>
 		<br><br>
 		<div class="row">
-		<div class="col-md-6"> 
+		<div class="col-md-6">
 			<div class=" devis row">
 				<div class="col-md-12">
-					
+
                        <button type="button" class="btn btn btn-lg btn-block">Vous êtes ?</button>
-  
-					
+
+
 				</div>
 			</div><br>
 			<div class=" devis1 row">
@@ -130,13 +126,13 @@ function handleComplete(evt,comp) {
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Nom" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Prenom" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -144,7 +140,7 @@ function handleComplete(evt,comp) {
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="tel" class="form-control" placeholder="Telephone" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -152,7 +148,7 @@ function handleComplete(evt,comp) {
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="email" class="form-control" placeholder="Adresse mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -160,7 +156,7 @@ function handleComplete(evt,comp) {
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Adresse postale" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -168,13 +164,13 @@ function handleComplete(evt,comp) {
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="number" class="form-control" placeholder="Code postal" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Ville" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -189,7 +185,7 @@ function handleComplete(evt,comp) {
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6"> 
+		<div class="col-md-6">
            <div class="row">
            	 <div class="col-md-10">
            	 	<div class="  input-group mb-3">
@@ -200,7 +196,7 @@ function handleComplete(evt,comp) {
 					    <option value="3">Trois</option>
 					    <option value="3">Quatre</option>
 					  </select>
-					  
+
 				</div>
            	 </div>
            </div>
@@ -208,25 +204,25 @@ function handleComplete(evt,comp) {
            	<div class="col-md-12">
            	<form class="tArea">
   <div class="mb-3">
-    
+
     <textarea class="ask form-control" id="" placeholder="Posez vos questions" ></textarea>
-    
+
   </div>
 
            	</div>
            </div>
-           
+
            	  <div class="buto">
            	  	<button type="button" class="btn btn-dark" id="conct">VALIDER</button>
            	  </div>
            </div>
 		</div>
 
-    
+
 
        <div class="demande"><h5>Rendez-vous</h5></div><br><br>
                  <div class="row">
-                 	
+
                  	<div class="col-sm-6">
                  		<div class="input-group mb-3">
 					  <select class="custom-select" id="inputGroupSelect02">
@@ -235,7 +231,7 @@ function handleComplete(evt,comp) {
 					    <option value="2">Two</option>
 					    <option value="3">Three</option>
 					  </select>
-					  
+
 				</div>
                  	</div>
                  	<div class="col-sm-6">
@@ -244,9 +240,9 @@ function handleComplete(evt,comp) {
 					    <option selected>Telephone ou cabinet</option>
 					    <option value="1">Telephone</option>
 					    <option value="2">cabinet</option>
-					    
+
 					  </select>
-					  
+
 				</div>
                  	</div>
                  </div>
@@ -254,9 +250,9 @@ function handleComplete(evt,comp) {
 						<div class="row">
 		<div class="col-md-12" id="imgBut">
 			<iframe name="InlineFrame1" id="InlineFrame1" style="width:180px;height:220px;" src="https://www.mathieuweb.fr/calendrier/calendrier-des-semaines.php?nb_mois=1&nb_mois_ligne=4&mois=&an=&langue=fr&texte_color=B9CBDD&week_color=DAE9F8&week_end_color=C7DAED&police_color=453413&sel=true" scrolling="no" frameborder="0" allowtransparency="true"></iframe><br>
-			
-		</div> 
-		
+
+		</div>
+
 	</div><br><br>
 	<div class="demande"><h5>Le cabinet</h5></div><br><br>
      <div class="row">
@@ -266,29 +262,29 @@ function handleComplete(evt,comp) {
      </div><br><br>
      <div class="row">
 		<div class=" col-md-12">
-					<HR color="#0f02bc" width="100%" size="5px"  />	
+					<HR color="#0f02bc" width="100%" size="5px"  />
 		</div>
 	</div>
      <div class="row" >
 		<div class="actualite3 col-sm-4 col-md-4">
 			<p >Pour plus d'actualités,<br>abonnez vous</p>
 		</div>
-													
+
 		<div class="actualite3 col-sm-4 col-md-4">
-			
+
 					<input type="radio" name="">
 					<a href="newletterDroitPena">Droit Pénal</a>
-				
+
 					<input type="radio" name="">
-					<a href="newletterDroitPena">Droit Privé</a><br>	
-				
+					<a href="newletterDroitPena">Droit Privé</a><br>
+
 					<input type="radio" name="">
 					<a href="newletterDroitPena">Droit Public</a>
-				
+
 					<input type="radio" name="">
-					<a href="newletterDroitPena">Les Trois</a>		
+					<a href="newletterDroitPena">Les Trois</a>
 		</div>
-			
+
 		<div class="actualite3 col-sm-4 col-md-4">
 			<form method="" action="">
 				<input type="email" name="email" placeholder="adresse mail" style="border:1px solid #0f02bc;">
@@ -298,7 +294,7 @@ function handleComplete(evt,comp) {
 	</div>
 	<div class="row">
 		<div class=" col-md-12">
-					<HR color="#0f02bc" width="100%" size="5px"  />	
+					<HR color="#0f02bc" width="100%" size="5px"  />
 		</div>
 	</div>
 
@@ -309,7 +305,7 @@ function handleComplete(evt,comp) {
 
 	        </div>
 
-       
+
 
 
 <?php
