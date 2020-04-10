@@ -55,6 +55,21 @@ public function count_all_client()
     $combien = $requete_resultat->num_rows();
     return $combien;
 }
+
+// Verifier si un email existe dans la table client
+public function check_email_account($email)
+{
+  $requete_resultat = $this->db->where('email',$email);
+  $requete_resultat = $this->db->get('client');
+  $combien = $requete_resultat->num_rows();
+  if ($combien > 0){
+       return true;
+   }
+   else{
+       return false;
+   }
+}
+
 public function update_client_password($id,$password)
 {
 
@@ -63,7 +78,7 @@ public function update_client_password($id,$password)
                'password' => $password,
             );
 
-$requete_resultat = $this->db->where('id', $id);
+//$requete_resultat = $this->db->where('id', $id);
 $requete_resultat = $this->db->update('client', $data);
 
 return $requete_resultat;

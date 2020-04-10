@@ -27,7 +27,7 @@ exit; // Toujours mieux de stopper la suite du script si non autoriser. le heade
 { ?>
       <!--  <li><a href="#" class="blue_lien">Accueil</a></li>-->
         <li><a id="admin_dossier" href="admin_dossiers" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
-        <li><a id="admin_formation" href="admin_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
+        <li><a id="rendezvous_formation" href="rendezvous_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="rendezvous" href="rendezvous"  class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_newsletter" href="admin_newsletter" class="blue_lien">Newsletter <i class="fa fa-chevron-right fa-1x"></i></a></li>
         <li><a id="admin_clients" href="admin_clients"  class="blue_lien">Clients <i class="fa fa-chevron-right fa-1x"></i></a></li>
@@ -38,7 +38,7 @@ exit; // Toujours mieux de stopper la suite du script si non autoriser. le heade
 <?php } else { ?>
 
   <li><a id="admin_dossier" href="client_dossiers" class="blue_lien">Mes dossiers <i class="fa fa-chevron-right fa-1x"></i></a></li>
-  <li><a id="admin_formation" href="client_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
+  <li><a id="rendezvous_formation" href="rendezvous_formation" class="blue_lien">Formation <i class="fa fa-chevron-right fa-1x"></i></a></li>
   <li><a id="rendezvous" href="rendezvous"  class="blue_lien">Rendez-vous <i class="fa fa-chevron-right fa-1x"></i></a></li>
   <li><a id="deconnexion" href="deconnexion" class="blue_lien">Déconnecter <i class="fa fa-chevron-right fa-1x"></i></a></li>
 

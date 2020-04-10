@@ -6,18 +6,36 @@ class Rendezvous_model extends CI_Model
 {
 
 
-    // RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS
 
-  public function afficher_rendezvous($id_table_client = '')
+
+
+  public function update_rendezvous($id,$statut)
+  {
+
+    $data = array(
+            'statut' => $statut
+    );
+
+    $this->db->where('id', $id);
+    $this->db->update('rendezvous', $data);
+
+    $this->db->close();
+  }
+
+
+    // RECUPERER ET AFFICHER LA BASE DE DONNES DES RENDEZ VOUS ET FORMATION
+
+  public function afficher_rendezvous($typerendezvous,$email = '')
     {
 
-      if($id_table_client == '')
+
+      if($email == '')
       {
       $requete_resultat = $this->db->get('rendezvous');
       }
       else
       {
-      $requete_resultat = $this->db->where('client_id', $id_table_client);
+      $requete_resultat = $this->db->where('email', $email);
       $requete_resultat = $this->db->get('rendezvous');
       }
 

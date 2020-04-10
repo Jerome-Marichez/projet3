@@ -42,121 +42,107 @@ $this->charger_bas_page();
 
 
 
-public function deconnexion() {
-
-$this->session->sess_destroy();
-
-redirect('');
-
-
-
-
-}
-
-
-
-
+public function deconnexion() { $this->session->sess_destroy(); redirect(''); }
 
 
 
 
 public function connexion() {
 
+    $this->charger_haut_page();
 
-
-$this->charger_haut_page();
-
-// PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
- $this->client_model->count_all_client();
- $this->dossier_model->count_all_dossier_classer();
- $this->dossier_model->count_all_dossier();
-// FIN
-
-
-
-  $this->form_validation->set_rules('email', 'email', 'trim|required');
-  $this->form_validation->set_rules('password', 'Password', 'trim|required');
-  if ($this->form_validation->run() == FALSE) {
-  if(isset($this->session->userdata['isConnected'])){
-
-  $this->load->view('backend/menu_backend');
-
-  $this->load->view('backend/admin_main');
-
-  }else{
-  $this->load->view('backend/login_form');
-  }
-  } else {
-
-    $email =  $this->input->post('email');
-    $password = $this->input->post('password');
-
-    // ON TESTE LA CONNEXION AVEC BASE DE DONNE
-    $resultat = $this->client_model->connexion_client($email,encrypt($password));
+  // PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
+   $this->client_model->count_all_client();
+   $this->dossier_model->count_all_dossier_classer();
+   $this->dossier_model->count_all_dossier();
+  // FIN
 
 
 
-  if (empty($resultat))
-  {
-    //echo "ya rien";
-    $data = array(
-    'erreur_message' => 'Mauvais Email ou Mot de Passe'
-    );
+    $this->form_validation->set_rules('email', 'email', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+      if ($this->form_validation->run() == FALSE) {
+      if(isset($this->session->userdata['isConnected'])){
+
+      $this->load->view('backend/menu_backend');
+
+      $this->load->view('backend/admin_main');
+
+      }else{
+      $this->load->view('backend/login_form');
+      }
+      } else {
+
+        $email =  $this->input->post('email');
+        $password = $this->input->post('password');
+
+        // ON TESTE LA CONNEXION AVEC BASE DE DONNE
+        $resultat = $this->client_model->connexion_client($email,encrypt($password));
 
 
-    $this->load->view('backend/login_form', $data);
-  }
-  else
-  {
 
-
-    foreach($resultat as $row)
-    {
-
-
-      // SI CLIENT EXISTE CREE SESSION
-      $isItAdmin = isIt_Admin_or_Client($row->client_id);
-
-        $data_session = array(
-        'email' => $row->email,
-        'client_id' => $row->client_id,
-        'password' => $row->password,
-        'nom' => $row->nom,
-        'prenom' => $row->prenom,
-        'id' => $row->id,
-        'isItAdmin' => $isItAdmin
-
+      if (empty($resultat))
+      {
+        //echo "ya rien";
+        $data = array(
+        'erreur_message' => 'Mauvais Email ou Mot de Passe'
         );
+
+
+        $this->load->view('backend/login_form', $data);
+      }
+      else
+      {
+
+
+        foreach($resultat as $row)
+        {
+
+
+          // SI CLIENT EXISTE CREE SESSION
+          $isItAdmin = isIt_Admin_or_Client($row->client_id);
+
+            $data_session = array(
+            'email' => $row->email,
+            'client_id' => $row->client_id,
+            'password' => $row->password,
+            'nom' => $row->nom,
+            'prenom' => $row->prenom,
+            'id' => $row->id,
+            'isItAdmin' => $isItAdmin
+
+            );
+
+        }
+
+
+
+              $source_origine = array("[MESSAGE]","[NAME]");
+
+              $source_modifier = array("Vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom.' '.$row->prenom);
+
+              envoyer_mail("Connexion",expediteur_mail_data(),$row->email,$source_origine,$source_modifier);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+              $this->session->set_userdata('isConnected', $data_session);
+              $this->load->view('backend/menu_backend');
+              $this->load->view('backend/admin_main');
+
+
+
+      }
+
 
     }
 
 
 
-          $source_origine = array("[MESSAGE]","[NAME]");
-
-          $source_modifier = array("Vous venez de vous connecté sur votre espace client si ce n'est pas vous merci de nous contacter au plus vite.",$row->nom.' '.$row->prenom);
-
-          envoyer_mail("Connexion",expediteur_mail_data(),$row->email,$source_origine,$source_modifier);
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-          $this->session->set_userdata('isConnected', $data_session);
-          $this->load->view('backend/menu_backend');
-          $this->load->view('backend/admin_main');
-
-
-
-  }
-
-
-}
-
-
-
-$this->charger_bas_page();
+  $this->charger_bas_page();
 }
 
 
@@ -214,39 +200,73 @@ public function action_rendezvous()
       $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
       autoriser_action($isItAdmin,'admin');
       $client_ID = $this->input->post('client_id');
-      $id =  $this->input->post('id');
+      $id =  $this->input->post('id'); // DE LA DEMANDE PAS DE LID CLIENT
       $email =  $this->input->post('email');
       $date_tableau =  $this->input->post('date_tableau');
+      $nom = $this->input->post('nom');
+      $prenom = $this->input->post('prenom');
+      $tel =  $this->input->post('tel');
+      $code_postale =  $this->input->post('code_postale');
+      $ville =  $this->input->post('ville');
+      $adresse = $this->input->post('adresse');
 
 
-      $source_origine = array("[MESSAGE]","[NAME]");
 
       if($this->input->post('action') == "accepter")
       {
 
 
 
-          $sujet = "Rendez vous accepté ".$date_tableau;
-          $source_modifier = array("Votre rendez vous pour le ".date_formater($date_tableau,'d-m-Y')." à ".date_formater($date_tableau,'H')."h".date_formater($date_tableau,'i')." est accepté.");
+
 
           // SI LE EMAIL EXISTE DEJA DANS LA BASE CLIENT ALORS JE NE CREE PAS DE COMPTE CLIENT PAS CAR IL A UN COMPTE CLIENT
 
           // IF NOT JE CREE LE COMPTE CLIENT AVEC LES INFO DU FORMULAIRE
+
+          if($this->client_model->check_email_account($email) == false)
+
+          {
+          // CREE AUSSI CLIENT SI EMAIL IN EXISTANT
+
+            $password = generer_numero_client();
+            //echo $password;
+            $client_id = generer_numero_client('particulier');
+
+
+            $resultat = $this->client_model->cree_client('',$client_id,encrypt($password),$nom,$prenom,$tel,$email,$code_postale,$ville,$code_postale);
+
+
+            $source_origine = array("[MESSAGE]","[NAME]");
+            $NAME = $nom.' '.$prenom;
+            $sujet = "Compte Client ".$nom." ".$prenom;
+            $source_modifier = array("Nous vous confirmons la création de votre espace client vous pouvez vous connecter via vos identifiants<br><br>E-mail: ".$email."<br><br>Mot de passe: ".$password,$NAME);
+
+            envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
+            envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
+          }
+
+
+          $this->rendezvous_model->update_rendezvous($id,'valide');
+
+        $date_francaise = date_formater($date_tableau,'d-m-Y')." à ".date_formater($date_tableau,'H')."h".date_formater($date_tableau,'i');
+        $sujet = "Rendez vous accepté ".$date_francaise;
+        $source_modifier = array("Votre rendez vous pour le ".$date_francaise." est accepté.");
+        $source_origine = array("[MESSAGE]","[NAME]");
 
       }
       if($this->input->post('action') == "refuser")
       {
 
           $sujet = "Rendez vous refuser ".$date_tableau;
-          $source_modifier = array("Votre rendez vous pour le ".date_formater($date_tableau,'d-m-Y')." à ".date_formater($date_tableau,'H')."h".date_formater($date_tableau,'i')." est refusé.");
+          $source_modifier = array("Votre rendez vous pour le ".$date_francaise." est refusé.");
 
           $this->rendezvous_model->supprimer_rendezvous($id);
 
       }
 
+    envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
+    envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
 
-  envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
-  envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
   $this->rendezvous();
 
 
@@ -254,11 +274,15 @@ public function action_rendezvous()
 }
 
 
-
-
-
-public function rendezvous()
+public function rendezvous_formation()
 {
+  $this->rendezvous(true);
+}
+
+
+public function rendezvous($formation = false)
+{
+
     $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
 
     $this->charger_haut_page();
@@ -266,7 +290,7 @@ public function rendezvous()
     $this->load->view('backend/menu_backend');
 
     if ($isItAdmin == 'admin'){
-      $resultat = $this->rendezvous_model->afficher_rendezvous();
+      $resultat = $this->rendezvous_model->afficher_rendezvous('rendezvous');
 
 
       $data['tableau_rendezvous'] = $resultat;
@@ -274,7 +298,7 @@ public function rendezvous()
     }
     else
     {
-      $resultat = $this->rendezvous_model->afficher_rendezvous($this->session->userdata['isConnected']['client_id']);
+      $resultat = $this->rendezvous_model->afficher_rendezvous('rendezvous',$this->session->userdata['isConnected']['email']);
 
 
       $data['tableau_rendezvous'] = $resultat;
