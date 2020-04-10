@@ -32,7 +32,7 @@ $nom_tableau = html_escape($row->nom);
 $prenom_tableau = html_escape($row->prenom);
 $email_tableau = html_escape($row->email);
 $date_tableau = html_escape($row->date);
-$client_ID_tableau = html_escape($row->client_id);
+$client_ID = html_escape($row->client_id);
 $cabinet = html_escape($row->cabinet);
 $statut = html_escape($row->statut);
 if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
@@ -43,7 +43,7 @@ if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
       <div class="card-body">
 
 
-        <h5 class="card-ligne1-rendezvous"> <i class="fa fa-calendar-check fa-2x" ></i><?php echo $date_tableau ?><i class="fa fa-clock fa-2x" style="padding-left: 50px"></i>9h30</div>
+        <h5 class="card-ligne1-rendezvous"> <i class="fa fa-calendar-check fa-2x" ></i><?php echo date_formater($date_tableau,'d-m-Y'); ?><i class="fa fa-clock fa-2x" style="padding-left: 50px"></i><?php echo date_formater($date_tableau,'H'); echo "h"; echo date_formater($date_tableau,'i');  ?></div>
         <p class="card-ligne2-rendezvous"><p><?php echo $cabinet ?></p>
           <p class="card-ligne2-rendezvous"><b><?php echo $nom_tableau.' '.$prenom_tableau; ?></b></p>
 
@@ -54,9 +54,22 @@ if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
     <div class="espace_backend_30_for_mobile_only"></div>
     <?php if ($statut == 'en-attente')
     { ?>
-      <div class="col-md-3 text-center">  <a href="#"  class="btn btn-primary btn-lg btn-block " ><b>Accepter </b></a></div>
+
+
+        <form <?php echo form_open('backend/login/accepter_rendezvous'); ?>
+        <input id="id" name="id" type="hidden" value="<?php echo $id_specific;?>">
+        <input id="email" name="email" type="hidden" value="<?php echo $email_tableau;?>">
+        <div class="col-md-3 text-center">  <button type="submit"  class="btn btn-primary btn-lg btn-block " ><b>Accepter </b></button></div>
+        <?php echo form_close(); ?>
+
         <div class="espace_backend_30_for_mobile_only"></div>
-          <div class="col-md-3 text-center">   <a href="#" class="btn btn-primary btn-lg btn-block " ><b>Refusez </b></a> </div>
+        <form <?php echo form_open('backend/login/refuser_rendezvous'); ?>
+        <input id="id" name="id" type="hidden" value="<?php echo $id_specific;?>">
+        <input id="email" name="email" type="hidden" value="<?php echo $email_tableau;?>">
+        <input id="clientid" name="clientid" type="hidden" value="<?php echo $client_id?>">
+
+        <div class="col-md-3 text-center">  <button type="submit"   class="btn btn-primary btn-lg btn-block " ><b>Refuser </b></button></div>
+        <?php echo form_close(); ?>
     <?php }
     else
     { ?>

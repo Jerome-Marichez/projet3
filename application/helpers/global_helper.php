@@ -5,8 +5,8 @@
 // CREE LE TITRE HTML
 function titre_page_html()
 {
+ return "A.G.D.Z Avocat";
 
-return $_GET['']; 
 }
 function site_link_base($chemin = "")
 {
@@ -33,6 +33,18 @@ function site_link_base($chemin = "")
                     }
   return $ma_page_home;
 }
+
+
+// RETOURNE LA DATE OU HEURE UNIQUEMENT DEPUIS DATETIME MYSQL
+function date_formater($myvalue,$format)
+{
+$datetime = new DateTime($myvalue);
+
+$data = $datetime->format($format);
+
+return $data;
+}
+
 
 
 // EXPORTER UN FICHIER TEXTE DEPUIS UN STRING

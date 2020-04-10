@@ -39,10 +39,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-$autoload['packages'] = array();
 
 
 // CODE DE CHARGEMENT CONFIG CUSTOM  ///////////////////////////////
+
 $autoload['database'] = array();     // Pour les fonction database
 $autoload['memcached'] = array();    // Pour le cache
 $autoload['routes'] = array();

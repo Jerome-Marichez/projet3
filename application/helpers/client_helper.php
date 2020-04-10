@@ -18,6 +18,14 @@ function autoriser_action($GRADE_USER,$minimum_grade = "client")
 
 }
 
+
+
+
+// RETOURNE LA DATE ET HEURE COMBINE
+function additione_date_heure($date,$heure)
+{
+
+}
 function isIt_Admin_or_Client($client_id)
 {
 
