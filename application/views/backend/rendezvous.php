@@ -24,9 +24,10 @@
 <?php
 
 
-
+$isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
 foreach($tableau_rendezvous as $row)
 {
+
 $id_specific = html_escape($row->id);
 $client_ID = html_escape($row->client_id);
 $nom_tableau = html_escape($row->nom);
@@ -56,7 +57,7 @@ if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
 
     <div class="espace_backend_30"></div>
     <div class="espace_backend_30_for_mobile_only"></div>
-    <?php if ($statut == 'en-attente')
+    <?php if ($statut == 'en-attente' )
     { ?>
 
         <!-- Les differents ID relatif au formulaire -->
@@ -72,14 +73,17 @@ if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
         <input id="adresse" name="adresse" type="hidden" value="<?php echo $adresse_tableau;?>">
 
         <input id="date_tableau" name="date_tableau" type="hidden" value="<?php echo $date_tableau;?>">
+
+        <?php if ( $isItAdmin =="admin") { ?>
         <div class="col-md-3 text-center">  <button type="submit" name="action" value="accepter" class="btn btn-primary btn-lg btn-block " ><b>Accepter </b></button></div>
 
         <div class="espace_backend_30_for_mobile_only"></div>
 
 
         <div class="col-md-3 text-center">  <button type="submit" name="action" value="refuser"   class="btn btn-primary btn-lg btn-block " ><b>Refuser </b></button></div>
+    <?php  } else  { ?>     <div class="col-md-6 text-center">  <a href="#"  class="btn btn-primary btn-lg btn-block " ><b>En attente de confirmation </b></a></div>
         <?php echo form_close(); ?>
-    <?php }
+    <?php }}
     else
     { ?>
           <div class="col-md-6 text-center">  <a href="#"  class="btn btn-primary btn-lg btn-block " ><b>Rendez vous accepté </b></a></div>
