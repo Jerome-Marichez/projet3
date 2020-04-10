@@ -16,6 +16,8 @@ $this->load->library('form_validation');
 $this->load->library('session');
 $this->load->model('newsletter_model');
 $this->load->model('client_model');
+$this->load->model('dossier_model');
+
 $this->load->view('header');
 }
 
@@ -55,8 +57,19 @@ redirect('');
 
 public function connexion() {
 
+
+
 $this->load->view('header');
 $this->load->view('backend/haut_page_backend');
+
+
+// PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
+ $this->client_model->count_all_client();
+ $this->dossier_model->count_all_dossier_classer();
+ $this->dossier_model->count_all_dossier();
+// FIN
+
+
 
   $this->form_validation->set_rules('email', 'email', 'trim|required');
   $this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -64,6 +77,7 @@ $this->load->view('backend/haut_page_backend');
   if(isset($this->session->userdata['isConnected'])){
 
   $this->load->view('backend/menu_backend');
+
   $this->load->view('backend/admin_main');
 
   }else{
@@ -244,8 +258,9 @@ public function admin_clients()
   if(!empty($this->uri->segment(4)) AND is_numeric($this->uri->segment(4)))
   {
     $this->client_model->supprimer_client($this->uri->segment(4));
+    redirect('backend/login/admin_clients', 'refresh');
   }
-  
+
 
 
   $resultat = $this->client_model->afficher_base_client();

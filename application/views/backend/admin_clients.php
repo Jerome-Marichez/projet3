@@ -15,13 +15,11 @@
   <div class="modal fade" id="creationclient_fenetre" tabindex="-1" role="dialog" aria-labelledby="creationclient_fenetre" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form <?php echo form_open('backend/login/ajouter_client'); ?>>
+        <form <?php echo form_open('backend/login/ajouter_client'); ?>
 
         <div class="modal-header">
           <h5 class="modal-title" id="creationclient_fenetre">Création client</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
         </div>
         <div class="modal-body">
 
@@ -29,29 +27,29 @@
 
               <div class="form-group">
                 <div class="row"><div class="col-md-6">
-                <input type="text" class="form-control" name="cree_nom" id="cree_nom" placeholder="Nom">
+                <input type="text" class="form-control" name="cree_nom" id="cree_nom" placeholder="Nom" required>
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" name="cree_prenom" id="cree_prenom"  placeholder="Prenom">
+                <input type="text" class="form-control" name="cree_prenom" id="cree_prenom"  placeholder="Prenom" required>
               </div> </div>
               </div>
               <div class="form-group">
-                <input type="tel" class="form-control" name="cree_telephone" id="cree_telephone" placeholder="Telephone">
+                <input type="tel" class="form-control" name="cree_telephone" id="cree_telephone" placeholder="Telephone" required>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="cree_email" id="cree_email" placeholder="email">
+                <input type="email" class="form-control" name="cree_email" id="cree_email" placeholder="email" required>
               </div>
               <div class="form-group">
 
-                <input type="text" class="form-control" name="cree_adresse_postal" id="cree_adresse_postal" placeholder="adresse postale">
+                <input type="text" class="form-control" name="cree_adresse_postal" id="cree_adresse_postal" placeholder="adresse postale" required>
               </div>
               <div class="form-group">
                 <div class="row">
                 <div class="col-md-6">
-                <input type="text" class="form-control" name="cree_code_postal" id="cree_code_postal" placeholder="code postale">
+                <input type="number" class="form-control" name="cree_code_postal" id="cree_code_postal" placeholder="code postale" required>
               </div>
                 <div class="col-md-6">
-                <input type="text" class="form-control" name="cree_ville" id="cree_ville" placeholder="ville">    </div>
+                <input type="text" class="form-control" name="cree_ville" id="cree_ville" placeholder="ville" required>    </div>
               </div>
             </div>
               <div class="form-group">
@@ -105,7 +103,7 @@ $nom_tableau = html_escape($row->nom);
 $email_tableau = html_escape($row->email);
 $date_tableau = html_escape($row->date);
 $client_ID_tableau = html_escape($row->client_id);
-      ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="<?php echo site_link_base();  ?>backend/admin_delete_clientid/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
+      ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="admin_clients/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
 <?php
 echo '<td>';echo $email_tableau; echo '</td>';
 echo '<td>';echo $nom_tableau; echo '</td>';

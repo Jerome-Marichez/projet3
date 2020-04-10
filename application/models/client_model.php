@@ -26,8 +26,8 @@ class client_model extends CI_Model
 public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,$email,$code_postale,$ville,$adresse)
 
  {
-   // date du jour pas marche
-   $date_du_jour =  date("d/m/Y");
+
+$date = date("Y-m-d H:i:s"); // Certain type de date ne sont pas admis dans MYSQL ce format fonctionne en effet si le champ est DATE TIME
    $data = array(
      'id'=>$id,
      'client_id'=> $client_id,
@@ -39,7 +39,7 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
      'code_postale'=>$code_postale,
      'ville'=>$ville,
      'adresse'=>$adresse,
-     'date'=>$date_du_jour);
+     'date'=> $date);
    //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
    $this->db->insert('client',$data);
 
@@ -47,6 +47,14 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
   }
 
 
+// RETOURNER LE NOMBRE DE CLIENT
+public function count_all_client()
+{
+
+    $requete_resultat = $this->db->get('client');
+    $combien = $requete_resultat->num_rows();
+    return $combien;
+}
 public function update_client_password($id,$password)
 {
 
@@ -83,7 +91,7 @@ public function connexion_client($email,$password)
  {
 
 
-   if ($id == "erreur")
+   if ($id == "erreur") // ICI le IF on en à plus besoin parce que on passe via le URL Segment et qu'on execute la requete via le controller si c un numerique
    {
     return $id;
    }

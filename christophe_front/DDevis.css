@@ -1,0 +1,40 @@
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+.demande{
+	text-align: center;
+	color: #0000a0;
+}
+
+#conct{
+	background-color: #0000a0 !important;
+
+}
+.buto{
+	text-align: center;
+}
