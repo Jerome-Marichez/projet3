@@ -27,7 +27,7 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
 
  {
 
-$date = date("Y-m-d H:i:s"); // Certain type de date ne sont pas admis dans MYSQL ce format fonctionne en effet si le champ est DATE TIME
+   $date = date("Y-m-d H:i:s"); // Certain type de date ne sont pas admis dans MYSQL ce format fonctionne en effet si le champ est DATE TIME
    $data = array(
      'id'=>$id,
      'client_id'=> $client_id,

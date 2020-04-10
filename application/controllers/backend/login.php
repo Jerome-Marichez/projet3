@@ -17,7 +17,7 @@ $this->load->library('session');
 $this->load->model('newsletter_model');
 $this->load->model('client_model');
 $this->load->model('dossier_model');
-
+$this->load->model('rendezvous_model');
 $this->load->view('header');
 }
 
@@ -28,6 +28,10 @@ $this->load->view('header');
 ////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
 
+
+// $date = date("2020-04-10 10:46:00");
+//$this->rendezvous_model->cree_rendezvous_front("","","test","test2","0771651588","boby@yopmail.fr","59140","longuenesse","ma rue exemple",$date,1);
+//exit;
 
 $this->load->view('header');
 $this->load->view('backend/login_form');
@@ -207,24 +211,55 @@ public function admin_formation()
 
 }
 
+/** RENDEZ VOUS **/
 
-
-public function admin_rendezvous()
+public function refuser_rendezvous()
 {
+
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
+
+}
+
+public function accepter_rendezvous()
+{
+
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
+
+}
+
+public function rendezvous()
+{
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
 
   $this->load->view('header');
   $this->load->view('backend/haut_page_backend');
 
-
   $this->load->view('backend/menu_backend');
-  $this->load->view('backend/admin_rendezvous');
+
+    if ($isItAdmin == 'admin'){
+      $resultat = $this->rendezvous_model->afficher_rendezvous();
+
+
+      $data['tableau_rendezvous'] = $resultat;
+      $this->load->view('backend/rendezvous',$data);
+    }
+    else
+    {
+      $resultat = $this->rendezvous_model->afficher_rendezvous($this->session->userdata['isConnected']['client_id']);
+
+
+      $data['tableau_rendezvous'] = $resultat;
+      $this->load->view('backend/rendezvous',$data);
+    }
 
   $this->load->view('backend/bas_page_backend');
   $this->load->view('footer');
 }
 
+
+/** FIN RENDEZ VOUS **/
 
 /** ADMIN NEWSLETTER **/
 public function admin_newsletter()
