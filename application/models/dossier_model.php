@@ -14,7 +14,7 @@ class dossier_model extends CI_Model
   {
 
     if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  } else if  ($email != '') { $requete_resultat = $this->db->where('email',$email); }
-    $requete_resultat = $this->db->get('client');
+    $requete_resultat = $this->db->get('dossier');
     return $requete_resultat->result();
     $this->db->close();
 

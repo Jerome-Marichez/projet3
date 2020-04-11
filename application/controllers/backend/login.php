@@ -12,6 +12,7 @@ $this->load->helper('form');
 $this->load->helper('mail_helper');
 $this->load->helper('client_helper');
 $this->load->helper('url');
+$this->load->helper('dossier_helper');
 $this->load->library('form_validation');
 $this->load->library('session');
 $this->load->model('newsletter_model');

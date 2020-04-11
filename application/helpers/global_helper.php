@@ -28,7 +28,7 @@ function site_link_base($chemin = "")
         $ma_page_home = "http://localhost/projet3/application/assets/video/"; // CHEMIN VIDEO
         break;
      default:
-        $ma_page_home = "http://localhost/projet3/index.php/"; // CHEMIN URL
+        $ma_page_home = "http://localhost/projet3/"; // CHEMIN URL
 
                     }
   return $ma_page_home;
