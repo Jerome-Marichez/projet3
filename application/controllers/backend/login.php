@@ -20,7 +20,7 @@ $this->load->model('client_model');
 $this->load->model('dossier_model');
 $this->load->model('rendezvous_model');
 $this->load->model('piecejointe_model');
-$this->load->view('header');
+
 }
 
 public function charger_haut_page() { $this->load->view('header'); $this->load->view('backend/haut_page_backend'); }

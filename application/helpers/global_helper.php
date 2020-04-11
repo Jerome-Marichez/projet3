@@ -5,7 +5,7 @@
 // CREE LE TITRE HTML
 function titre_page_html()
 {
- return "A.G.D.Z Avocat";
+ return "A.G.D.Z Avocat - Espace Client";
 
 }
 
