@@ -256,8 +256,23 @@ public function upload()
                 $email = $this->input->post('email');
                 echo "<br>";
                 echo $email;
+
+                echo "<br>";
+                $dossier_numero = $this->input->post('ndossier');
+                echo $dossier_numero;
+
                 $this->piecejointe_model->ajouter_au_dossier($derniersegment,$filename);
-                exit;
+
+
+                  $source_origine = array("[MESSAGE]","[NAME]");
+                  $NAME = ' ';
+                  $sujet = "Ajout de piece jointe au N° DOSSIER ".$dossier_numero;
+                  $source_modifier = array("Vous avez ajouté une pièce jointe au dossier: ".$dossier_numero." qui est disponible sur votre espace client ",$NAME);
+
+                  echo envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
+                  echo envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
+
+
 
                 redirect('backend/login/show_dossier/'.$derniersegment);
         }
@@ -289,6 +304,9 @@ public function show_dossier()
             $data['tableau_dossier'] = $resultat;
 
 
+            $resultat = $this->piece_jointe->afficher_piece_jointe($derniersegment);
+            $data['piece_jointe'] = $resultat;
+
 
             $this->load->view('backend/menu_backend');
 
@@ -300,7 +318,7 @@ public function show_dossier()
 
                $this->load->view('backend/admin_form_dossier',$data);
             }
-            $this->load->view('backend/piece_jointe');
+            $this->load->view('backend/piece_jointe',$data);
             $this->load->view('backend/upload_form',$data);
 
             $this->charger_bas_page();

@@ -3,6 +3,7 @@
 
   $id = html_escape($row->id);
   $email = html_escape($row->email);
+  $ndossier = html_escape($row->number_dossier);
 }
 
 ?>
@@ -12,7 +13,9 @@
 
 <input type="hidden" name="id" value="<?php echo $id?>" />
 
-<input type="hidden" name="email" value="<?php echo $email?>"/>
+<input type="hidden" name="email" value="<?php echo $ndossier?>"/>
+
+<input type="hidden" name="ndossier" value="<?php echo $email?>"/>
 <br /><br />
 
 <input type="submit" value="upload" />
