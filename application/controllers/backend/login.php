@@ -228,40 +228,48 @@ public function show_dossier()
   // IMPORTANT //
 
 
-      $this->charger_haut_page();
+
 
     // GET ID
       $segment = $this->uri->total_segments();
       $derniersegment = $this->uri->segment($segment);
 
-      $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
-      if($this->dossier_model->check_ID_Dossier_Client($derniersegment,$monemail) == TRUE OR $isItAdmin == 'admin' )
+      $monemail = $this->session->userdata['isConnected']['email'];
+
+
+      if(isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin' || $this->dossier_model->check_ID_Dossier_Client($derniersegment,$monemail) == true )
       {
 
-        echo "YOURE RIGHT";
+            $this->charger_haut_page();
+
+            $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
+            $data['tableau_dossier'] = $resultat;
+
+            $this->load->view('backend/menu_backend');
+
+
+
+
+
+
+
+
+
+
+            $this->load->view('backend/show_dossier',$data);
+
+
+            $this->charger_bas_page();
+
+
+      }
+      else
+      {
+       show_404();
+
       }
     // SEND
 
-
-    $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
-    $data['tableau_dossier'] = $resultat;
-
-    $afficher_piece
-    $this->load->view('backend/menu_backend');
-
-
-
-
-
-
-
-
-
-
-    $this->load->view('backend/show_dossier',$data);
-
-
-    $this->charger_bas_page();
 
 
 }
