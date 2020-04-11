@@ -224,20 +224,29 @@ public function show_dossier()
 
 
 
-//A FAIRE VERIFIER QUE LE ID du SHOW_DOSSIER CORRESPOND A LID DU CLIENT DISPO //
-// IMPORTANT //
+  //A FAIRE VERIFIER QUE LE ID du SHOW_DOSSIER CORRESPOND A LID DU CLIENT DISPO //
+  // IMPORTANT //
 
-    $this->charger_haut_page();
+
+      $this->charger_haut_page();
 
     // GET ID
       $segment = $this->uri->total_segments();
       $derniersegment = $this->uri->segment($segment);
+
+      $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+      if($this->dossier_model->check_ID_Dossier_Client($derniersegment,$monemail) == TRUE OR $isItAdmin == 'admin' )
+      {
+
+        echo "YOURE RIGHT";
+      }
     // SEND
 
 
     $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
     $data['tableau_dossier'] = $resultat;
 
+    $afficher_piece
     $this->load->view('backend/menu_backend');
 
 
