@@ -9,17 +9,19 @@ Projet 3 en collaboration avec: <br>
 
 Création d'un site de cabinet d'avocat. 
 
-# FRAMEWORK JAVASCRIPT
-Jquery <br>
-BootStrap
+# LANGUAGE
+HTML/CSS/PHP/JS <br>
 
-# Librairie 
-Chart.JS
+# LIBRAIRIE 
+Chart.JS / Jquery 
 
 # API 
 SendInBlue 
 
-# FRAMEWORK PHP 
+# FRAMEWORK FRONT
+BootStrap
+
+# FRAMEWORK BACK
 CodeInginiter 3.1.11 
 
 # PHP VERSION 
