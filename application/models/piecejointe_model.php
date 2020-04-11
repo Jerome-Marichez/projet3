@@ -18,7 +18,7 @@ class piecejointe_model extends CI_Model
 
            $this->db->close();
           }
-        }
+
 
 
          function afficher_piece_jointe($id_dossier)
@@ -31,5 +31,5 @@ class piecejointe_model extends CI_Model
           $this->db->close();
 
           }
-        }
+
 }
