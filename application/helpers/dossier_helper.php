@@ -9,19 +9,19 @@ function retourner_statut_icon($string)
    switch($string){
 
    case "en-attente":
-   $string = '<i class="fas fa-history 2x"></i>';
+   $string = '<i class="fas fa-history fa-2x"></i>';
    break;
 
    case "valide":
-   $string = '<i class="fas fa-check 2x"></i>';
+   $string = '<i class="fas fa-check fa-2x"></i>';
    break;
 
    case "piece":
-   $string = '<i class="fas fa-exclamation-triangle"></i>';
+   $string = '<i class="fas fa-exclamation-triangle fa-2x"></i>';
    break;
 
    default:
-   $string = '<i class="fas fa-history"></i>';
+   $string = '<i class="fas fa-history fa-2x"></i>';
 
 
     }
