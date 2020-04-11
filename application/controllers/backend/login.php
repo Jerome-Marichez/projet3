@@ -217,6 +217,29 @@ public function admin_dossiers()
 
 }
 
+public function upload()
+{
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png|pdf|txt|bmp|xls|doc';
+        $config['max_size']             = 5000;
+        $config['max_width']            = 4000;
+        $config['max_height']           = 4000;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('monfichier'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                $this->load->view('upload_form', $error);
+        }
+        else
+        {
+                $data = array('upload_data' => $this->upload->data());
+
+                $this->load->view('upload_success', $data);
+        }
+}
 
 
 public function show_dossier()
@@ -244,20 +267,19 @@ public function show_dossier()
 
             $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
             $data['tableau_dossier'] = $resultat;
-
+            $upload_id['id'] = $derniersegment;
             $this->load->view('backend/menu_backend');
 
 
-
-
-
-
-
-
-
-
             $this->load->view('backend/show_dossier',$data);
+            if (isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin')
+            {
+               // Seulement pour admin
 
+               $this->load->view('backend/admin_form_dossier',$data);
+            }
+            $this->load->view('backend/piece_jointe');
+            $this->load->view('backend/upload_form',$upload_id);
 
             $this->charger_bas_page();
 
