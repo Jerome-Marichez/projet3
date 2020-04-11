@@ -252,7 +252,10 @@ public function upload()
                 $filename = $data['file_name'];
                 echo "<br>";
                 echo $derniersegment;
-
+                echo "<br>";
+                $email = $this->input->post('email');
+                echo "<br>";
+                echo $email;
                 $this->piecejointe_model->ajouter_au_dossier($derniersegment,$filename);
                 exit;
 
@@ -284,7 +287,8 @@ public function show_dossier()
 
             $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
             $data['tableau_dossier'] = $resultat;
-            $upload_id['id'] = $derniersegment;
+
+
 
             $this->load->view('backend/menu_backend');
 
@@ -297,7 +301,7 @@ public function show_dossier()
                $this->load->view('backend/admin_form_dossier',$data);
             }
             $this->load->view('backend/piece_jointe');
-            $this->load->view('backend/upload_form',$upload_id);
+            $this->load->view('backend/upload_form',$data);
 
             $this->charger_bas_page();
 
