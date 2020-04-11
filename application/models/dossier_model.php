@@ -54,10 +54,18 @@ public function count_dossier($statut ='',$email ='')
 
 
 
-public function refuser_dossier_en_attente()
+public function update_dossier($id,$statut)
 {
 
+  $data = array(
+          'statut' => $statut
+  );
+
+  $this->db->where('id', $id);
+  $this->db->update('dossier', $data);
+
 }
+
 
 public function cree_dossier($id = 'NULL',$number_dossier,$email)
 

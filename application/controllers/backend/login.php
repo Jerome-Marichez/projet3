@@ -204,7 +204,20 @@ public function admin_dossiers()
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
+  $segment = $this->uri->total_segments();
+  $derniersegment = $this->uri->segment($segment); // Qui est notre ID
+
+
+  if(!empty($derniersegment) AND is_numeric($derniersegment))
+    {
+      $this->dossier_model->supprimer_dossier($derniersegment);
+      redirect('backend/login/admin_dossiers', 'refresh');
+    }
+
+
+
   $this->charger_haut_page();
+
 
   $resultat = $this->dossier_model->afficher_base_dossier();
   $data['tableau_dossier'] = $resultat;
@@ -256,6 +269,7 @@ public function upload()
                 $email = $this->input->post('email');
                 echo "<br>";
                 echo $email;
+            //    exit;
 
                 echo "<br>";
                 $dossier_numero = $this->input->post('ndossier');
@@ -265,7 +279,7 @@ public function upload()
 
 
                   $source_origine = array("[MESSAGE]","[NAME]");
-                  $NAME = ' ';
+                  $NAME = '';
                   $sujet = "Ajout de piece jointe au N° DOSSIER ".$dossier_numero;
                   $source_modifier = array("Vous avez ajouté une pièce jointe au dossier: ".$dossier_numero." qui est disponible sur votre espace client ",$NAME);
 
@@ -300,18 +314,33 @@ public function show_dossier()
       if(isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin' || $this->dossier_model->check_ID_Dossier_Client($derniersegment,$monemail) == true )
       {
 
+        // DANS LE CADRE OU ON CE TROUVE DANS LE DOSSIER ET QUON EST CLIENT OU ADMIN SUR CE DOSSIER ON PEUX SUPPRIMER UNE PIECE JOINTE
+                    $id_piece = $this->input->post('id_piece');
+                    if (!empty($id_piece))
+                    {
+                      $id_dossier = $this->input->post('id_dossier');
+                      $piece_lien = $this->input->post('piece_lien');
+                      echo $id_piece; echo "<br>";
+                      echo $piece_lien; echo "<br>";
+                      echo $id_dossier; echo "<br>";
 
-            $id_piece = $this->input->post('id_piece');
-            if (!empty($id_piece))
-            {
-              $id_dossier = $this->input->post('id_dossier');
-              $piece_lien = $this->input->post('piece_lien');
-              echo $id_piece; echo "<br>";
-              echo $piece_lien; echo "<br>";
-              echo $id_dossier; echo "<br>";
+                      $dir = "./uploads/".$piece_lien;
+                          if (!unlink($dir)) {
+                              show_404();
+                              exit;
+                          }
 
-            }
+                      $this->piecejointe_model->supprimer_piece_jointe($id_dossier,$piece_lien);
+                      $source_origine = array("[MESSAGE]","[NAME]");
+                      $NAME = '';
+                      $sujet = "Piece jointe supprimer au dossier:  ".$id_dossier;
+                      $source_modifier = array("Nous vous confirmons la suppresion de la piece jointe ".$piece_lien."<br>à votre dossier ".$id_dossier,$NAME);
 
+                      echo $monemail;
+                      envoyer_mail($sujet,expediteur_mail_data(),$monemail,$source_origine,$source_modifier); // POUR LE CLIENT
+                      envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
+                    }
+        // END
 
             $this->charger_haut_page();
 
@@ -326,13 +355,48 @@ public function show_dossier()
             $this->load->view('backend/menu_backend');
 
 
-            $this->load->view('backend/show_dossier',$data);
-            if (isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin')
-            {
-               // Seulement pour admin
 
-               $this->load->view('backend/admin_form_dossier',$data);
-            }
+              if (isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin')
+              {
+
+                   // Seulement pour admin
+
+                   $changer_statut_dossier = $this->input->post('changer_statut_dossier');
+                   if (!empty($changer_statut_dossier))
+                   {
+                     echo "triggered";
+                     $id_dossier = $this->input->post('id_specific');
+                     $number_dossier = $this->input->post('number_dossier');
+                     $email_dossier = $this->input->post('email_dossier');
+                     $statut = $this->input->post('submit');
+
+                     echo "<br>";
+                     echo $id_dossier;
+                     echo $statut;
+                     echo "<br>";
+
+
+                     $this->dossier_model->update_dossier($id_dossier,$statut);
+
+
+                     $source_origine = array("[MESSAGE]","[NAME]");
+                     $NAME = '';
+                     $sujet = "Dossier N°".$id_dossier;
+
+                     $source_modifier = array("Votre dossier N°".$number_dossier." vient de passer à ".statut_dossier_texte($statut),$NAME);
+                     envoyer_mail($sujet,expediteur_mail_data(),$email_dossier,$source_origine,$source_modifier); // POUR LE CLIENT
+                     envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
+
+
+                   }
+                   $this->load->view('backend/admin_form_dossier',$data);
+
+              }
+
+              $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
+              $data['tableau_dossier'] = $resultat;
+
+            $this->load->view('backend/show_dossier',$data);
             $this->load->view('backend/upload_form',$data);
             $this->load->view('backend/piece_jointe',$data);
 
@@ -635,6 +699,7 @@ public function admin_clients()
 
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
+
 
 
   if(!empty($derniersegment) AND is_numeric($derniersegment))

@@ -16,9 +16,9 @@
 
 <input type="hidden" name="id" value="<?php echo $id?>" />
 
-<input type="hidden" name="email" value="<?php echo $ndossier?>"/>
+<input type="hidden" name="email" value="<?php echo $email?>"/>
 
-<input type="hidden" name="ndossier" value="<?php echo $email?>"/>
+<input type="hidden" name="ndossier" value="<?php echo $ndossier?>"/>
 <br /><br />
 
 <input type="submit" value="upload" />

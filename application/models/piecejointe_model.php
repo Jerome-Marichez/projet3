@@ -19,6 +19,25 @@ class piecejointe_model extends CI_Model
            $this->db->close();
           }
 
+          function supprimer_piece_jointe($id_dossier,$piece_lien)
+          {
+
+          //  $id_dossier = intval($id_dossier); // PAR MESURE DE SECURITE ON UTILISE INTVAL MAIS NORMALEMENT VIA LE CONTROLLER C DEJA CHECKED
+
+            $data = array(
+              'id_dossier'=>$id_dossier,
+              'piece_lien'=>$piece_lien
+            );
+
+            if (!empty($id_dossier))
+            {
+              $this->db->delete('piecejointe', $data);
+
+              return $piece_lien;
+            }
+
+
+           }
 
 
          function afficher_piece_jointe($id_dossier)

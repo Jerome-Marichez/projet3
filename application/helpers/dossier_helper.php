@@ -10,6 +10,22 @@ function generer_numero_dossier()
     return $valeur_generation_numero;
 }
 
+function statut_dossier_texte($statut)
+ {
+   switch($statut) {
+    case "en-attente":
+    return " en cours de validation ";
+    break;
+
+    case "valide":
+    return " validé.";
+    break;
+
+    case "piece":
+    return " en attente de pièces complémentaire";
+    break;
+  }
+ }
 
 function retourner_statut_icon($string)
 

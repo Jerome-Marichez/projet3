@@ -19,7 +19,7 @@
   <table class="table table-striped ">
      <thead>
        <tr class="haut_du_tableau_tr">
-         <th class="haut_du_tableau_th"> </th>
+
          <th>N° de dossier</th>
          <th>Client</th>
 
@@ -51,7 +51,7 @@ $id_specific = html_escape($row->id);
 $number_dossier = html_escape($row->number_dossier);
 $email_dossier = html_escape($row->email);
 $statut = html_escape($row->statut);
-      ?>     <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="#"> <i class="fa fa-trash fa-2x"></i></a>   </td>
+      ?>    
 
 <?php
 echo '<td>'.$number_dossier.'</td>';
