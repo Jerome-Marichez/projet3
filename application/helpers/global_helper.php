@@ -21,6 +21,9 @@ function site_link_base($chemin = "")
     case "img":
         $ma_page_home = "http://localhost/projet3/application/assets/images/"; // CHEMIN IMAGES
         break;
+    case "upload":
+          $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN IMAGES
+          break;
     case "login":
         $ma_page_home = "http://localhost/projet3/backend/login/"; // PATH TO LOGIN
         break;
@@ -31,7 +34,7 @@ function site_link_base($chemin = "")
         $ma_page_home = "http://localhost/projet3/application/assets/video/"; // CHEMIN VIDEO
         break;
      default:
-        $ma_page_home = "http://localhost/projet3/"; // CHEMIN URL
+        $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN URL
 
                     }
   return $ma_page_home;
@@ -100,7 +103,7 @@ function decrypt($value,$key = '45',$iv='1234567824546542')
   $ciphertext_raw = substr($c, $ivlen+$sha2len);
   $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
   $calcmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
-  if (hash_equals($hmac, $calcmac))//PHP 5.6+ timing attack 
+  if (hash_equals($hmac, $calcmac))//PHP 5.6+ timing attack
   {
       return $original_plaintext;
   }

@@ -1,3 +1,6 @@
+
+<div class="col-md-9">
+
 <?php foreach($tableau_dossier as $row)
 {
 
@@ -21,3 +24,4 @@
 <input type="submit" value="upload" />
 
 </form>
+</div>

@@ -294,9 +294,24 @@ public function show_dossier()
 
       $monemail = $this->session->userdata['isConnected']['email'];
 
+    // SUPPRIMER PIECE JOINTE
+
 
       if(isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']) == 'admin' || $this->dossier_model->check_ID_Dossier_Client($derniersegment,$monemail) == true )
       {
+
+
+            $id_piece = $this->input->post('id_piece');
+            if (!empty($id_piece))
+            {
+              $id_dossier = $this->input->post('id_dossier');
+              $piece_lien = $this->input->post('piece_lien');
+              echo $id_piece; echo "<br>";
+              echo $piece_lien; echo "<br>";
+              echo $id_dossier; echo "<br>";
+
+            }
+
 
             $this->charger_haut_page();
 
@@ -304,7 +319,7 @@ public function show_dossier()
             $data['tableau_dossier'] = $resultat;
 
 
-            $resultat = $this->piece_jointe->afficher_piece_jointe($derniersegment);
+            $resultat = $this->piecejointe_model->afficher_piece_jointe($derniersegment);
             $data['piece_jointe'] = $resultat;
 
 
@@ -318,8 +333,9 @@ public function show_dossier()
 
                $this->load->view('backend/admin_form_dossier',$data);
             }
-            $this->load->view('backend/piece_jointe',$data);
             $this->load->view('backend/upload_form',$data);
+            $this->load->view('backend/piece_jointe',$data);
+
 
             $this->charger_bas_page();
 
