@@ -2,6 +2,15 @@
 
 
 
+
+function generer_numero_dossier()
+{
+
+    $valeur_generation_numero = rand(100000, 900000);
+    return $valeur_generation_numero;
+}
+
+
 function retourner_statut_icon($string)
 
   // NECESSITE FONT AWESOME CHARGER POUR FONCTIONER

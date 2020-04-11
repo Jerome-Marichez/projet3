@@ -33,7 +33,7 @@
 
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
-        <div class="lightgraycard"><i class="fa fa-folder-open fa-5x"></i><div class="counter1">50</div></div>
+        <div class="lightgraycard"><i class="fa fa-folder-open fa-5x"></i><div class="counter1"><?php  echo $stat2; ?></div></div>
         <div class="card-body">
           <p class="card_blue_text">Dossiers en cours</p>
         </div>
@@ -42,7 +42,7 @@
 
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
-        <div class="lightgraycard"><i class="fa fa-archive fa-5x"></i><div class="counter1">50</div></div>
+        <div class="lightgraycard"><i class="fa fa-archive fa-5x"></i><div class="counter1"><?php  echo $stat3; ?></div></div>
         <div class="card-body">
           <p class="card_blue_text">Dossiers classés</p>
         </div>
@@ -51,7 +51,7 @@
   </div>
 
 <canvas id="AdminGraph"></canvas>
-<script>cree_tableau_js(<?php  echo $stat1; ?>,30,30);</script>
+<script>cree_tableau_js(<?php  echo $stat1; ?>,<?php  echo $stat2; ?>,<?php  echo $stat3; ?>);</script>
 
 
 

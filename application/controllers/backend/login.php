@@ -43,7 +43,7 @@ $this->charger_bas_page();
 
 
 
-public function deconnexion() { $this->session->sess_destroy(); redirect(''); }
+public function deconnexion() { $this->session->sess_destroy(); redirect(''); } // DETRUIRE SESSION  & REDIRECT HOME
 
 
 
@@ -52,13 +52,13 @@ public function connexion() {
 
 
 
-echo decrypt('MTIzNDU2NzgyNDU0NjU0Mi8qnIcjHYpz4STUPepjF+m7c3bSpoWC58AtHTQk9tlAlUF7O5mrES53d07qo3OlEQ==');
+   //echo decrypt('MTIzNDU2NzgyNDU0NjU0Mi8qnIcjHYpz4STUPepjF+m7c3bSpoWC58AtHTQk9tlAlUF7O5mrES53d07qo3OlEQ==');
     $this->charger_haut_page();
 
   // PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
    $stat1 = $this->client_model->count_client();
-   $stat2 = 20;
-   $stat3 = 30;
+   $stat2 = $this->dossier_model->count_dossier('en-attente');
+   $stat3 = $this->dossier_model->count_dossier('valide');
    $stats = array(
    'stat1' => $stat1,
    'stat2' => $stat2,
@@ -216,6 +216,69 @@ public function admin_dossiers()
 
 
 }
+
+
+
+public function show_dossier()
+{
+
+
+
+//A FAIRE VERIFIER QUE LE ID du SHOW_DOSSIER CORRESPOND A LID DU CLIENT DISPO //
+// IMPORTANT //
+
+    $this->charger_haut_page();
+
+    // GET ID
+      $segment = $this->uri->total_segments();
+      $derniersegment = $this->uri->segment($segment);
+    // SEND
+
+
+    $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
+    $data['tableau_dossier'] = $resultat;
+
+    $this->load->view('backend/menu_backend');
+
+
+
+
+
+
+
+
+
+
+    $this->load->view('backend/show_dossier',$data);
+
+
+    $this->charger_bas_page();
+
+
+}
+
+public function client_dossiers()
+{
+
+
+
+
+  $this->charger_haut_page();
+
+  $monemail = $this->session->userdata['isConnected']['email'];
+
+  $resultat = $this->dossier_model->afficher_base_dossier($monemail,''); // AFFICHER LES DOSSIERS EN RELATION AVEC LE CLIENT
+  $data['tableau_dossier'] = $resultat;
+
+  $this->load->view('backend/menu_backend');
+  $this->load->view('backend/client_dossiers',$data);
+
+
+  $this->charger_bas_page();
+
+
+}
+
 
 public function admin_formation()
 {
@@ -376,14 +439,63 @@ public function admin_newsletter()
 
 
 
-public function show_dossier()
+public function ajouter_dossier()
 {
+  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+  autoriser_action($isItAdmin,'admin');
+
+  $email = $this->input->post('email');
+  $this->form_validation->set_rules('email', $email, 'trim|required');
+
+  if ($this->form_validation->run() == TRUE) {
+
+      if($this->client_model->check_email_account($email) == false)
+
+      {
+
+        $data = array(
+        'erreur_message' => 'Erreur le compte client associé à cette email est inconnu'
+        );
+
+
+      }
+      else
+      {
+        $generer_numero_dossier = generer_numero_dossier();
+        $this->dossier_model->cree_dossier('',$generer_numero_dossier,$email,$statut);
+        $data = array(
+        'valide_message' => 'Votre dossier est crée avec succès, un email à était envoyé au client'
+        );
+        // DO THE JOB
+
+
+          $source_origine = array("[MESSAGE]","[NAME]");
+          $NAME = '';
+          $sujet = "N° DOSSIER ".$generer_numero_dossier.' est crée';
+          $source_modifier = array("Votre N° de dossier: ".$generer_numero_dossier." est crée et disponible sur votre espace client ",$NAME);
+
+          envoyer_mail($sujet,expediteur_mail_data(),$email,$source_origine,$source_modifier); // POUR LE CLIENT
+//          envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
 
 
 
 
+      }
+
+
+      $this->charger_haut_page();
+
+      $this->load->view('backend/menu_backend');
+      $resultat = $this->dossier_model->afficher_base_dossier();
+      $data['tableau_dossier'] = $resultat;
+      $this->load->view('backend/admin_dossiers', $data);
+
+
+      $this->charger_bas_page();
+
+
+  }
 }
-
 
 
 /** ADMIN CLIENT **/
@@ -439,12 +551,7 @@ public function admin_clients()
 
 
   $resultat = $this->client_model->afficher_base_client();
-
-
   $data['tableau_client'] = $resultat;
-
-
-
 
 
 

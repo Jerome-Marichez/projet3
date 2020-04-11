@@ -5,17 +5,17 @@
 
   <div class="row lightgray">
     <div class="col-md-10">  <div class="titre_menu_admin"><p> Mes Dossiers  </p></div></div>
-    <div class="col-md-2">  <div class="titre_menu_admin"> <a id="ajouter_client"   data-toggle="modal" data-target="#creationclient_fenetre"><i class="fa fa-plus-circle fa-2x"></i></a></div></div>
+    <div class="col-md-2">  <div class="titre_menu_admin"> <a id="ajouter_dossier"   data-toggle="modal" data-target="#creationdossier_fenetre"><i class="fa fa-plus-circle fa-2x"></i></a></div></div>
   </div>
 
 
 
 
 
-  <div class="modal fade" id="creationclient_fenetre" tabindex="-1" role="dialog" aria-labelledby="creationclient_fenetre" aria-hidden="true">
+  <div class="modal fade" id="creationdossier_fenetre" tabindex="-1" role="dialog" aria-labelledby="creationdossier_fenetre" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form <?php echo form_open('backend/login/ajouter_client'); ?>
+        <form <?php echo form_open('backend/login/ajouter_dossier'); ?>
 
         <div class="modal-header">
           <h5 class="modal-title" id="creationclient_fenetre">Création Dossier</h5>
@@ -30,7 +30,7 @@
 
 
               <div class="form-group">
-                <input type="email" class="form-control" name="cree_email" id="cree_email" placeholder="Email du compte client à associé au dossier">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email du compte client à associé au dossier" required>
               </div>
 
 
@@ -55,6 +55,27 @@
 
   <div class="espace_backend_30"> </div>
 
+
+      <?php
+      if (isset($valide_message)) {
+      echo "<div class='alert alert-success' role='alert'>";
+      echo $valide_message;
+      echo "</div>";
+      echo '<div class="espace_backend_30"> </div>';
+      }
+      ?>
+      <?php
+
+      if (isset($erreur_message)) {
+        echo "<div class='alert alert-danger' role='alert'>";
+
+      echo $erreur_message;
+      echo validation_errors();
+      echo "</div>";
+      echo '<div class="espace_backend_30"> </div>';
+      }
+
+      ?>
 
   <table class="table table-striped ">
      <thead>
@@ -96,7 +117,7 @@ $statut = html_escape($row->statut);
 echo '<td>'.$number_dossier.'</td>';
 echo '<td>'.$email_dossier.'</td>';
 echo ' <td >'; echo retourner_statut_icon($statut); echo '</i></td>';
-echo '<td><a href="./admin_show_client/'.$id_specific.'"</a><i class="fas fa-chevron-right fa-2x">'.'</td>';
+echo '<td><a href="./show_dossier/'.$id_specific.'"</a><i class="fas fa-chevron-right fa-2x">'.'</td>';
 
 echo  '</tr>';
         ?>

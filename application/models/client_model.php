@@ -15,7 +15,7 @@ class client_model extends CI_Model
   public function afficher_base_client($id =  '',$email ='')
   {
 
-    if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  } else if  ($email != '') { $requete_resultat = $this->db->where('email',$email); }
+    if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  }  if ($email != '') {$requete_resultat = $this->db->where('email',$email); }
     $requete_resultat = $this->db->get('client');
     return $requete_resultat->result();
     $this->db->close();
@@ -103,17 +103,13 @@ public function connexion_client($email,$password)
 
 
 // SUPPRIMER UN CLIENT AVEC SON ID
- public function supprimer_client($id = "erreur")
+ public function supprimer_client($id = "")
  {
 
+   $id = intval($id); // PAR MESURE DE SECURITE ON UTILISE INTVAL MAIS NORMALEMENT VIA LE CONTROLLER C DEJA CHECKED
 
-   if ($id == "erreur") // ICI le IF on en à plus besoin parce que on passe via le URL Segment et qu'on execute la requete via le controller si c un numerique
+   if (!empty($id))
    {
-    return $id;
-   }
-   else
-   {
-
      $this->db->delete('client', array('id' => $id));
      $this->db->close();
      return $id;
