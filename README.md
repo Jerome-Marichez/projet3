@@ -9,7 +9,7 @@ Projet 3 en collaboration avec: <br>
 
 Création d'un site de cabinet d'avocat. 
 
-# LANGUAGE
+# LANGAGE
 HTML/CSS/PHP/JS <br>
 
 # LIBRAIRIE 
