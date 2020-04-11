@@ -1,35 +1,34 @@
 <?php
 
-
+// DOSSIER en-attente ---> DOSSIER EN ATTENTE
+// DOSSIER valide ---> DOSSIER VALIDE
+// DOSSIER piece ---> DOSSIER PIECE JOINTE
 
 class dossier_model extends CI_Model
 
 {
 
 
-public function count_all_dossier_classer()
+
+ public function afficher_base_dossier($id =  '',$email ='')
+  {
+
+    if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  } else if  ($email != '') { $requete_resultat = $this->db->where('email',$email); }
+    $requete_resultat = $this->db->get('client');
+    return $requete_resultat->result();
+    $this->db->close();
+
+  }
+public function count_dossier($statut ='',$email ='')
 {
 
-  $requete_resultat = $this->db->get('client');
+  $requete_resultat = $this->db->get('dossier');
   $combien = $requete_resultat->num_rows();
   return $combien;
 
-
 }
 
-public function count_all_dossier()
-{
 
-  $requete_resultat = $this->db->get('client');
-  $combien = $requete_resultat->num_rows();
-  return $combien;
-
-}
-
-public function cree_dossier_en_attente()
-{
-
-}
 
 public function refuser_dossier_en_attente()
 {

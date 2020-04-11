@@ -11,10 +11,11 @@ class client_model extends CI_Model
 
 
 
-// RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS
-  public function afficher_base_client()
+// RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS DE TOUT LES CLIENTS OU DUN ID SPECIFIC OU DUN EMAIL SPECIFIC
+  public function afficher_base_client($id =  '',$email ='')
   {
 
+    if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  } else if  ($email != '') { $requete_resultat = $this->db->where('email',$email); }
     $requete_resultat = $this->db->get('client');
     return $requete_resultat->result();
     $this->db->close();
@@ -48,7 +49,7 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
 
 
 // RETOURNER LE NOMBRE DE CLIENT
-public function count_all_client()
+public function count_client()
 {
 
     $requete_resultat = $this->db->get('client');
@@ -78,7 +79,7 @@ public function update_client_password($id,$password)
                'password' => $password,
             );
 
-//$requete_resultat = $this->db->where('id', $id);
+$requete_resultat = $this->db->where('id', $id);
 $requete_resultat = $this->db->update('client', $data);
 
 return $requete_resultat;

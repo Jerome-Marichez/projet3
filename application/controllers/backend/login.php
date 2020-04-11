@@ -49,12 +49,23 @@ public function deconnexion() { $this->session->sess_destroy(); redirect(''); }
 
 public function connexion() {
 
+
+
+echo decrypt('MTIzNDU2NzgyNDU0NjU0Mi8qnIcjHYpz4STUPepjF+m7c3bSpoWC58AtHTQk9tlAlUF7O5mrES53d07qo3OlEQ==');
     $this->charger_haut_page();
 
   // PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
-   $this->client_model->count_all_client();
-   $this->dossier_model->count_all_dossier_classer();
-   $this->dossier_model->count_all_dossier();
+   $stat1 = $this->client_model->count_client();
+   $stat2 = 20;
+   $stat3 = 30;
+   $stats = array(
+   'stat1' => $stat1,
+   'stat2' => $stat2,
+   'stat3' => $stat3
+   );
+
+  // $stat2= $this->dossier_model->count_all_dossier_classer();
+  // $this->dossier_model->count_all_dossier();
   // FIN
 
 
@@ -66,8 +77,18 @@ public function connexion() {
       if(isset($this->session->userdata['isConnected'])){
 
       $this->load->view('backend/menu_backend');
+      $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+        if($isItAdmin == 'admin')
+        {
 
-      $this->load->view('backend/admin_main');
+          $this->load->view('backend/admin_main',$stats);
+        }
+        else
+        {
+           $this->load->view('backend/client_main');
+        }
+
+
 
       }else{
       $this->load->view('backend/login_form');
@@ -130,8 +151,18 @@ public function connexion() {
 
 
               $this->session->set_userdata('isConnected', $data_session);
+              $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
               $this->load->view('backend/menu_backend');
-              $this->load->view('backend/admin_main');
+
+                      if($isItAdmin == 'admin')
+                      {
+
+                        $this->load->view('backend/admin_main',$stats);
+                      }
+                      else
+                      {
+                         $this->load->view('backend/client_main');
+                      }
 
 
 
@@ -164,13 +195,20 @@ public function connexion() {
 
 public function admin_dossiers()
 {
+
+
+
+
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
   $this->charger_haut_page();
 
+  $resultat = $this->dossier_model->afficher_base_dossier();
+  $data['tableau_dossier'] = $resultat;
+
   $this->load->view('backend/menu_backend');
-  $this->load->view('backend/admin_dossiers');
+  $this->load->view('backend/admin_dossiers',$data);
 
 
   $this->charger_bas_page();
@@ -320,6 +358,7 @@ public function admin_newsletter()
 
   $this->charger_haut_page();
 
+
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/admin_newsletter');
 
@@ -330,18 +369,69 @@ public function admin_newsletter()
 /** FIN ADMIN NEWSLETTER **/
 
 
+
+/** DOSSIERS **/
+
+
+
+
+public function show_dossier()
+{
+
+
+
+
+}
+
+
+
 /** ADMIN CLIENT **/
+
+public function admin_show_client()
+{
+
+    $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+    autoriser_action($isItAdmin,'admin');
+    $segment = $this->uri->total_segments();
+    $derniersegment = $this->uri->segment($segment);
+
+
+    if(!empty($derniersegment) AND is_numeric($derniersegment))
+    {
+
+      $this->charger_haut_page();
+
+      $this->load->view('backend/menu_backend');
+
+
+        $resultat = $this->client_model->afficher_base_client($derniersegment);
+
+
+        $data['tableau_client'] = $resultat;
+        $this->load->view('backend/show_client',$data);
+
+
+
+    $this->charger_bas_page();
+
+
+  }
+
+}
 public function admin_clients()
 {
 
+
+  $segment = $this->uri->total_segments();
+  $derniersegment = $this->uri->segment($segment);
 
   $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
   autoriser_action($isItAdmin,'admin');
 
 
-  if(!empty($this->uri->segment(4)) AND is_numeric($this->uri->segment(4)))
+  if(!empty($derniersegment) AND is_numeric($derniersegment))
   {
-    $this->client_model->supprimer_client($this->uri->segment(4));
+    $this->client_model->supprimer_client($derniersegment);
     redirect('backend/login/admin_clients', 'refresh');
   }
 
@@ -372,16 +462,16 @@ public function admin_clients()
 
 
 
-public function admin_parametre()
+public function parametre()
 {
-  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
-  autoriser_action($isItAdmin,'admin');
+//  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+//  autoriser_action($isItAdmin,'admin');
 
   $this->charger_haut_page();
 
   $this->load->view('backend/menu_backend');
   $this->load->view('backend/modifer_mot_de_passe_form');
-  $this->load->view('backend/admin_parametre');
+//  $this->load->view('backend/admin_parametre');
 
 
   $this->charger_bas_page();
@@ -447,7 +537,7 @@ public function ajouter_client()
 
 
 
-///////////////////// FONCTION  CONTROLLEUR  PARAMETRE /////////////////////////////////
+///////////////////// FONCTION  CONTROLLEUR  MODIFER MOT DE PASSE  /////////////////////////////////
 
 public function modifer_password()
 
