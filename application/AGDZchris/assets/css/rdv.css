@@ -1,0 +1,103 @@
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+.demande{
+	text-align: center;
+	color: #0000a0;
+}
+
+rendezVous{
+	color:#0f02bc;
+}
+
+.rendezVous1{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border:1px solid #70798c;
+}
+.rendezVous1 h2{
+	color: #0f02bc;
+	background-color: #70798c;
+	margin-top: 0;
+	height: 60px;
+}
+.rendezVous1 button{
+	width: 120px;
+	height: 50px;
+	border:1px solid #0f02bc;
+	border-radius: 15px;
+	margin-left: 60px;
+	background-color: #fff;
+}
+.rendezVous2{
+	width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+.calendrier{
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.formperso3{
+	width: 395px;
+	height: 40px;
+	background-color: #e7eaed;
+}
+.formperso4{
+	width:100%;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px; 
+	background-color: #e7eaed;
+}
+.question1{
+	width: 100%;
+	height:350px;
+	border:1px solid #0f02bc;
+	color: #0f02bc;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+#checked{
+	text-align: center;
+}
+#conct{
+	background-color: #0000a0 !important;
+	position: relative;
+	bottom: 5px;
+
+}
+.buto{
+	text-align: center;
+
+}

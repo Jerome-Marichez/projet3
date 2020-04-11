@@ -1,0 +1,64 @@
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+.demande{
+	text-align: center;
+	color: #0000a0;
+}
+
+iframe{
+	text-align: center;
+}
+#imgBut{
+	text-align: center;
+}
+#imgBut input {
+	text-align: center;
+}
+.devis input{
+	background-color: #e7eaed;
+}
+.devis1 input{
+	background-color: #e7eaed;
+	width: 100px;
+	height: 50px;
+	margin-left: 500px;
+
+}
+.devis2 input{
+	width: 100px;
+	height: 50px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #0f02bc;
+	color: #fff;
+	
+	
+	;
+}

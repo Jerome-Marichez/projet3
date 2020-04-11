@@ -1,0 +1,146 @@
+
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+h5{
+	text-align: center ;
+	color: #0000a0;
+}
+h6{
+  text-align: center ;
+}
+.but2{
+	text-align: center;
+	
+}
+.but2 button{
+	margin-right: 45px;
+	font-size: 10px;
+	border-radius: 10%;
+}
+#conct{
+	background-color: #0000a0 !important;
+	text-align: center;
+
+}
+.d-block{
+	height: 350px;
+}
+.texte_centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+a{
+	text-decoration: none;
+}
+#suite{
+	text-align: center !important;
+}
+#suite i{
+	color: #0f02bc;
+	font-size: 30px;
+}
+#suite button{
+	background-color: #0f02bc !important;
+	/*border-radius: 15%;*/
+	margin-left: 20px;
+	width: 250px;
+	height: 30px;
+	padding-bottom: 10px;
+}
+#form{
+	background-color: #515151;
+}
+.pform{
+	color: white;
+}
+.fobut{
+	text-align: center;
+	position: relative;
+	bottom: 5px;
+}
+.fobut button{
+	width: 150px;
+	height: 30px;
+	border-radius: 10%;
+	margin-left: 20px;
+
+}
+
+
+h2{
+	text-align: center;
+	color: #0000a0;
+
+}
+.actualite{
+	text-align: center;
+}
+.actualite3{
+	color: #0f02bc;
+	text-align: center;
+	font-weight: bold;
+}
+.actualite3 input{
+	color: #0f02bc;
+}
+.actualite3 a{
+	margin-right: 15px;
+	margin-left: 5px;
+	color: #0f02bc;
+}
+.devis h2{
+	margin-bottom: 30px;
+}
+.devis button{
+	border:1px solid #70798c;
+}
+.devis1 button{
+	background-color: #e7eaed;
+}
+.devis2 input{
+	background-color: #e7eaed;
+}
+.choix{
+	background-color: #e7eaed !important;
+
+}
+.ask{
+	background-color: #e7eaed !important;
+
+}
+
+
+}
+.buto{
+	text-align: center!important;
+}

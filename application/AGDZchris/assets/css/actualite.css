@@ -1,0 +1,65 @@
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.info{
+	width: 250px;
+	height: 50px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #e7eaed;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+.demande{
+	text-align: center;
+	color: #0000a0;
+}
+
+.info{
+	text-align: center;
+	background-color: #e7eaed;
+	
+}
+.actualite1{
+	text-align: center;
+}
+.actualite3{
+	color: #0f02bc;
+	text-align: center;
+	font-weight: bold;
+}
+.actualite3 input{
+	color: #0f02bc;
+}
+.actualite3 a{
+	
+	color: #0f02bc;
+}
+.actuBas{
+	position: relative;
+	left: 50px;
+}

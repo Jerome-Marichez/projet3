@@ -1,0 +1,72 @@
+.navbar{
+	background-color: #0000a0 !important;
+}
+.reso{
+	margin-left: 50px;
+	color: white;
+}
+.user{
+	color: white;
+}
+.numero{
+	color: white;
+	/*position: relative;
+	right: 200px;*/
+}
+.adresse{
+	color: white;
+	/*position: relative;
+	right: 500px;*/
+}
+img{
+	height: 150px;
+	
+
+}
+#log{
+	text-align: center;
+}
+.demande{
+	text-align: center;
+	color: #0000a0;
+}
+.sousMenu{
+	text-align: center;
+}
+#textee{
+	text-align: center !important;
+	
+}
+h5{
+	color: #0000a0;
+}
+.fa-file{
+	color: #0000a0;
+}
+.fa-calendar-alt{
+	color: #0000a0;
+}
+#block{
+	text-align: center !important;
+}
+#suite{
+	text-align: center !important;
+}
+#conct{
+	background-color: #0000a0 !important;
+}
+#suite{
+	text-align: center !important;
+}
+#suite i{
+	color: #0f02bc;
+	font-size: 30px;
+}
+#suite button{
+	background-color: #0f02bc !important;
+	/*border-radius: 15%;*/
+	margin-left: 20px;
+	width: 250px;
+	height: 30px;
+	padding-bottom: 10px;
+}
