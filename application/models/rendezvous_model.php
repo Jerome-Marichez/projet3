@@ -23,7 +23,26 @@ class Rendezvous_model extends CI_Model
   }
 
 
-    // RECUPERER ET AFFICHER LA BASE DE DONNES DES RENDEZ VOUS ET FORMATION
+// COUNT RENDEZ VOUS
+    public function count_rendezvous($formation ='',$email ='')
+    {
+        $this->db->from('rendezvous');
+
+          if (!empty($formation)) {
+            $this->db->where('formation',$formation);
+          }
+          if (!empty($email)) {
+            $this->db->where('email',$email);
+          }
+
+        $combien = $this->db->count_all_results();
+        return intval($combien);
+    }
+
+
+
+
+        // RECUPERER ET AFFICHER LA BASE DE DONNES DES RENDEZ VOUS ET FORMATION
 
   public function afficher_rendezvous($typerendezvous,$email = '')
     {
@@ -92,16 +111,6 @@ class Rendezvous_model extends CI_Model
 
 
       }
-
-
-    public function autoriser_action()
-    {
-
-
-
-
-    }
-
 
 
 }

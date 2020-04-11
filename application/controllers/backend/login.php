@@ -52,23 +52,7 @@ public function deconnexion() { $this->session->sess_destroy(); redirect(''); } 
 public function connexion() {
 
 
-
-   //echo decrypt('MTIzNDU2NzgyNDU0NjU0Mi8qnIcjHYpz4STUPepjF+m7c3bSpoWC58AtHTQk9tlAlUF7O5mrES53d07qo3OlEQ==');
     $this->charger_haut_page();
-
-  // PARTIE RESERVER POUR CHARGER LE ADMIN_MAIN avec les stats
-   $stat1 = $this->client_model->count_client();
-   $stat2 = $this->dossier_model->count_dossier('en-attente');
-   $stat3 = $this->dossier_model->count_dossier('valide');
-   $stats = array(
-   'stat1' => $stat1,
-   'stat2' => $stat2,
-   'stat3' => $stat3
-   );
-
-  // $stat2= $this->dossier_model->count_all_dossier_classer();
-  // $this->dossier_model->count_all_dossier();
-  // FIN
 
 
 
@@ -78,8 +62,19 @@ public function connexion() {
       if ($this->form_validation->run() == FALSE) {
       if(isset($this->session->userdata['isConnected'])){
 
-      $this->load->view('backend/menu_backend');
-      $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+        $this->load->view('backend/menu_backend');
+        $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+
+
+        $stats = array(
+        'stat1' => $this->client_model->count_client(),
+        'stat2' => $this->dossier_model->count_dossier('en-attente'),
+        'stat3' => $this->dossier_model->count_dossier('valide'),
+        'stat4' => $this->dossier_model->count_dossier('',$this->session->userdata['isConnected']['email']),
+        'stat5' => $this->rendezvous_model->count_rendezvous('',$this->session->userdata['isConnected']['email']),
+        'stat6' => $this->rendezvous_model->count_rendezvous('',$this->session->userdata['isConnected']['email'])
+        );
+
         if($isItAdmin == 'admin')
         {
 
@@ -87,7 +82,7 @@ public function connexion() {
         }
         else
         {
-           $this->load->view('backend/client_main');
+           $this->load->view('backend/client_main',$stats);
         }
 
 
@@ -156,6 +151,15 @@ public function connexion() {
               $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
               $this->load->view('backend/menu_backend');
 
+
+              $stats = array(
+              'stat1' => $this->client_model->count_client(),
+              'stat2' => $this->dossier_model->count_dossier('en-attente'),
+              'stat3' => $this->dossier_model->count_dossier('valide'),
+              'stat4' => $this->dossier_model->count_dossier('',$this->session->userdata['isConnected']['email']),
+              'stat5' => $this->rendezvous_model->count_rendezvous('',$this->session->userdata['isConnected']['email']),
+              'stat6' => $this->rendezvous_model->count_rendezvous('',$this->session->userdata['isConnected']['email'])
+              );
                       if($isItAdmin == 'admin')
                       {
 
@@ -163,7 +167,7 @@ public function connexion() {
                       }
                       else
                       {
-                         $this->load->view('backend/client_main');
+                         $this->load->view('backend/client_main',$stats);
                       }
 
 
@@ -758,7 +762,7 @@ public function ajouter_client()
   autoriser_action($isItAdmin,'admin');
 
   //print_r($_POST);
-
+  $cree_type = $this->input->post('cree_type');
   $cree_nom =  $this->input->post('cree_nom');
   $cree_prenom =  $this->input->post('cree_prenom');
   $cree_telephone =  $this->input->post('cree_telephone');
@@ -771,7 +775,7 @@ public function ajouter_client()
 
   $password = generer_numero_client();
   //echo $password;
-  $client_id = generer_numero_client('particulier');
+  $client_id = generer_numero_client($cree_type);
 
 
   $resultat = $this->client_model->cree_client('',$client_id,encrypt($password),$cree_nom,$cree_prenom,$cree_telephone,$cree_email,$cree_code_postal,$cree_ville,$cree_adresse_postal);

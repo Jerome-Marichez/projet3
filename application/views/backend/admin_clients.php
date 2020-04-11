@@ -24,6 +24,18 @@
         <div class="modal-body">
 
 
+                  <div class="form-group">
+                    <div class="row text-center">
+
+                      <div class="col-md-3"><input type="radio" name="cree_type"  value="particulier">Particulier</input></div>
+                      <div class="col-md-3"><input type="radio" name="cree_type" value="entreprise">Entreprise </input></div>
+                      <div class="col-md-3"><input type="radio" name="cree_type" value="collectivite" >Collectivite territoriale</input></div>
+                      <div class="col-md-3"><input type="radio" name="cree_type" value="etablissement_public" >Etablissement public</input></div>
+
+                    </div>
+                  </div>
+
+
 
               <div class="form-group">
                 <div class="row"><div class="col-md-6">
