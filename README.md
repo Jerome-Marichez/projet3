@@ -13,6 +13,12 @@ Création d'un site de cabinet d'avocat.
 Jquery <br>
 BootStrap
 
+# Librairie 
+Chart.JS
+
+# API 
+SendInBlue 
+
 # FRAMEWORK PHP 
 CodeInginiter 3.1.11 
 
