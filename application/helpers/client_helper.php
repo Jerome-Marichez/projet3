@@ -26,6 +26,9 @@ function additione_date_heure($date,$heure)
 {
 
 }
+
+
+//VERIFIER SI ADMIN VIA LE CLIENT ID APRES LA CONNEXION SI LES DROIT SONT ACCORDE VIA LA BDD 
 function isIt_Admin_or_Client($client_id)
 {
 

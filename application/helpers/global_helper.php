@@ -8,6 +8,9 @@ function titre_page_html()
  return "A.G.D.Z Avocat";
 
 }
+
+
+// GENERE LES LIENS DU SITE
 function site_link_base($chemin = "")
 {
 
@@ -97,7 +100,7 @@ function decrypt($value,$key = '45',$iv='1234567824546542')
   $ciphertext_raw = substr($c, $ivlen+$sha2len);
   $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
   $calcmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
-  if (hash_equals($hmac, $calcmac))//PHP 5.6+ timing attack safe comparison
+  if (hash_equals($hmac, $calcmac))//PHP 5.6+ timing attack 
   {
       return $original_plaintext;
   }

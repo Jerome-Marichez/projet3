@@ -95,7 +95,7 @@ $statut = html_escape($row->statut);
 <?php
 echo '<td>'.$number_dossier.'</td>';
 echo '<td>'.$email_dossier.'</td>';
-echo ' <td >'.retourner_statut_icon($statut);.'</i></td>';
+echo ' <td >'; echo retourner_statut_icon($statut); echo '</i></td>';
 echo '<td><a href="./admin_show_client/'.$id_specific.'"</a><i class="fas fa-chevron-right fa-2x">'.'</td>';
 
 echo  '</tr>';
