@@ -19,6 +19,7 @@ $this->load->model('newsletter_model');
 $this->load->model('client_model');
 $this->load->model('dossier_model');
 $this->load->model('rendezvous_model');
+$this->load->model('piecejointe_model');
 $this->load->view('header');
 }
 
@@ -225,27 +226,43 @@ public function upload()
         $config['max_width']            = 4000;
         $config['max_height']           = 4000;
 
+
         $this->load->library('upload', $config);
 
+        $segment = $this->uri->total_segments();
+        $derniersegment = $this->uri->segment($segment); // Qui est notre ID
+
+        // ON Verifie ainsi l'origine de l'upload
+
+        if ($derniersegment != $this->input->post('id'))
+        {
+           show_404();
+
+        }
         if ( ! $this->upload->do_upload('monfichier'))
         {
-                $error = array('error' => $this->upload->display_errors());
 
-                $this->load->view('upload_form', $error);
+
+                  show_404();
         }
         else
         {
-                $data = array('upload_data' => $this->upload->data());
 
-                $this->load->view('upload_success', $data);
+                $data = $this->upload->data();
+                $filename = $data['file_name'];
+                echo "<br>";
+                echo $derniersegment;
+
+                $this->piecejointe_model->ajouter_au_dossier($derniersegment,$filename);
+                exit;
+
+                redirect('backend/login/show_dossier/'.$derniersegment);
         }
 }
 
 
 public function show_dossier()
 {
-
-
 
   //A FAIRE VERIFIER QUE LE ID du SHOW_DOSSIER CORRESPOND A LID DU CLIENT DISPO //
   // IMPORTANT //
@@ -268,6 +285,7 @@ public function show_dossier()
             $resultat = $this->dossier_model->afficher_base_dossier('',$derniersegment);
             $data['tableau_dossier'] = $resultat;
             $upload_id['id'] = $derniersegment;
+
             $this->load->view('backend/menu_backend');
 
 
