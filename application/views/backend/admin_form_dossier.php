@@ -17,10 +17,11 @@ foreach($tableau_dossier as $row)
     <input  type="hidden" name="email_dossier" value="<?php echo $email_dossier;?>">    </input>
     <input  type="hidden" name="statut" value="<?php echo $statut;?>">    </input>
 
-
+    <div class="espace_backend_30"> </div>
     <button type="submit" name="submit" value="en-attente" class="btn btn-danger">Dossier statut en attente</button>
     <button type="submit" name="submit" value="piece" class="btn btn-warning">Dossier statut en attente de pièce jointe</button>
     <button type="submit" name="submit" value="valide" class="btn btn-success">Dossier statut valide</button>
+    <div class="espace_backend_60"> </div>
   <?php echo form_close(); ?>
 
 
