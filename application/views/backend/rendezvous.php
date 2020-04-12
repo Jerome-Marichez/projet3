@@ -61,7 +61,7 @@ if ($cabinet == 1) { $cabinet = "Cabinet"; } else { $cabinet = "Téléphone"; }
     { ?>
 
         <!-- Les differents ID relatif au formulaire -->
-        <form <?php echo form_open('backend/login/action_rendezvous'); ?>
+        <?php echo form_open('backend/login/action_rendezvous'); ?>
         <input id="id" name="id" type="hidden" value="<?php echo $id_specific;?>">
         <input id="email" name="email" type="hidden" value="<?php echo $email_tableau;?>">
         <input id="client_id" name="client_id" type="hidden" value="<?php echo $client_ID;?>">

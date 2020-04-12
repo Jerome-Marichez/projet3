@@ -10,7 +10,7 @@ foreach($tableau_dossier as $row)
 ?>
 
 <div class="col-md-9">
-    <form <?php echo form_open('backend/login/show_dossier/'.$id_specific); ?>
+   <?php echo form_open('backend/login/show_dossier/'.$id_specific); ?>
     <input  type="hidden" name="changer_statut_dossier" value="1">    </input>
     <input  type="hidden" name="id_specific" value="<?php echo $id_specific;?>">    </input>
     <input  type="hidden" name="number_dossier" value="<?php echo $number_dossier;?>">    </input>
@@ -21,7 +21,7 @@ foreach($tableau_dossier as $row)
     <button type="submit" name="submit" value="en-attente" class="btn btn-danger">Dossier statut en attente</button>
     <button type="submit" name="submit" value="piece" class="btn btn-warning">Dossier statut en attente de pièce jointe</button>
     <button type="submit" name="submit" value="valide" class="btn btn-success">Dossier statut valide</button>
-  <?php echo form_close(); ?></form>
+  <?php echo form_close(); ?>
 
 
 </div>

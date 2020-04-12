@@ -33,7 +33,7 @@
 <div class="espace_backend_30"> </div>
 
 
-<form id="modifer_password" <?php echo form_open('backend/login/modifer_password'); ?>
+<?php echo form_open('backend/login/modifer_password'); ?>
   <div class="form-group row">
     <div class="col-md-4 input-lg"><label class="label_form_modifier_password" for="password">Mot de passe actuel</label></div>
       <div class="col-md-8"><input type="password" class="form-control input-lg" name="password" id="password" placeholder="" required="true"></div>

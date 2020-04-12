@@ -15,7 +15,7 @@ $id_dossier = html_escape($row->id_dossier);
 ?>
 
 
-<form <?php echo form_open('backend/login/show_dossier/'.$id_dossier); ?>
+<?php echo form_open('backend/login/show_dossier/'.$id_dossier); ?>
 <div class="form-group">
         <div class="row"><div class="col-md-6">
 
@@ -42,3 +42,4 @@ echo "<br>";
 
  ?>
 </div>
+<?php echo form_close(); ?>

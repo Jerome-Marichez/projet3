@@ -175,23 +175,7 @@ function handleComplete(evt,comp) {
 				</div>
 			</div><br>
 
-			<div class=" devis1 row">
 
-					<div class="col-sm-3">
-						<input type="text" name="particulier" required="text" placeholder="Particulier">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" name="particulier" required="text" placeholder="Entreprise">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" name="particulier" required="text" placeholder="Collectivité">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" name="particulier" required="text" placeholder="Etablissement">
-					</div>
-
-
-			</div><br>
 			<div class=" devis2 row">
 
 					<div class="col-md-6">
@@ -295,7 +279,6 @@ function handleComplete(evt,comp) {
 		</div>
 
 
-		<?php echo form_close();?>
 
 
        <div class="demande"><h5>Rendez-vous</h5></div><br><br>
@@ -303,14 +286,14 @@ function handleComplete(evt,comp) {
         <!--         	-->
                  	<div class="col-sm-6">
                  		<div class="input-group mb-3">
-                 		  <form method="" action="">
+
 						  <select class=" choix1" >
 						    <option selected>Votre demande concerne</option>
 						    <option value="1">One</option>
 						    <option value="2">Two</option>
 						    <option value="3">Three</option>
 						  </select>
-						  </form>
+
 						</div>
                  	</div>
                  	<div class="col-sm-6">
@@ -321,19 +304,16 @@ function handleComplete(evt,comp) {
 						    <option value="1">Telephone</option>
 						    <option value="2">cabinet</option>
 						  </select>
-						  </form>
+
 						</div>
                  	</div>
             <!--      -->
                  </div>
-				<!--		<br><br>
-						<div class="row">
-		<div class="col-md-12" id="imgBut">
-			<br>
-
-		</div>-->
 
 	</div><br><br>
+
+			<?php echo form_close();?>
+			<form>
 	<div class="demande"><h5>Le cabinet</h5></div><br><br>
      <div class="row">
      	<div class="col-md-12">
