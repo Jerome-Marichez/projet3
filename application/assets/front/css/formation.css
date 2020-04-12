@@ -8,6 +8,10 @@
 .user{
 	color: white;
 }
+.icon_connexion{
+
+   color: white;
+}
 .numero{
 	color: white;
 	/*position: relative;
@@ -20,7 +24,7 @@
 }
 img{
 	height: 150px;
-	
+
 
 }
 #log{
@@ -35,7 +39,7 @@ img{
 }
 #textee{
 	text-align: center !important;
-	
+
 }
 h5{
 	color: #0000a0;

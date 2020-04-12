@@ -29,7 +29,7 @@
 					</div>
  				</nav>
 					<div class="user">
-						<i class="fas fa-user-circle"></i>
+						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a> 
 					</div>
 
 	    </nav>

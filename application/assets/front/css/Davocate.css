@@ -6,6 +6,11 @@ h1{
 	text-align: center;
 	color: #0000a0 ;
 }
+.icon_connexion{
+
+   color: white;
+}
+
 .separation{
 	border-left: 1px solid black;
 
@@ -25,7 +30,7 @@ h1{
 }
 img{
 	height: 150px;
-	
+
 
 }
 #log{
@@ -87,7 +92,7 @@ p{
 	color: #0000a0;
 }
 #users{
-	
+
 	background-color: #c4c4c4;
 	/*text-align: center;*/
 }
@@ -101,7 +106,7 @@ p{
 /*Newsletters*/
 #blok{
 	background-color: #0000a0;
-	
+
 }
 .fa-file-download{
 	color: 	#0000a0;

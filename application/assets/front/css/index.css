@@ -9,6 +9,10 @@
 .user{
 	color: white;
 }
+.icon_connexion{
+
+   color: white;
+}
 .numero{
 	color: white;
 	/*position: relative;
@@ -21,7 +25,7 @@
 }
 img{
 	height: 150px;
-	
+
 
 }
 #log{
@@ -36,7 +40,7 @@ h6{
 }
 .but2{
 	text-align: center;
-	
+
 }
 .but2 button{
 	margin-right: 45px;

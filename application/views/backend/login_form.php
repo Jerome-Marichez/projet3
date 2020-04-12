@@ -1,13 +1,3 @@
-
-<?php
-if (isset($this->session->userdata['isConnected'])) {
-
-//header("location: http://109.10.93.242:8080/projet3/backend/login/");
-}
-?>
-
-
-
 <div id="main">
 
 

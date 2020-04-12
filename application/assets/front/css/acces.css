@@ -1,6 +1,10 @@
 .navbar{
 	background-color: #0000a0 !important;
 }
+.icon_connexion{
+
+   color: white;
+}
 .reso{
 	margin-left: 50px;
 	color: white;
@@ -20,7 +24,7 @@
 }
 img{
 	height: 150px;
-	
+
 
 }
 #log{

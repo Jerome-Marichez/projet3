@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo site_link_base("css_front");?>contact.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-	<title></title>
+	<title>A.G.D.Z - Contact</title>
 </head>
 <body onload="init();">
 <div class="container-fluid">
@@ -42,7 +42,7 @@
 
  				 </nav>
 					<div class="user">
-						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i>			</a> 
+						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
 					</div>
 
 	        </nav>
@@ -165,7 +165,8 @@ function handleComplete(evt,comp) {
 		<br><br>
 
 
-		<form method="" action="">
+		<?php echo form_open('home/contact');  ?>
+		<form>
 			<div class="row">
 		<div class="col-md-6">
 			<div class=" devis row">
@@ -173,7 +174,7 @@ function handleComplete(evt,comp) {
                        <button type="button" class="btn btn btn-lg btn-block">Vous êtes ?</button>
 				</div>
 			</div><br>
-			<form method="" action="">
+
 			<div class=" devis1 row">
 
 					<div class="col-sm-3">
@@ -277,24 +278,25 @@ function handleComplete(evt,comp) {
            </div>
            <div class="row">
            	<div class="col-md-12">
-           	<form class="tArea">
-  <div class="mb-3">
 
-    <textarea class="ask form-control" id="" placeholder="Posez vos questions" ></textarea>
+						  <div class="mb-3">
 
-  </div>
+						    <textarea class="ask form-control" id="" placeholder="Posez vos questions" ></textarea>
+
+						  </div>
 
            	</div>
            </div>
 
            	  <div class="buto">
-           	  	<button type="button" class="btn btn-dark" id="conct">VALIDER</button>
+           	  	<button type="submit" id="contact" value="contact" class="btn btn-dark">VALIDER</button>
            	  </div>
            </div>
 		</div>
 
 
-		</form>
+		<?php echo form_close();?>
+
 
        <div class="demande"><h5>Rendez-vous</h5></div><br><br>
                  <div class="row">
@@ -313,7 +315,7 @@ function handleComplete(evt,comp) {
                  	</div>
                  	<div class="col-sm-6">
                  		<div class="input-group mb-3">
-                 		  <form method="" action="">
+
 						  <select class="choix2 " >
 						    <option selected>Telephone ou cabinet</option>
 						    <option value="1">Telephone</option>

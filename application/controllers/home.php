@@ -8,8 +8,12 @@ class Home extends CI_Controller {
 
   public function __construct() {
   parent::__construct();
-  $this->load->helper('url');
 
+  $this->load->helper('url');
+  $this->load->helper('form');
+  $this->load->helper('mail_helper');
+  $this->load->library('form_validation');
+  $this->load->model('newsletter_model');
 
   }
 
@@ -49,6 +53,14 @@ class Home extends CI_Controller {
 
   public function Contact()
   {
+    if($this->input->post('contact'))
+    {
+        echo "contact"; 
+        var_dump($_POST);
+        exit;
+
+
+    }
      $this->load->view('front/contact');
   }
 
