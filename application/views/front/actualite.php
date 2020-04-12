@@ -44,7 +44,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="assets/images/logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -106,7 +106,7 @@
           		<div class="row" >
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite1.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite1.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -114,7 +114,7 @@
 
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite2.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite2.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -122,7 +122,7 @@
 
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite3.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite3.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -131,7 +131,7 @@
 				<div class="row" >
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite1.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite1.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -139,7 +139,7 @@
 
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite2.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite2.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -147,7 +147,7 @@
 
 					<div class="actualite col-sm-4 col-md-4">
 						<div class="actualite1">
-							<img src="assets/images/actualite3.jpg"><br><br>
+							<img src="<?php echo site_link_base("img_front");?>/actualite3.jpg"><br><br>
 							<strong>Accenderat super his incitatum</strong><br><br>
 							<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 						</div>
@@ -305,7 +305,7 @@ function handleComplete(evt,comp) {
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="assets/images/logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>

@@ -45,7 +45,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="assets/images/logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -83,7 +83,7 @@
 		</div>
 				</div><br>
 		<div class="row">
-			<div class="col-sm-6" id="img1"><img src="assets/images/formation1.jpg"></div>
+			<div class="col-sm-6" id="img1"><img src="<?php echo site_link_base("img_front");?>/formation1.jpg"></div>
 			<div class="col-sm-6">
 				<h5 class="demande">"Pluridisciplinarité"</h5><br>
                    <p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
@@ -109,7 +109,7 @@ cohabitent de façon esthétique.</p>
 				</div><br>
 		<div class="row">
 			<div class="col-md-6" id="img2">
-				<img src="assets/images/guendouz.jpg"><br>
+				<img src="<?php echo site_link_base("img_front");?>/guendouz.jpg"><br>
 				<span>Léa AMIC</span><br>
 				<span>Avocate en droit privé</span><br>
 				<i class="fas fa-phone"></i>&nbsp; <span>+33 04 78 78 78</span><br>
@@ -139,7 +139,7 @@ cohabitent de façon esthétique.</p><br>
 
 		<div class="row">
 			<div class="col-md-6" id="img2">
-				<img src="assets/images/celia.jpg"><br>
+				<img src="<?php echo site_link_base("img_front");?>/celia.jpg"><br>
 				<span>Célié GUNDEGOUZ</span><br>
 				<span>Avocate en droit public</span><br>
 				<i class="fas fa-phone"></i>&nbsp; <span>+33 04 78 78 78</span><br>
@@ -228,7 +228,7 @@ cohabitent de façon esthétique.
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="assets/images/logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>

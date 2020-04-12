@@ -47,7 +47,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="assets/images/logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -92,13 +92,13 @@ cohabitent de façon esthétique.</p>
 	 		<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="10000">
-      <img src="assets/images/actualite1.jpg" class="d-block w-100" alt="actualite1">
+      <img src="<?php echo site_link_base("img_front");?>/actualite1.jpg" class="d-block w-100" alt="actualite1">
     </div>
     <div class="carousel-item" data-interval="2000">
-      <img src="assets/images/actualite2.jpg" class="d-block w-100" alt="actualite2">
+      <img src="<?php echo site_link_base("img_front");?>/actualite2.jpg" class="d-block w-100" alt="actualite2">
     </div>
     <div class="carousel-item">
-      <img src="assets/images/actualite3.jpg" class="d-block w-100" alt="actualite3">
+      <img src="<?php echo site_link_base("img_front");?>/actualite3.jpg" class="d-block w-100" alt="actualite3">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -121,9 +121,9 @@ cohabitent de façon esthétique.</p>
 	 </div>
 	 <br>
 	 <div class="row">
-	 	<div class="col-sm-4 col-md-4"><img src="assets/images/imageDroitPublic.jpg"><div class="texte_centrer">DROIT PUBLIC</div></div>
-	 	<div class="col-sm-4 col-md-4"><img src="assets/images/imageDroitPenal.jpg"><div class="texte_centrer">DROIT PENAL</div></div>
-	 	<div class="col-sm-4 col-md-4"><img src="assets/images/imageDroitPrive.jpg"><div class="texte_centrer">DROIT PRIVE ET DES AFFAIRES</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPublic.jpg"><div class="texte_centrer">DROIT PUBLIC</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPenal.jpg"><div class="texte_centrer">DROIT PENAL</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPrive.jpg"><div class="texte_centrer">DROIT PRIVE ET DES AFFAIRES</div></div>
 	 </div><br>
 	 <div class="row">
 		<div class="col-md-12" id="suite">
@@ -151,21 +151,21 @@ cohabitent de façon esthétique.</p>
 	<div class="row" >
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="assets/images/actualite1.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite1.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
 
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="assets/images/actualite2.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite2.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
 
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="assets/images/actualite3.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite3.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
@@ -405,7 +405,7 @@ cohabitent de façon esthétique.</p>
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="assets/images/logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>

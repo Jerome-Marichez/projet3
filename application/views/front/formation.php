@@ -45,7 +45,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="assets/images/logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -89,7 +89,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6" id="log">
-			<img src="assets/images/formation1.jpg">
+			<img src="<?php echo site_link_base("img_front");?>/formation1.jpg">
 		</div>
         <div class="col-md-6" id="textee">
         	         <h5>Formation sur mesure</h5>
@@ -99,7 +99,7 @@
 	</div>
 	<div class="row" id="log">
 		<div class="col-md-6">
-			<img src="assets/images/formation 2.jpg">
+			<img src="<?php echo site_link_base("img_front");?>/formation 2.jpg">
 		</div>
         <div class="col-md-6" id="textee">
         	         <h5>Formation sur mesure</h5>
@@ -159,7 +159,7 @@
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="assets/images/logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>

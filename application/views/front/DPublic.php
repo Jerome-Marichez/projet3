@@ -46,7 +46,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="assets/images/logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -104,7 +104,7 @@
 	</div><br><br>
 		<div class="row">
 			<div class="col-md-4" id="imgAv">
-				<img src="assets/images/celia.jpg"><br>
+				<img src="<?php echo site_link_base("img_front");?>/celia.jpg"><br>
 				<span>Celine GUNDEGOUZ</span><br>
 				<span>Avocate en droit public</span>
 			</div>
@@ -172,7 +172,7 @@
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="assets/images/logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>
