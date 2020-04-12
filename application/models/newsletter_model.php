@@ -4,7 +4,7 @@
 
   // A FAIRE GERER LES EXCEPTION  POUR UPDATE SI ERREUR DUPLICATION DE LEMAIL DANS FONCTION inserer_email_newsletter
 
-class newsletter_model extends CI_Model
+class Newsletter_model extends CI_Model
 
 {
 

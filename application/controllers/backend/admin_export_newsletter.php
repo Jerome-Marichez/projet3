@@ -5,7 +5,7 @@
 
 // CODE PAS SECURISER DU TOUT
 
-Class admin_export_newsletter extends CI_Controller {
+Class Admin_export_newsletter extends CI_Controller {
 
 
   function _remap($PARAMETRE_NEWS) {

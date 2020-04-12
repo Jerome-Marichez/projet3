@@ -5,7 +5,7 @@
   // Voir lien: https://codeigniter.com/userguide2/database/active_record.html
 
 
-class client_model extends CI_Model
+class Client_model extends CI_Model
 
 {
 

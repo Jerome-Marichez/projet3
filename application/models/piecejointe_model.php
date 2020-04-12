@@ -2,7 +2,7 @@
 
 
 
-class piecejointe_model extends CI_Model
+class Piecejointe_model extends CI_Model
 
 {
          function ajouter_au_dossier($id_dossier,$piece_lien)

@@ -4,7 +4,7 @@
 // DOSSIER valide ---> DOSSIER VALIDE
 // DOSSIER piece ---> DOSSIER PIECE JOINTE
 
-class dossier_model extends CI_Model
+class Dossier_model extends CI_Model
 
 {
 
