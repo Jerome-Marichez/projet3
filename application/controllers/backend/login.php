@@ -267,15 +267,15 @@ public function upload()
 
                 $data = $this->upload->data();
                 $filename = $data['file_name'];
-                echo "<br>";
-                echo $derniersegment;
-                echo "<br>";
+              //  echo "<br>";
+              //  echo $derniersegment;
+              //  echo "<br>";
                 $email = $this->input->post('email');
-                echo "<br>";
-                echo $email;
+              //  echo "<br>";
+              //  echo $email;
             //    exit;
 
-                echo "<br>";
+//                echo "<br>";
                 $dossier_numero = $this->input->post('ndossier');
                 echo $dossier_numero;
 
@@ -324,9 +324,9 @@ public function show_dossier()
                     {
                       $id_dossier = $this->input->post('id_dossier');
                       $piece_lien = $this->input->post('piece_lien');
-                      echo $id_piece; echo "<br>";
-                      echo $piece_lien; echo "<br>";
-                      echo $id_dossier; echo "<br>";
+                  //    echo $id_piece; echo "<br>";
+                //      echo $piece_lien; echo "<br>";
+              //        echo $id_dossier; echo "<br>";
 
                       $dir = "./uploads/".$piece_lien;
                           if (!unlink($dir)) {
@@ -886,12 +886,17 @@ $this->form_validation->set_rules('nouveau_password2', 'mot de passe', 'trim|req
         'deconnexion_message' => 'Votre mot de passe est modifié avec succès'
         );
           $this->session->sess_destroy(); // Oui voila ici on détruit la session
+
+
+          $this->charger_haut_page();
+
           $this->load->view('backend/login_form', $data);
+          $this->charger_bas_page();
       }
       else
       {
         $data = array(
-        'erreur_message' => 'Vos nouveaux mot de passe ne sont pas identique ou vous ne disposez pas les droits.'
+        'erreur_message' => 'Vos nouveaux mot de passe ne sont pas identique, ou votre ancien mot de passe est invalide.'
         );
 
               $this->charger_haut_page();
