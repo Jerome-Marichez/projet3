@@ -12,13 +12,13 @@
 <body>
 
 
-	
+
           <!-- menu -->
       <div class="container-fluid">
 		<nav class="navbar">
-				
+
 				<div class="reso">
-					
+
 	           <i class="fab fa-youtube"></i>&nbsp;&nbsp;
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
@@ -27,27 +27,27 @@
 	        <!-- <div class="row">
 	        	<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
 	        </div> -->
-	   
+
 				<nav class="navbar navbar-expand-lg">
 					<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
-    				
+
  				 </nav>
 					<div class="user">
 						<i class="fas fa-user-circle"></i>
 					</div>
-	            
+
 	        </nav>
 	        <div class="container">
 	        	<div class="row">
@@ -57,78 +57,22 @@
 	</div>
 
        </div><br><br>
-       
+
 </div>
 </div>
 <div class="container">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- 
+	<?php
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    	<li class="nav-item"> 
-        <a class="nav-link" href="index.php">Le CABINET</a>
-      </li>
-    	<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PUBLIC
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Commande publique</a>
-          <a class="dropdown-item" href="#">Fonction publique</a>
-          <a class="dropdown-item" href="#">Collectivité territoriale</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PENAL
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Atteinte a la personne</a>
-          <a class="dropdown-item" href="#">Délits contre les biens</a>
-          <a class="dropdown-item" href="#">Infraction aux droits routiers</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PRIVE
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Projet de construction</a>
-          <a class="dropdown-item" href="#">Droit des personnes et de la famille</a>
-          <a class="dropdown-item" href="#">Droit au travail</a>
-          <a class="dropdown-item" href="#">Droit des sociétés et des commerces</a>
-        </div>
-      </li>
-         <li class="nav-item"> 
-        <a class="nav-link" href="#">CONSULTATION EN LIGNE</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">FORMATION</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">ACTUALITES</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">CONTACT</a>
-      </li>
-      
-      
-    </ul>
-    
-  </div>
-</nav><br><br>
+	  $this->load->view('front/menu_front');
+	 ?>
+	 <br><br>
 
 
 
 
     <div class="container">
-    
-    
+
+
 	 <div class="row">
 	 	<div class="col-md-6">
 	 		<h5>Le Cabinet</h5><br>
@@ -142,7 +86,7 @@ cohabitent de façon esthétique. Une page web contient du texte et des images, 
 tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
 tâche aisée.
 Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p> 
+cohabitent de façon esthétique.</p>
  <div class="but2">
 
  	<button type="button" class="btn btn-light">EN SAVOIR PLUS</button>
@@ -177,7 +121,7 @@ cohabitent de façon esthétique.</p>
 	 	<div class="col-md-12">
 	 		<h5>EXPERTISE</h5>
 	 		<p>Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet? Coluntur tamen simulatione dumtaxat ad tempus. Quod si forte, ut fit plerumque, ceciderunt, tum intellegitur quam fuerint inopes amicorum. Quod Tarquinium dixisse ferunt, tum exsulantem se intellexisse quos fidos amicos habuisset, quos infidos, cum iam neutris gratiam referre posse</p>
-	 		
+
 	 	</div>
 	 </div>
 	 <br>
@@ -193,7 +137,7 @@ cohabitent de façon esthétique.</p>
  			<button type="button" class="btn btn-primary" id="conct">PRENDRE RENDEZ VOUS</button>
 			<i class="far fa-calendar-alt" style="position: relative; top: 5px; left: 20px;"></i>
 		</div>
-	</div>	
+	</div>
 	<br>
 	<div class="row">
 		<div class="col-md-12" id="form"> <br>
@@ -205,7 +149,7 @@ cohabitent de façon esthétique.</p>
 			<button type="button" class="btn btn-dark">S'inscrire</button>
 		</div>
 		</div>
-		
+
 	</div><br>
 	<h2>Actualités</h2>
 	<br>
@@ -214,14 +158,14 @@ cohabitent de façon esthétique.</p>
 			<div class="actualite1">
 				<img src="assets/images/actualite1.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
-			</div>						
+			</div>
 		</div>
-						
+
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
 				<img src="assets/images/actualite2.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
-			</div>				
+			</div>
 		</div>
 
 		<div class="actualite col-sm-4 col-md-4">
@@ -233,27 +177,27 @@ cohabitent de façon esthétique.</p>
 	</div>
 	<div class="row">
 		<div class=" col-md-12">
-					<HR color="#0f02bc" width="100%" size="5px"  />	
+					<HR color="#0f02bc" width="100%" size="5px"  />
 		</div>
 	</div>
 	<div class="row" >
 		<div class="actualite3 col-sm-4 col-md-4">
 			<p >Pour plus d'actualités,<br>abonnez vous</p>
 		</div>
-													
+
 		<div class="actualite3 col-sm-4 col-md-4">
 
 		<!--			<span class="glyphicon glyphicon-unchecked" ></span>
 					<a href="newletterDroitPena">Droit Pénal</a>
-				
+
 					<span class="glyphicon glyphicon-unchecked" ></span>
-					<a href="newletterDroitPena">Droit Privé</a><br>	
-				
+					<a href="newletterDroitPena">Droit Privé</a><br>
+
 					<span class="glyphicon glyphicon-unchecked"></span>
 					<a href="newletterDroitPena">Droit Public</a>
-				
+
 					<span class="glyphicon glyphicon-unchecked" ></span>
-					<a href="newletterDroitPena">Les Trois</a>-->	
+					<a href="newletterDroitPena">Les Trois</a>-->
 			         	<div class="row">
 			         		<div class="col-md-6">
 			         			<input type="checkbox" name="">
@@ -264,7 +208,7 @@ cohabitent de façon esthétique.</p>
 					<a href="newletterDroitPena">Droit Privé</a>
 					     </div>
 			         	</div>
-					     
+
 				     <div class="row">
 				     	<div class="col-md-6">
 				     		&nbsp;&nbsp;<input type="checkbox" name="">
@@ -272,17 +216,17 @@ cohabitent de façon esthétique.</p>
 				     	</div>
 				     	<div class="col-md-6">
 				     		<input type="checkbox" name="">
-					<a href="newletterDroitPena">Les Trois</a>	
+					<a href="newletterDroitPena">Les Trois</a>
 				     	</div>
 				     </div>
-					
-						
-				
-					
-				
-						
+
+
+
+
+
+
 		</div>
-			
+
 		<div class="actualite3 col-sm-4 col-md-4">
 			<form method="" action="">
 				<input type="email" name="email" placeholder="adresse mail" style="border:1px solid #0f02bc;">
@@ -292,28 +236,28 @@ cohabitent de façon esthétique.</p>
 	</div>
 	<div class="row">
 		<div class=" col-md-12">
-					<HR color="#0f02bc" width="100%" size="5px"  />	
+					<HR color="#0f02bc" width="100%" size="5px"  />
 		</div>
 	</div>
 	<div class="row">
 		<div class="devis col-md-12">
-					<h2 >Demande de devis</h2>	
+					<h2 >Demande de devis</h2>
 		</div>
 	</div>
 
-	
-      
-      	
+
+
+
           <form method="" action="">
       	<div class="row">
-		<div class="col-md-6"> 
+		<div class="col-md-6">
 			<div class=" devis row">
 				<div class="col-md-12">
 
-					
+
                        <button type="button" class="btn btn btn-lg btn-block">Vous êtes ?</button>
-  
-					
+
+
 				</div>
 			</div><br>
 			<div class=" devis1 row">
@@ -335,13 +279,13 @@ cohabitent de façon esthétique.</p>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Nom" aria-label="Recipient's username" aria-describedby="basic-addon2" >
-  
+
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Prenom" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -349,7 +293,7 @@ cohabitent de façon esthétique.</p>
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="tel" class="form-control" placeholder="Telephone" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -357,7 +301,7 @@ cohabitent de façon esthétique.</p>
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="email" class="form-control" placeholder="Adresse mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -365,7 +309,7 @@ cohabitent de façon esthétique.</p>
 				<div class="col-md-12">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Adresse postale" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -373,13 +317,13 @@ cohabitent de façon esthétique.</p>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="number" class="form-control" placeholder="Code postal" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Ville" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  
+
 					</div>
 				</div>
 			</div>
@@ -394,7 +338,7 @@ cohabitent de façon esthétique.</p>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6"> 
+		<div class="col-md-6">
            <div class="row">
            	 <div class="col-md-10">
            	 	<div class="  input-group mb-3">
@@ -405,7 +349,7 @@ cohabitent de façon esthétique.</p>
 					    <option value="3">Trois</option>
 					    <option value="3">Quatre</option>
 					  </select>
-					  
+
 				</div>
            	 </div>
            </div>
@@ -413,23 +357,23 @@ cohabitent de façon esthétique.</p>
            	<div class="col-md-12">
            	<form class="tArea">
   <div class="mb-3">
-    
+
     <textarea class="ask form-control" id="" placeholder="Posez vos questions" ></textarea>
-    
+
   </div>
 
            	</div>
            </div>
-           
+
            	  <div class="buto">
            	  	<button type="button" class="btn btn-dark" id="conct">VALIDER</button>
            	  </div>
            </div>
 		</div>
       </form>
-	       
+
 	        </div>
-       
+
 </div>
    <div class="container-fluid">
    	<footer>
@@ -460,21 +404,21 @@ cohabitent de façon esthétique.</p>
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
 	           <i class="fas fa-rss-square"></i>&nbsp;&nbsp;
-					
-				</div>						
+
+				</div>
 			</div>
-							
+
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
 					<img src="assets/images/logo-blanc.png" alt="le logo"/>
-					
-				</div>				
+
+				</div>
 			</div>
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="carte">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.065686218915!2d5.373373515122521!3d43.29194607913538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0b84d3dad0b%3A0xa6fdfda4628c186e!2s64%20Rue%20Grignan%2C%2013001%20Marseille!5e0!3m2!1sfr!2sfr!4v1585918260796!5m2!1sfr!2sfr" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					
+
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
@@ -483,10 +427,10 @@ cohabitent de façon esthétique.</p>
 				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
 				<a href="condition">&nbsp;FAQ&nbsp; </a>
 				<a href="condition">&nbsp;Plan de site&nbsp;</a>
-				
+
 
 			</div>
-		</div>	
+		</div>
 	</div>
 </footer>
 

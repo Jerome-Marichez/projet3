@@ -14,9 +14,9 @@
 
 	<div class="container-fluid">
 		<nav class="navbar">
-				
+
 				<div class="reso">
-					
+
 	           <i class="fab fa-youtube"></i>&nbsp;&nbsp;
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
@@ -25,27 +25,27 @@
 	        <!-- <div class="row">
 	        	<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
 	        </div> -->
-	   
+
 				<nav class="navbar navbar-expand-lg">
 					<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
-    				
+
  				 </nav>
 					<div class="user">
 						<i class="fas fa-user-circle"></i>
 					</div>
-	            
+
 	        </nav>
 	        <div class="container">
 	        	<div class="row">
@@ -55,92 +55,35 @@
 	</div>
 
        </div><br><br>
-       
+
 </div>
 </div>
 <div class="container">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- 
+	<?php
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    	<li class="nav-item"> 
-        <a class="nav-link" href="index.php">Le CABINET</a>
-      </li>
-    	<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PUBLIC
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Commande publique</a>
-          <a class="dropdown-item" href="#">Fonction publique</a>
-          <a class="dropdown-item" href="#">Collectivité territoriale</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PENAL
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Atteinte a la personne</a>
-          <a class="dropdown-item" href="#">Délits contre les biens</a>
-          <a class="dropdown-item" href="#">Infraction aux droits routiers</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PRIVE
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Projet de construction</a>
-          <a class="dropdown-item" href="#">Droit des personnes et de la famille</a>
-          <a class="dropdown-item" href="#">Droit au travail</a>
-          <a class="dropdown-item" href="#">Droit des sociétés et des commerces</a>
-        </div>
-      </li>
-         <li class="nav-item"> 
-        <a class="nav-link" href="#">CONSULTATION EN LIGNE</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">FORMATION</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">ACTUALITES</a>
-      </li>
-      <li class="nav-item"> 
-        <a class="nav-link" href="#">CONTACT</a>
-      </li>
-      
-      
-    </ul>
-    
-  </div>
-</nav><br><br>
+	  $this->load->view('front/menu_front');
+	 ?><br><br>
 
 
 
 
- 
+
 </div>
 
 
           <!-- menu -->
           <div class="container">
 	<div class="demande"><h5>FORMATION</h5></div>
-	
+
 	 <div class="row">
 		<div class="col-md-5">
-					<HR color="#0000a0" width="100%" size="5px"  />	
+					<HR color="#0000a0" width="100%" size="5px"  />
 		</div>
 		<div class="col-md-2" style="text-align: center; color: #0000a0;" >
 			<i class="fas fa-graduation-cap"></i>
 		</div>
           <div class="col-md-5">
-					<HR color="#0000a0" width="100%" size="5px"  />	
+					<HR color="#0000a0" width="100%" size="5px"  />
 		</div>
 	</div>
 	       <br>
@@ -181,8 +124,8 @@
 
 	</form>
       <br>
-	
-	
+
+
 
 	        </div>
 	</div>
@@ -215,21 +158,21 @@
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
 	           <i class="fas fa-rss-square"></i>&nbsp;&nbsp;
-					
-				</div>						
+
+				</div>
 			</div>
-							
+
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
 					<img src="assets/images/logo-blanc.png" alt="le logo"/>
-					
-				</div>				
+
+				</div>
 			</div>
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="carte">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.065686218915!2d5.373373515122521!3d43.29194607913538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0b84d3dad0b%3A0xa6fdfda4628c186e!2s64%20Rue%20Grignan%2C%2013001%20Marseille!5e0!3m2!1sfr!2sfr!4v1585918260796!5m2!1sfr!2sfr" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					
+
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
@@ -238,10 +181,10 @@
 				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
 				<a href="condition">&nbsp;FAQ&nbsp; </a>
 				<a href="condition">&nbsp;Plan de site&nbsp;</a>
-				
+
 
 			</div>
-		</div>	
+		</div>
 	</div>
 </footer>
 

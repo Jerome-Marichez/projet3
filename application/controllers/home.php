@@ -1,7 +1,18 @@
  <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+
+
+class Home extends CI_Controller {
+
+
+  public function __construct() {
+  parent::__construct();
+  $this->load->helper('url');
+
+
+  }
+
 
 	/** FRONT CONTROLLER
 	 */
@@ -11,14 +22,14 @@ class Welcome extends CI_Controller {
 
 	}
 
-  public function actualite()
+  public function acces()
   {
-    $this->load->view('front/actualite');
+    $this->load->view('front/acces');
   }
 
-  public function contact()
+  public function Dactualite()
   {
-    $this->load->view('front/contact');
+    $this->load->view('front/actualite');
   }
 
   public function Davocate()
@@ -36,10 +47,17 @@ class Welcome extends CI_Controller {
      $this->load->view('front/DCPublique');
   }
 
-  public function DDevis()
+  public function contact()
   {
-     $this->load->view('front/DDevis');
+     $this->load->view('front/contact');
   }
+
+
+    public function DContact()
+    {
+       $this->load->view('front/Dcontact');
+    }
+
 
   public function Dformation()
   {
@@ -53,23 +71,33 @@ class Welcome extends CI_Controller {
   }
 
 
+
+
   public function faq()
 
   {
-    $this->load->view('front/faq');
+  $this->load->view('front/faq');
   }
+
+
 
   public function formation()
-
   {
-  $this->load->view('front/formation');
+    $this->load->view('front/formation');
   }
-
 
 
   public function leCabinet()
   {
-    $this->load->view('front/leCabinet');
+      $this->load->view('front/leCabinet');
   }
+
+  public function rdv()
+  {
+        $this->load->view('front/rdv');
+  }
+
+
+
 
 }
