@@ -64,11 +64,11 @@
                 <input type="text" class="form-control" name="cree_ville" id="cree_ville" placeholder="ville" required>    </div>
               </div>
             </div>
-              <div class="form-group">
+              <!--<div class="form-group">
 
                 <textarea class="form-control" name="question" id="question" rows="5" placeholder="Posez vos question"></textarea>
 
-              </div>
+              </div>-->
 
 
 

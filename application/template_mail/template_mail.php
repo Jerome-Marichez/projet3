@@ -640,7 +640,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div style="font-size:14px; color:#888888; font-weight:normal; text-align:center; font-family:'Raleway','Arial',Helvetica,sans-serif;"><div><span style="font-size:12px;"><span style="color:#FFFFFF;">Cet e-mail a été envoyé à [EMAIL]</span> </span>
+                                        <div style="font-size:14px; color:#888888; font-weight:normal; text-align:center; font-family:'Raleway','Arial',Helvetica,sans-serif;"><div><span style="font-size:12px;"><span style="color:#FFFFFF;">Cet e-mail a été envoyé</span> </span>
 
 <div><span style="font-size:12px;"><span style="color:#FFFFFF;">© 2020 AGDZ Cabinet D'Avocat. Tous droits réservés.</span></span></div>
 <span style="font-size:12px;"> </span>
