@@ -340,7 +340,7 @@ public function show_dossier()
                       $sujet = "Piece jointe supprimer au dossier:  ".$id_dossier;
                       $source_modifier = array("Nous vous confirmons la suppresion de la piece jointe ".$piece_lien."<br>à votre dossier ".$id_dossier,$NAME);
 
-                      echo $monemail;
+                    //  echo $monemail;
                       envoyer_mail($sujet,expediteur_mail_data(),$monemail,$source_origine,$source_modifier); // POUR LE CLIENT
                       envoyer_mail($sujet,expediteur_mail_data(),expediteur_mail_data(),$source_origine,$source_modifier); // POUR LAVOCAT
                     }
@@ -368,16 +368,16 @@ public function show_dossier()
                    $changer_statut_dossier = $this->input->post('changer_statut_dossier');
                    if (!empty($changer_statut_dossier))
                    {
-                     echo "triggered";
+                //     echo "triggered";
                      $id_dossier = $this->input->post('id_specific');
                      $number_dossier = $this->input->post('number_dossier');
                      $email_dossier = $this->input->post('email_dossier');
                      $statut = $this->input->post('submit');
 
-                     echo "<br>";
-                     echo $id_dossier;
-                     echo $statut;
-                     echo "<br>";
+                  //   echo "<br>";
+                    // echo $id_dossier;
+                     //echo $statut;
+                    // echo "<br>";
 
 
                      $this->dossier_model->update_dossier($id_dossier,$statut);
