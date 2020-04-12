@@ -12,3 +12,15 @@
     <script src="https://kit.fontawesome.com/35388eb05f.js" crossorigin="anonymous"></script>
 	</head>
 <body>
+<header>
+
+	<div class="row">
+	  <div class="col-md-12">
+
+	      <a href="./">
+	        <img src="<?php echo site_link_base("img");?>/logo.png" alt="Logo" class="imagemaxsize" >
+	      </a>
+
+	  </div>
+
+</header>

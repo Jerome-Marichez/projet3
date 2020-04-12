@@ -16,13 +16,13 @@ class Home extends CI_Controller {
 
 	/** FRONT CONTROLLER
 	 */
-	public function index()
+	public function Index()
 	{
     $this->load->view('front/index');
 
 	}
 
-  public function acces()
+  public function Acces()
   {
     $this->load->view('front/acces');
   }
@@ -47,7 +47,7 @@ class Home extends CI_Controller {
      $this->load->view('front/DCPublique');
   }
 
-  public function contact()
+  public function Contact()
   {
      $this->load->view('front/contact');
   }
@@ -73,7 +73,7 @@ class Home extends CI_Controller {
 
 
 
-  public function faq()
+  public function Faq()
 
   {
   $this->load->view('front/faq');
@@ -81,18 +81,18 @@ class Home extends CI_Controller {
 
 
 
-  public function formation()
+  public function Formation()
   {
     $this->load->view('front/formation');
   }
 
 
-  public function leCabinet()
+  public function LeCabinet()
   {
       $this->load->view('front/leCabinet');
   }
 
-  public function rdv()
+  public function Rdv()
   {
         $this->load->view('front/rdv');
   }

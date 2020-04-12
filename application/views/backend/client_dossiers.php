@@ -43,7 +43,7 @@
        <?php
 
 
-       var_dump($tableau_dossier);
+    //   var_dump($tableau_dossier);
 
        foreach($tableau_dossier as $row)
        {
@@ -51,7 +51,7 @@ $id_specific = html_escape($row->id);
 $number_dossier = html_escape($row->number_dossier);
 $email_dossier = html_escape($row->email);
 $statut = html_escape($row->statut);
-      ?>    
+      ?>
 
 <?php
 echo '<td>'.$number_dossier.'</td>';

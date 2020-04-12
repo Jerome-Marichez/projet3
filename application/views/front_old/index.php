@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	 <link href="<?php echo site_link_base("css_front");?>fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
-     <link rel="stylesheet" type="text/css" href="<?php echo site_link_base("css_front");?>index.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<?php
 
-	<title></title>
-</head>
+  $this->load->view('front/head_front');
+ ?>
 <body>
 
 
@@ -52,7 +47,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+		<img src="<?php echo site_link_base("img_front");?>/logo-bleu.png">
 
 	</div>
 
@@ -61,67 +56,11 @@
 </div>
 </div>
 <div class="container">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<?php
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    	<li class="nav-item">
-        <a class="nav-link" href="index.php">Le CABINET</a>
-      </li>
-    	<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PUBLIC
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Commande publique</a>
-          <a class="dropdown-item" href="#">Fonction publique</a>
-          <a class="dropdown-item" href="#">Collectivité territoriale</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PENAL
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Atteinte a la personne</a>
-          <a class="dropdown-item" href="#">Délits contre les biens</a>
-          <a class="dropdown-item" href="#">Infraction aux droits routiers</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          DROIT PRIVE
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Projet de construction</a>
-          <a class="dropdown-item" href="#">Droit des personnes et de la famille</a>
-          <a class="dropdown-item" href="#">Droit au travail</a>
-          <a class="dropdown-item" href="#">Droit des sociétés et des commerces</a>
-        </div>
-      </li>
-         <li class="nav-item">
-        <a class="nav-link" href="#">CONSULTATION EN LIGNE</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">FORMATION</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">ACTUALITES</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
-      </li>
-
-
-    </ul>
-
-  </div>
-</nav><br><br>
+	  $this->load->view('front/menu_front');
+	 ?>
+	 <br><br>
 
 
 
@@ -153,13 +92,13 @@ cohabitent de façon esthétique.</p>
 	 		<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="10000">
-      <img src="<?php echo site_link_base("img_front");?>actualite1.jpg" class="d-block w-100" alt="actualite1">
+      <img src="<?php echo site_link_base("img_front");?>/actualite1.jpg" class="d-block w-100" alt="actualite1">
     </div>
     <div class="carousel-item" data-interval="2000">
-      <img src="<?php echo site_link_base("img_front");?>actualite2.jpg" class="d-block w-100" alt="actualite2">
+      <img src="<?php echo site_link_base("img_front");?>/actualite2.jpg" class="d-block w-100" alt="actualite2">
     </div>
     <div class="carousel-item">
-      <img src="<?php echo site_link_base("img_front");?>actualite3.jpg" class="d-block w-100" alt="actualite3">
+      <img src="<?php echo site_link_base("img_front");?>/actualite3.jpg" class="d-block w-100" alt="actualite3">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -182,9 +121,9 @@ cohabitent de façon esthétique.</p>
 	 </div>
 	 <br>
 	 <div class="row">
-	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>imageDroitPublic.jpg"><div class="texte_centrer">DROIT PUBLIC</div></div>
-	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>imageDroitPenal.jpg"><div class="texte_centrer">DROIT PENAL</div></div>
-	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>imageDroitPrive.jpg"><div class="texte_centrer">DROIT PRIVE ET DES AFFAIRES</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPublic.jpg"><div class="texte_centrer">DROIT PUBLIC</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPenal.jpg"><div class="texte_centrer">DROIT PENAL</div></div>
+	 	<div class="col-sm-4 col-md-4"><img src="<?php echo site_link_base("img_front");?>/imageDroitPrive.jpg"><div class="texte_centrer">DROIT PRIVE ET DES AFFAIRES</div></div>
 	 </div><br>
 	 <div class="row">
 		<div class="col-md-12" id="suite">
@@ -212,21 +151,21 @@ cohabitent de façon esthétique.</p>
 	<div class="row" >
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="<?php echo site_link_base("img_front");?>actualite1.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite1.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
 
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="<?php echo site_link_base("img_front");?>actualite2.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite2.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
 
 		<div class="actualite col-sm-4 col-md-4">
 			<div class="actualite1">
-				<img src="<?php echo site_link_base("img_front");?>actualite3.jpg">
+				<img src="<?php echo site_link_base("img_front");?>/actualite3.jpg">
 				<p>Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. </p>
 			</div>
 		</div>
@@ -466,7 +405,7 @@ cohabitent de façon esthétique.</p>
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
-					<img src="<?php echo site_link_base("img_front");?>logo-blanc.png" alt="le logo"/>
+					<img src="<?php echo site_link_base("img_front");?>/logo-blanc.png" alt="le logo"/>
 
 				</div>
 			</div>

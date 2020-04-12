@@ -16,37 +16,37 @@ function site_link_base($chemin = "")
 
   switch ($chemin) {
     case "js":
-        $ma_page_home = "http://localhost/projet3/application/assets/js/"; // CHEMIN JAVASCRIPT
+        $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/js/"; // CHEMIN JAVASCRIPT
         break;
     case "img":
-        $ma_page_home = "http://localhost/projet3/application/assets/images/"; // CHEMIN IMAGES
+        $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/images/"; // CHEMIN IMAGES
         break;
     case "upload":
-          $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN IMAGES
+          $ma_page_home = "http://109.10.93.242:8080/projet3/uploads/"; // CHEMIN IMAGES
           break;
 
     case "login":
-        $ma_page_home = "http://localhost/projet3/backend/login/"; // PATH TO LOGIN
+        $ma_page_home = "http://109.10.93.242:8080/projet3/backend/login/"; // PATH TO LOGIN
         break;
     case "css":
-        $ma_page_home = "http://localhost/projet3/application/assets/css/"; // CHEMIN CSS
+        $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/css/"; // CHEMIN CSS
         break;
     case "video":
-        $ma_page_home = "http://localhost/projet3/application/assets/video/"; // CHEMIN VIDEO
+        $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/video/"; // CHEMIN VIDEO
         break;
 
     case "js_front":
-                $ma_page_home = "http://localhost/projet3/application/assets/front/js/"; // CHEMIN JAVASCRIPT
+                $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/front/js/"; // CHEMIN JAVASCRIPT
                 break;
     case "img_front":
-                $ma_page_home = "http://localhost/projet3/application/assets/front/images/"; // CHEMIN IMAGES
+                $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/front/images/"; // CHEMIN IMAGES
                 break;
     case "css_front":
-                $ma_page_home = "http://localhost/projet3/application/assets/front/css/"; // CHEMIN CSS
+                $ma_page_home = "http://109.10.93.242:8080/projet3/application/assets/front/css/"; // CHEMIN CSS
                 break;
 
     default:
-        $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN URL UPLOAD
+        $ma_page_home = "http://109.10.93.242:8080/projet3/uploads/"; // CHEMIN URL UPLOAD
 
                     }
   return $ma_page_home;
