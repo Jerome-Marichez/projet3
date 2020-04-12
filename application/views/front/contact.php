@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="authoring-tool" content="Adobe_Animate_CC">
-	 <link href="assets/css/fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/contact.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<?php
 
-	<title></title>
-</head>
+  $this->load->view('front/head_front');
+ ?>
 <body onload="init();">
 <div class="container-fluid">
 		<nav class="navbar">

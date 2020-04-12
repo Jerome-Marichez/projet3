@@ -24,6 +24,7 @@ function site_link_base($chemin = "")
     case "upload":
           $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN IMAGES
           break;
+
     case "login":
         $ma_page_home = "http://localhost/projet3/backend/login/"; // PATH TO LOGIN
         break;
@@ -33,8 +34,19 @@ function site_link_base($chemin = "")
     case "video":
         $ma_page_home = "http://localhost/projet3/application/assets/video/"; // CHEMIN VIDEO
         break;
-     default:
-        $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN URL
+
+    case "js_front":
+                $ma_page_home = "http://localhost/projet3/application/assets/front/js/"; // CHEMIN JAVASCRIPT
+                break;
+    case "img_front":
+                $ma_page_home = "http://localhost/projet3/application/assets/front/images/"; // CHEMIN IMAGES
+                break;
+    case "css_front":
+                $ma_page_home = "http://localhost/projet3/application/assets/front/css/"; // CHEMIN CSS
+                break;
+
+    default:
+        $ma_page_home = "http://localhost/projet3/uploads/"; // CHEMIN URL UPLOAD
 
                     }
   return $ma_page_home;
