@@ -7,7 +7,7 @@
      <link rel="stylesheet" type="text/css" href="assets/css/acces.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     	
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -16,13 +16,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/animate/animate.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
@@ -31,12 +31,12 @@
 	<title></title>
 </head>
 <body>
- 
+
      <div class="container-fluid">
 		<nav class="navbar">
-				
+
 				<div class="reso">
-					
+
 	           <i class="fab fa-youtube"></i>&nbsp;&nbsp;
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
@@ -45,27 +45,27 @@
 	        <!-- <div class="row">
 	        	<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
 	        </div> -->
-	   
+
 				<nav class="navbar navbar-expand-lg">
 					<div class="numero">
 					<h8>+33 04 78 78 78</h8>
-					
+
 				</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="adresse">
 					<h9 >agdavocats@contact.fr</h9>
 				</div>
-    				
+
  				 </nav>
 					<div class="user">
 						<i class="fas fa-user-circle"></i>
 					</div>
-	            
+
 	        </nav>
 	        <div class="container">
 	        	<div class="row">
@@ -75,20 +75,20 @@
 	</div>
 
        </div><br>
-       
+
 </div>
 </div>
 <div class="container">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
- 
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-    	<li class="nav-item"> 
+    	<li class="nav-item">
         <a class="nav-link" href="index.php">Le CABINET</a>
       </li>
     	<li class="nav-item dropdown">
@@ -122,42 +122,42 @@
           <a class="dropdown-item" href="#">Droit des sociétés et des commerces</a>
         </div>
       </li>
-         <li class="nav-item"> 
+         <li class="nav-item">
         <a class="nav-link" href="#">CONSULTATION EN LIGNE</a>
       </li>
-      <li class="nav-item"> 
+      <li class="nav-item">
         <a class="nav-link" href="#">FORMATION</a>
       </li>
-      <li class="nav-item"> 
+      <li class="nav-item">
         <a class="nav-link" href="#">ACTUALITES</a>
       </li>
-      <li class="nav-item"> 
+      <li class="nav-item">
         <a class="nav-link" href="#">CONTACT</a>
       </li>
-      
-      
+
+
     </ul>
-    
+
   </div>
 </nav>
 
 
 
- 
-</div>
-	
-            
 
-    
+</div>
+
+
+
+
 
           <!-- menu -->
-	       	
-	       		
+
+
 	       		<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="" action="">
-					
+
 
 					<span class="login100-form-title p-b-34 p-t-27">
 						Acces à votre espace client
@@ -173,7 +173,7 @@
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
-					
+
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
@@ -190,11 +190,11 @@
 			</div>
 		</div>
 	</div>
-	       	
-	       
-	
+
+
+
 	        </div>
-       
+
 </div>
 <div class="container-fluid">
 	<div class="container-fluid">
@@ -226,21 +226,21 @@
 	           <i class="fab fa-linkedin"></i>&nbsp;&nbsp;
 	           <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;
 	           <i class="fas fa-rss-square"></i>&nbsp;&nbsp;
-					
-				</div>						
+
+				</div>
 			</div>
-							
+
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="footer2">
 					<img src="assets/images/logo-blanc.png" alt="le logo"/>
-					
-				</div>				
+
+				</div>
 			</div>
 
 			<div class="actualite col-sm-4 col-md-4">
 				<div class="carte">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.065686218915!2d5.373373515122521!3d43.29194607913538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0b84d3dad0b%3A0xa6fdfda4628c186e!2s64%20Rue%20Grignan%2C%2013001%20Marseille!5e0!3m2!1sfr!2sfr!4v1585918260796!5m2!1sfr!2sfr" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					
+
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
@@ -249,10 +249,10 @@
 				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
 				<a href="condition">&nbsp;FAQ&nbsp; </a>
 				<a href="condition">&nbsp;Plan de site&nbsp;</a>
-				
+
 
 			</div>
-		</div>	
+		</div>
 	</div>
 </footer>
 
