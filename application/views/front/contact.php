@@ -42,7 +42,7 @@
 
  				 </nav>
 					<div class="user">
-						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
+						<a href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
 					</div>
 
 	        </nav>
@@ -165,8 +165,13 @@ function handleComplete(evt,comp) {
 		<br><br>
 
 
-		<?php echo form_open('home/contact');  ?>
-		<form>
+
+
+				<?php
+
+
+				echo form_open(site_url('/home/contact/valid_form'));  ?>
+
 			<div class="row">
 		<div class="col-md-6">
 			<div class=" devis row">
@@ -180,13 +185,13 @@ function handleComplete(evt,comp) {
 
 					<div class="col-md-6">
 						<div class="input-group mb-3">
-	                       <input type="text" class="form-control" placeholder="Nom" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
+	                       <input type="text" class="form-control" placeholder="Nom" name="nom" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
 
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="input-group mb-3">
-	                       <input type="text" class="form-control" placeholder="Prenom" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
+	                       <input type="text" class="form-control" placeholder="Prenom" prenom="prenom" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
 
 						</div>
 					</div>
@@ -196,7 +201,7 @@ function handleComplete(evt,comp) {
 
 					<div class="col-md-12">
 						<div class="input-group mb-3">
-	                       <input type="tel" class="form-control" placeholder="Telephone" aria-label="Recipient's username" aria-describedby="basic-addon2" required="tel">
+	                       <input type="tel" class="form-control" placeholder="Telephone" telephone="tel" aria-label="Recipient's username" aria-describedby="basic-addon2" required="tel">
 
 						</div>
 					</div>
@@ -206,7 +211,7 @@ function handleComplete(evt,comp) {
 
 					<div class="col-md-12">
 						<div class="input-group mb-3">
-	                       <input type="email" class="form-control" placeholder="Adresse mail" aria-label="Recipient's username" aria-describedby="basic-addon2" required="email">
+	                 <input type="email" class="form-control" placeholder="Adresse mail" name="email" aria-label="Recipient's username" aria-describedby="basic-addon2" required="email">
 
 						</div>
 					</div>
@@ -215,7 +220,7 @@ function handleComplete(evt,comp) {
 
 					<div class="col-md-12">
 						<div class="input-group mb-3">
-	                       <input type="text" class="form-control" placeholder="Adresse postale" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
+	                       <input type="text" class="form-control" placeholder="Adresse postale" name="adressepostale" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
 
 						</div>
 					</div>
@@ -223,13 +228,13 @@ function handleComplete(evt,comp) {
 			<div class="devis2 row">
 				<div class="col-md-6">
 					<div class="input-group mb-3">
-                       <input type="number" class="form-control" placeholder="Code postal" aria-label="Recipient's username" aria-describedby="basic-addon2" required="number">
+                       <input type="number" class="form-control" placeholder="Code postal" name="codepostale" aria-label="Recipient's username" aria-describedby="basic-addon2" required="number">
 
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group mb-3">
-                       <input type="text" class="form-control" placeholder="Ville" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
+                       <input type="text" class="form-control" placeholder="Ville" name="ville" aria-label="Recipient's username" aria-describedby="basic-addon2" required="text">
 
 					</div>
 				</div>
@@ -265,7 +270,7 @@ function handleComplete(evt,comp) {
 
 						  <div class="mb-3">
 
-						    <textarea class="ask form-control" id="" placeholder="Posez vos questions" ></textarea>
+						    <textarea class="ask form-control" id="" name="question" placeholder="Posez vos questions" ></textarea>
 
 						  </div>
 
@@ -299,10 +304,10 @@ function handleComplete(evt,comp) {
                  	<div class="col-sm-6">
                  		<div class="input-group mb-3">
 
-						  <select class="choix2 " >
+						  <select class="choix2 " name="choix_cabinet">
 						    <option selected>Telephone ou cabinet</option>
-						    <option value="1">Telephone</option>
-						    <option value="2">cabinet</option>
+						    <option value="0">Telephone</option>
+						    <option value="1">cabinet</option>
 						  </select>
 
 						</div>
@@ -313,7 +318,7 @@ function handleComplete(evt,comp) {
 	</div><br><br>
 
 			<?php echo form_close();?>
-			<form>
+
 	<div class="demande"><h5>Le cabinet</h5></div><br><br>
      <div class="row">
      	<div class="col-md-12">
@@ -327,41 +332,51 @@ function handleComplete(evt,comp) {
 					<HR color="#0f02bc" width="100%" size="5px"  />
 		</div>
 	</div>
-     <div class="row" >
-		<div class="actualite3 col-sm-4 col-md-4">
-			<p >Pour plus d'actualités,<br>abonnez vous</p>
-		</div>
-
-		<div class="actualite3 col-sm-4 col-md-4">
-
-					<input type="checkbox" name="">
-					<a href="newletterDroitPena">Droit Pénal</a>
-
-					<input type="checkbox" name="">
-					<a href="newletterDroitPena">Droit Privé</a><br>
-
-					<input type="checkbox" name="">
-					<a href="newletterDroitPena">Droit Public</a>
-
-					<input type="checkbox" name="">
-					<a href="newletterDroitPena">Les Trois</a>
-		</div>
-
-		<div class="actualite3 col-sm-4 col-md-4">
-			<form method="" action="">
-				<input type="email" name="email" placeholder="adresse mail" style="border:1px solid #0f02bc;">
-				<input type="submit" name="submit" value="Valider"style="background-color: #0f02bc;margin: 0;color: #fff;">
-			</form>
-		</div>
-	</div>
-	<div class="row">
-		<div class=" col-md-12">
-					<HR color="#0f02bc" width="100%" size="5px"  />
-		</div>
-	</div>
 
 
 
+
+		<?php
+
+
+		echo form_open(site_url('/home/contact/valid_form'));  ?>
+					     <div class="row" >
+							<div class="actualite3 col-sm-4 col-md-4">
+								<p >Pour plus d'actualités,<br>abonnez vous</p>
+							</div>
+
+
+
+
+
+							<div class="actualite3 col-sm-4 col-md-4">
+
+										<input type="checkbox" name="penal" >
+										<a href="#">Droit Pénal</a>
+
+										<input type="checkbox" name="prive">
+										<a href="#">Droit Privé</a><br>
+
+										<input type="checkbox" name="public">
+										<a href="#">Droit Public</a>
+
+										<input type="checkbox" name="all">
+										<a href="#">Les Trois</a>
+							</div>
+
+							<div class="actualite3 col-sm-4 col-md-4">
+
+									<input type="email" name="email_news" placeholder="adresse mail" style="border:1px solid #0f02bc;">
+									<input type="submit" name="submit" value="Valider"style="background-color: #0f02bc;margin: 0;color: #fff;">
+
+							</div>
+						</div>
+						<div class="row">
+							<div class=" col-md-12">
+										<HR color="#0f02bc" width="100%" size="5px"  />
+							</div>
+						</div>
+				<?php echo form_close();?>
 
 
 
@@ -415,11 +430,11 @@ function handleComplete(evt,comp) {
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
-				<a href="condition">Conditions générales de service &nbsp;</a>
-				<a href="condition">&nbsp;Tous droit de service&nbsp; </a>
-				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
-				<a href="condition">&nbsp;FAQ&nbsp; </a>
-				<a href="condition">&nbsp;Plan de site&nbsp;</a>
+				<a href="faq">Conditions générales de service &nbsp;</a>
+				<a href="faq">&nbsp;Tous droit de service&nbsp; </a>
+				<a href="faq">&nbsp;Mentions légales &nbsp;</a>
+				<a href="faq">&nbsp;FAQ&nbsp; </a>
+				<a href="faq">&nbsp;Plan de site&nbsp;</a>
 
 
 			</div>

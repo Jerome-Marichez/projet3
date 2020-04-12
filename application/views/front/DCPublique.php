@@ -29,7 +29,7 @@
 					</div>
  				</nav>
 					<div class="user">
-						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a> 
+						<a href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
 					</div>
 
 	    </nav>
@@ -60,8 +60,7 @@
 	<div class="demande"><h5>Droit de la commande publique</h5></div><br>
 	           <div class="row">
 	           	<div class="col-md-12" id="video">
-	           		<iframe  width="425" height="344" src="https://www.youtube.com/embed/N4koEPJ0bjU" frameborder="0" allowfullscreen></iframe>
-	           	</div>
+	           		<iframe width="560" height="315" src="https://www.youtube.com/embed/19YGwEqJPMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    	</div>
 	           </div><br>
 	           <div class="row">
 	           	  <div class="col-md-12">
@@ -143,11 +142,11 @@
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
-				<a href="condition">Conditions générales de service &nbsp;</a>
-				<a href="condition">&nbsp;Tous droit de service&nbsp; </a>
-				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
-				<a href="condition">&nbsp;FAQ&nbsp; </a>
-				<a href="condition">&nbsp;Plan de site&nbsp;</a>
+				<a href="faq">Conditions générales de service &nbsp;</a>
+				<a href="faq">&nbsp;Tous droit de service&nbsp; </a>
+				<a href="faq">&nbsp;Mentions légales &nbsp;</a>
+				<a href="faq">&nbsp;FAQ&nbsp; </a>
+				<a href="faq">&nbsp;Plan de site&nbsp;</a>
 
 
 			</div>

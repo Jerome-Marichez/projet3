@@ -53,14 +53,11 @@ class Home extends CI_Controller {
 
   public function Contact()
   {
-    if($this->input->post('contact'))
-    {
-        echo "contact"; 
-        var_dump($_POST);
-        exit;
+
+        //echo "contact";
+        //var_dump($_POST);
 
 
-    }
      $this->load->view('front/contact');
   }
 

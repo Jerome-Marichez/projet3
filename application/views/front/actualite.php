@@ -43,7 +43,7 @@
 
  				 </nav>
 					<div class="user">
-						<a class="icon_connexion" href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
+						<a href="<?php echo site_url('/backend/login'); ?>">	<i class="fas fa-user-circle"></i></a>
 					</div>
 
 	        </nav>
@@ -329,11 +329,11 @@ function handleComplete(evt,comp) {
 				</div>
 			</div>
 			<div class="actualite col-sm-12 col-md-12">
-				<a href="condition">Conditions générales de service &nbsp;</a>
-				<a href="condition">&nbsp;Tous droit de service&nbsp; </a>
-				<a href="condition">&nbsp;Mentions légales &nbsp;</a>
-				<a href="condition">&nbsp;FAQ&nbsp; </a>
-				<a href="condition">&nbsp;Plan de site&nbsp;</a>
+				<a href="faq">Conditions générales de service &nbsp;</a>
+				<a href="faq">&nbsp;Tous droit de service&nbsp; </a>
+				<a href="faq">&nbsp;Mentions légales &nbsp;</a>
+				<a href="faq">&nbsp;FAQ&nbsp; </a>
+				<a href="faq">&nbsp;Plan de site&nbsp;</a>
 
 
 			</div>
