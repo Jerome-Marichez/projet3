@@ -6,20 +6,15 @@
 /** CUSTOM RULES MOBILE **/
 
 @media only screen and (max-width: 600px) {
-.espace_backend_30_for_mobile_only
-{
-	width: 100%;
-	margin-bottom: 30px;
-}
-.blue_lien_profile
-{
-	 text-align:center;
-}
-
-.blue_lien
-{
-	text-align: center;
-}
+	.espace_backend_30_for_mobile_only
+	{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.blue_lien_profile, .blue_lien
+	{
+		 text-align:center;
+	}
 
 }
 
