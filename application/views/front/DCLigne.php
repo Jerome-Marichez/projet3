@@ -50,7 +50,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+	  <a href="<?php echo site_url('/'); ?>">	<img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
 	</div>
 

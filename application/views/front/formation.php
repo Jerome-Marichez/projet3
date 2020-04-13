@@ -50,7 +50,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+		  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
 	</div>
 
@@ -97,7 +97,9 @@
 	       <br>
 	<div class="row">
 		<div class="col-md-12">
-			<p>Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad</p>
+			<p>Vous souhaitez organiser une formation juridique spécifiques et adaptées :
+			Le Cabinet AARPI AGD-Z est en mesure de répondre à vos attentes.
+			Pour vous permettre de bénéficier d’une meilleure gestion du risque juridique, nous élaborons des formations sur mesure.</p>
 		</div>
 	</div>
 	<div class="row">
@@ -106,7 +108,7 @@
 		</div>
         <div class="col-md-6" id="textee">
         	         <h5>Formation sur mesure</h5>
-        	<p>Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad</p>
+        	<p>Nous dispensons des formations pragmatiques, dont le programme et le contenu sont spécifiquement adaptés à vos besoins, traitant des cas pratiques concrets inspirés des problématiques que vous êtes susceptibles de rencontrer.</p>
 
         </div>
 	</div>
@@ -115,8 +117,10 @@
 			<img src="<?php echo site_link_base("img_front");?>formation 2.jpg">
 		</div>
         <div class="col-md-6" id="textee">
-        	         <h5>Formation sur mesure</h5>
-        	<p>Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad</p>
+        	         <h5>Formations dans le domaine du droit public et droits des affaires</h5>
+        	<p>
+				Dans le domaine du droit public et droit des affaires nous délivrons des formations au profit des entreprises ou des collectivité territoriales.
+				Le Cabinet AARPI AGD-Z propose différents formats d’intervention pour répondre à vos attentes : Les formations pouvant être organisées dans vos locaux ou au sein du Cabinet AGDZ. La durée des formations peuvent varier selon les besoins.</p>
 
         </div>
 	</div>

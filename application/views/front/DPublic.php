@@ -51,7 +51,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+  <a href="<?php echo site_url('/'); ?>">		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
 	</div>
 
@@ -80,7 +80,7 @@
 </div>
 
 
-          <!-- menu -->
+
 	  <div class="container">
 	<div class="demande"><h5>Droit pulic</h5></div><br>
 
@@ -102,15 +102,14 @@
 	<div class="row">
 		<div class="col-md-12" id="expert">
 			<h4>Expertises</h4>
-			<p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-					tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-					tâche aisée.
-					Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-					cohabitent de façon esthétique. Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-					tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-					tâche aisée.
-					Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-					cohabitent de façon esthétique.
+			<p>Le cabinet se tient à votre disposition pour convenir ensemble des modalités
+			d’intervention du cabinet dans le cadre de ses différents domaines d’expertises.
+			Une externalisation partielle ou totale de votre service juridique peut être envisagée.
+			À ce titre, un rendez-vous personnalisé peut vous être proposé afin de convenir
+			ensemble des conditions d’externalisation de votre service juridique.
+			Le cabinet peut intervenir en soutient à vos projets par le biais de consultation
+			juridique, vous assister lors de réunions, entretiens, audits et vous représenter en
+			justice dans l’ensemble des domaines suivants.
             </p>
             <button type="button" class="btn" id="but">PRENDRE RDV</button>
 		</div>
@@ -121,15 +120,13 @@
 				<span>Celine GUNDEGOUZ</span><br>
 				<span>Avocate en droit public</span>
 			</div>
-			<div class="col-md-8" id="imgAv"><p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-					tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-					tâche aisée.
-					Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-					cohabitent de façon esthétique. Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-					tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-					tâche aisée.
-					Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-					cohabitent de façon esthétique.</p>
+			<div class="col-md-8" id="imgAv"><p>Maître Célia GUENDOUZ intervient dans l’ensemble des contentieux afférents au droit
+			public et est disposée à vous faire part de ses compétences techniques.
+			Bénéficiant d’une expérience professionnelle solide dans le cadre du contentieux ayant
+			trait au droit public des affaires, Maître Célia GUENDOUZ vous assiste dans vos litiges
+			relevant de la commande publique, des contrats et des marchés publics, du droit des
+			Collectivités Territoriales, et du droit de la fonction publique.
+			Prenez contact avec votre cabinet d’avocat à Marseille pour une assistance efficace..</p>
 					<button type="button" class="btn" id="but">DEMANDEZ VOTRE DEVIS</button>
 				</div>
 

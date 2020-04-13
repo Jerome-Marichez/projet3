@@ -50,7 +50,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+		  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
 	</div>
 
@@ -80,7 +80,7 @@
 
 
 
-          <!-- menu -->
+
 	 <div class="container">
 	<div class="demande"><h5>Le cabinet</h5></div>
             <div class="row">
@@ -97,12 +97,17 @@
 		<div class="row">
 			<div class="col-sm-6" id="img1"><img src="<?php echo site_link_base("img_front");?>formation1.jpg"></div>
 			<div class="col-sm-6">
-				<h5 class="demande">"Pluridisciplinarité"</h5><br>
-                   <p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée. <br><br>
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p>
+				<h5 class="demande">« Une équipe pluridisciplinaire »</h5><br>
+                   <p>Nous avons choisi d’avancer ensemble !<br>
+				Nous sommes un cabinet d’avocats convaincus de l’importance d’une réflexion
+				collective dans chaque dossier.
+				Nous développons nos stratégies dans un esprit ouvert et sensible aux enjeux de nos
+				clients.
+				Notre philosophie est fondée sur un travail d’équipe pour réaliser une prestation
+				rigoureuse et de qualité.
+				La diversité et la complémentarité des compétences des avocats du cabinet AARPI
+				AGD-Z permettent de proposer des solutions innovantes tant en conseil qu’en
+				contentieux.</p>
 			</div>
 
 		</div>
@@ -132,17 +137,20 @@ cohabitent de façon esthétique.</p>
 			</div>
 			<div class="col-md-6" id="img3">
 				<div class="demande"><h5>Léa AMIC</h5></div><br>
-				<p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée. <br><br>
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p><br>
+				<p>avocate en droit privé et des affaires<br>
+				A l’issue d’un Master 2 Droit des contrats privés et publics, elle a pu soutenir
+				une thèse portant sur « La loyauté dans les relations de travail » le 19 décembre
+				2014 et ainsi acquis le grade de Docteur en Droit.
+				Maître AMIC a ensuite exercé dans des Cabinets spécialisés, notamment en droit des
+				assurances, de la construction et en droit du travail, se forgeant une solide expérience
+				dans ces matières.
+				Maître Léa AMIC assiste ses clients devant les juridictions civiles, commerciales et
+				prud’homales sur l’ensemble du territoire national..</p><br>
                   <div class="demande"><h5>Domaine de compétence</h5></div><br>
-                  <p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée. <br><br>
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p><br>
+                  <p>– Droit des personnes er de la famille <br>
+					– Droit de l’immobilier<br>
+					– Droit du travail<br>
+					– Droit commercial et des sociétés.</p><br>
 			</div>
 		</div><br><br><br><br>
 
@@ -152,7 +160,7 @@ cohabitent de façon esthétique.</p><br>
 		<div class="row">
 			<div class="col-md-6" id="img2">
 				<img src="<?php echo site_link_base("img_front");?>celia.jpg"><br>
-				<span>Célié GUNDEGOUZ</span><br>
+				<span>Célié GUNDOUZ</span><br>
 				<span>Avocate en droit public</span><br>
 				<i class="fas fa-phone"></i>&nbsp; <span>+33 04 78 78 78</span><br>
                 <i class="fas fa-envelope"></i>&nbsp;<span>celia.gundegouz@agdz.avocat.com</span><br><br>
@@ -162,17 +170,16 @@ cohabitent de façon esthétique.</p><br>
 			</div>
 			<div class="col-md-6" id="img3">
 				<div class="demande"><h5>Celia GUNDEGOUZ</h5></div><br>
-				<p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée. <br><br>
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p><br>
+				<p>avocate en droit pénal et public
+					Avocat au Barreau de Marseille, Maître Célia GUENDOUZ défend vos intérêts en droit
+					pénal et en droit public.
+					Après avoir obtenu un Master I en Droit public et un MasterII Pratique des droits
+					fondamentaux, elle a prêté serment en janvier 2017. Maître Célia GUENDOUZ exerce
+					aujourd’hui avec rapidité et efficacité.</p><br>
                   <div class="demande"><h5>Domaine de compétence</h5></div><br>
-                  <p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée. <br><br>
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p><br>
+                  <p>- Les atteintes à la personne humaine<br>
+						- Les crimes et délits contre les biens<br>
+						– Les infractions au droit routier</p><br>
 			</div>
 		</div>
    <div class="demande"><h5>Honoraire</h5></div><br>
@@ -189,16 +196,34 @@ cohabitent de façon esthétique.</p><br>
 				</div><br>
    <div class="row">
    	<p>
-   		Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée.
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.
-Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée.
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.
+   		Conformément aux dispositions de l’article 11.2 « Convention d’honoraires » du
+		Règlement Intérieur National de la profession d'avocat :<br>
+		- Une convention d’honoraires est conclue avec les clients aux termes de laquelle sont
+		précisés le montant ou le mode de détermination des honoraires :<br>
+		« Sauf en cas d’urgence ou de force majeure ou lorsqu’il intervient au titre de l’aide
+		juridictionnelle totale ou de la troisième partie de la loi n° 91-647 du 10 juillet 1991
+		relative à l’aide juridique, l’avocat conclut par écrit avec son client une convention
+		d’honoraires, qui précise, notamment, le montant ou le mode de détermination des
+		honoraires couvrant les diligences prévisibles, ainsi que les divers frais et débours
+		envisagés ».<br>
+		- Les honoraires sont déterminés selon les usages, en fonction :<br>
+		- de la situation de fortune du client,<br>
+		- de la difficulté de l’affaire, des frais exposés par l’avocat,<br>
+		- de sa notoriété,<br>
+		- et des diligences de celui-ci.<br>
+		A noter que : « L’avocat chargé d’un dossier peut demander des honoraires à son
+		client même si ce dossier lui est retiré avant sa conclusion, dans la mesure du travail
+		accompli ».<br>
+		Les éléments de la rémunération comprennent, notamment :<br>
+		- le temps consacré à l’affaire,<br>
+		- le travail de recherche,<br>
+		- la nature et la difficulté de l’affaire,<br>
+		- l’importance des intérêts en cause,<br>
+		- l’incidence des frais et charges du cabinet,<br>
+		- la notoriété, les titres, l’ancienneté, l’expérience et la spécialisation de l’Avocat,<br>
+		- les avantages et le résultat obtenus au profit du client ainsi que le service rendu à
+		celui-ci,<br>
+		– la situation de fortune du client.
    	</p>
    </div>
 

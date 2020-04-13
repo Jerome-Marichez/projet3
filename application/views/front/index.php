@@ -52,7 +52,7 @@
 	        <div class="container">
 	        	<div class="row">
        	<div class="col-md-12" id="log">
-		<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+		  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
 	</div>
 
@@ -85,15 +85,11 @@
 	 		<h5>Le Cabinet</h5><br>
 	 		<h6>*Une équipe pluridisciplinaire*</h6><br>
 
-	 		<p>Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée.
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique. Une page web contient du texte et des images, mais aussi un certain nombre d'éléments très fréquents : listes,
-tableaux, formulaires, icônes, boutons. Créer une harmonie dans la présentation de tous ces éléments n'est pas une
-tâche aisée.
-Nous allons voir comment Bootstrap permet de créer un rendu visuel cohérent pour que tous ces éléments
-cohabitent de façon esthétique.</p>
+	 		<p>Nous avons choisi d’avancer ensemble !
+			Nous sommes un cabinet d’avocats convaincus de l’importance d’une réflexion collective dans chaque dossier.
+			Nous développons nos stratégies dans un esprit ouvert et sensible aux enjeux de nos clients.
+			Notre philosophie est fondée sur un travail d’équipe pour réaliser une prestation rigoureuse et de qualité.
+			La diversité et la complémentarité des compétences des avocats du cabinet AARPI AGD-Z permettent de proposer des solutions innovantes tant en conseil qu’en contentieux.</p>
  <div class="but2">
 
  	<button type="button" class="btn btn-light">EN SAVOIR PLUS</button>
@@ -127,7 +123,10 @@ cohabitent de façon esthétique.</p>
 	 <div class="row">
 	 	<div class="col-md-12">
 	 		<h5>EXPERTISE</h5>
-	 		<p>Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet? Coluntur tamen simulatione dumtaxat ad tempus. Quod si forte, ut fit plerumque, ceciderunt, tum intellegitur quam fuerint inopes amicorum. Quod Tarquinium dixisse ferunt, tum exsulantem se intellexisse quos fidos amicos habuisset, quos infidos, cum iam neutris gratiam referre posse</p>
+	 		<p>Le cabinet se tient à votre disposition pour convenir ensemble des modalités d’intervention du cabinet dans le cadre de ses différents domaines d’expertises.
+			Une externalisation partielle ou totale de votre service juridique peut être envisagée.
+			À ce titre, un rendez-vous personnalisé peut vous être proposé afin de convenir ensemble des conditions d’externalisation de votre service juridique.
+			Le cabinet peut intervenir en soutient à vos projets par le biais de consultation juridique, vous assister lors de réunions, entretiens, audits et vous représenter en justice dans l’ensemble des domaines suivants. </p>
 
 	 	</div>
 	 </div>
@@ -149,11 +148,13 @@ cohabitent de façon esthétique.</p>
 	<div class="row">
 		<div class="col-md-12" id="form"> <br>
 			<h6 class="pform">FORMATION &nbsp;<i class="fas fa-graduation-cap"></i> </h6>
-			<p class="pform">Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet? Coluntur tamen simulatione dumtaxat ad tempus. Quod si forte, ut fit plerumque, ceciderunt, tum intellegitur quam fuerint inopes amicorum. Quod Tarquinium dixisse ferunt, tum exsulantem se intellexisse quos fidos amicos habuisset, quos infidos, cum iam neutris gratiam referre posse. Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet? Coluntur tamen simulatione dumtaxat ad tempus. Quod si forte, ut fit plerumque, ceciderunt, tum intellegitur quam fuerint inopes amicorum. Quod Tarquinium dixisse ferunt, tum exsulantem se intellexisse quos fidos amicos habuisset, quos infidos, cum iam neutris gratiam referre posse
+			<p class="pform">Vous souhaitez organiser une formation juridique spécifiques et adaptées :
+				Le Cabinet AARPI AGD-Z est en mesure de répondre à vos attentes.
+				Pour vous permettre de bénéficier d’une meilleure gestion du risque juridique, nous élaborons des formations sur mesure.
 			</p>
 			<div class="fobut">
-			<button type="button" class="btn btn-light">En savoir plus</button>
-			<button type="button" class="btn btn-dark">S'inscrire</button>
+			<button type="button" class="btn btn-light"><a href="">En savoir plus</a> </button>
+			<button type="button" class="btn btn-dark"><a href="">S'inscrire</a></button>
 		</div>
 		</div>
 

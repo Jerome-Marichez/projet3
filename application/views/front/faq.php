@@ -50,7 +50,7 @@
           <div class="container">
             <div class="row">
         <div class="col-md-12" id="log">
-    <img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+    <a href="<?php echo site_url('/'); ?>"><img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 
   </div>
 
@@ -82,31 +82,38 @@
     <div class="demande"><h5>FAQ</h5></div><br>
      <div class="row">
        <div class="col-md-12">
-         <span>Question 1</span><br>
-         <p>La pandémie de Covid-19 en France est identifiée à partir du 24 janvier 2020, quand trois premiers cas sont recensés sur le territoire métropolitain. La France est le quatrième foyer de contagion de la maladie à coronavirus 2019 (Covid-19) en nombre de cas confirmés de contamination. Cette maladie est causée par le coronavirus SARS-CoV-2, originaire de Chine continentale et devenue, selon une déclaration de l'Organisation mondiale de la santé (OMS) du 12 mars 2020, pandémie de Covid-19</p>
+         <span>Je ne suis pas à Marseilles. Est-ce que le cabinet peut intervenir ?</span><br>
+         <p>Oui. Le cabinet intervient partout. En France, mais aussi à l'étranger, grâce à un
+            réseau d'avocats européens construit au fil de l'expérience (notamment Anglettere,
+            Allemagne et Italie). Au cabinet. Par téléphone. Par email. Dans l'entreprise. Au
+            Tribunal.</p>
        </div>
      </div>
      <br>
      <div class="row">
        <div class="col-md-12">
-         <span>Question 1</span><br>
-         <p>La pandémie de Covid-19 en France est identifiée à partir du 24 janvier 2020, quand trois premiers cas sont recensés sur le territoire métropolitain. La France est le quatrième foyer de contagion de la maladie à coronavirus 2019 (Covid-19) en nombre de cas confirmés de contamination. Cette maladie est causée par le coronavirus SARS-CoV-2, originaire de Chine continentale et devenue, selon une déclaration de l'Organisation mondiale de la santé (OMS) du 12 mars 2020, pandémie de Covid-19</p>
+         <span>On me dit que je dois prendre un avocat postulant. ça veut dire quoi ?</span><br>
+         <p>Pour les procédures devant le Tribunal de Grande Instance (TGI), il est obligatoire
+            de prendre un avocat du barreau local. Cela s'appelle la postulation. La postulation à
+            Marseilles est possible pour le cabinet. Nous interviendrons aux côtés de votre avocat
+            situé ailleurs en France si besoin, pour les audiences de procédure. Celà lui évitera de
+            se déplacer et de vous facturer des frais de déplacements!</p>
        </div>
      </div>
      <br>
      <div class="row">
        <div class="col-md-12">
-         <span>Question 1</span><br>
-         <p>La pandémie de Covid-19 en France est identifiée à partir du 24 janvier 2020, quand trois premiers cas sont recensés sur le territoire métropolitain. La France est le quatrième foyer de contagion de la maladie à coronavirus 2019 (Covid-19) en nombre de cas confirmés de contamination. Cette maladie est causée par le coronavirus SARS-CoV-2, originaire de Chine continentale et devenue, selon une déclaration de l'Organisation mondiale de la santé (OMS) du 12 mars 2020, pandémie de Covid-19</p>
+         <span>je ne pense pas avoir les moyens de payer. Que dois-je faire pour me défendre
+            alors?</span><br>
+         <p>vous pouvez peut-être bénécier de l' AIDE JURIDICTIONNELLE: si vous ressources
+            sont faibles, vous avez peut-être droit à l'aide juridictionnelle, c'est à dire que l'Etat
+            rémunèrera votre Avocat (à un prix réduit). L'aide peut être totale, ou partielle.
+            Renseignez-vous en cliquant ICI . Un avocat vous sera désigné par le bâtonnier, sauf
+            si votre avocat accepte d'intervenir à l'aide juridictionnelle. Il faut le lui demander</p>
        </div>
      </div>
      <br>
-     <div class="row">
-       <div class="col-md-12">
-         <span>Question 1</span><br>
-         <p>La pandémie de Covid-19 en France est identifiée à partir du 24 janvier 2020, quand trois premiers cas sont recensés sur le territoire métropolitain. La France est le quatrième foyer de contagion de la maladie à coronavirus 2019 (Covid-19) en nombre de cas confirmés de contamination. Cette maladie est causée par le coronavirus SARS-CoV-2, originaire de Chine continentale et devenue, selon une déclaration de l'Organisation mondiale de la santé (OMS) du 12 mars 2020, pandémie de Covid-19</p>
-       </div>
-     </div>
+
      <br>
     </div>
     <div class="container-fluid">

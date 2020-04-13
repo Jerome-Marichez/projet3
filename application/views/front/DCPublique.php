@@ -36,7 +36,7 @@
 	    <!--    <div class="container">-->
 	        <div class="row">
 		       	<div class="col-md-12" id="log">
-				<img src="<?php echo site_link_base("img_front");?>logo-bleu.png">
+				  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo site_link_base("img_front");?>logo-bleu.png"></a>
 				</div>
 
        		</div><br><br>
@@ -64,27 +64,52 @@
 	           </div><br>
 	           <div class="row">
 	           	  <div class="col-md-12">
-						           	  	Ce fichier est un exemple d'amélioration de l'esthétique de Bootstrap, il n'est pas utile pour son fonctionnement. Si
-					vous observez l'apparence des composants de Bootstrap, vous allez constater qu'ils sont « plats », sans aucun relief.
-					Dans la version 2, ce n'était pas le cas. Pour des raisons de performances, il a été décidé d'offrir cette amélioration
-					visuelle dans un fichier séparé. Si vous avez la curiosité de regarder ce fichier, vous verrez qu'il contient des
-					définitions de dégradés et d'ombrages. Vous trouvez le résultat de l'application de ce thème sur cette page
-					d'exemple. Nous reparlerons de ce fichier dans le chapitre concernant la configuration de Bootstrap.
+						           	  	marché publics, délégations de service public, Partenariats public-privé, Contrats
+spéciaux (BEA, BEH...), Contrats complexes et montages contractuels complexes,
+Contrats d'occupation du domaine public, Conventions domaniales sur les propriétés
+publiques, Conventions d'aménagement, Conventions de financement, Conventions de
+subvention,Contrats de plan (Etat, Collectivités, Entreprises)
+Le cabinet d’avocats intervient dès la phase projet des différents contrats et marchés
+et ce en accompagnant les clients dans le cadre de la rédaction des documents
+contractuels (Élaboration des documents de la consultation, assistance lors de la
+phase de publicité et de mise en concurrence pour les Collectivités ou pour les
+Entreprises (Rédaction de leur offre, assistance lors de la publicité si be-soin…)
+Le cabinet assure un accompagnement exhaustif lors de la passation des contrats et
+marchés mais également lors des contentieux relatifs à l’exécution du marché :
+- contestation des ordres de service, contestation des pénalités de retard appliquées
+dans le cadre des marchés publics, recours liés aux retards d’exécution, résiliation du
+marché pour faute et motif d’intérêt général, défaillance de l’entreprise, règlements
+des situations financières et des décomptes) ;
+- Assistance dans le cadre des opérations de réception des marchés et de la levée des
+ré-serves,
+- assistance des entreprises dans le cadre de leurs réclamations financières au titre de
+travaux supplémentaires, rédaction des mémoires en réclamation
+- Assistance dans le cadre des recours dirigés contre les constructeurs, maître
+d’oeuvre et contrôleur technique,
+Enfin, le cabinet est en mesure de vous assister et de vous représenter dans le cadre
+des procédure contentieuses (référés, recours en annulation, recours en
+indemnisation, recours et assis-tance devant le Comité Consultatif de Recours
+Amiables dans le cadre des Litiges relatifs aux marchés publics, juridictions
+administratives).
 				   </div>
 	           </div><br>
               <div class="row" id="celine">
               	<div class="col-md-4" ><br>
               		<img src="<?php echo site_link_base("img_front");?>celia.jpg"><br>
-              		<span>Celine Gundouz</span><br>
+              		<span>Celine Guendouz</span><br>
               		<span>Avocate en droit publique</span>
               	</div>
               	<div class="col-md-8">
-              		<span>Ce cachier est un exemple d'amélioration de l'esthétique de Bootstrap, il n'est pas utile pour son fonctionnement. Si
-					vous observez l'apparence des composants de Bootstrap, vous allez constater qu'ils sont « plats », sans aucun relief.
-					Dans la version 2, ce n'était pas le cas. Pour des raisons de performances, il a été décidé d'offrir cette amélioration
-					visuelle dans un fichier séparé. Si vous avez la curiosité de regarder ce fichier, vous verrez qu'il contient des
-					définitions de dégradés et d'ombrages. Vous trouvez le résultat de l'application de ce thème sur cette page
-					d'exemple. Nous reparlerons de ce 􀁽chier dans le chapitre concernant la configuration de Bootstrap.</span><br>
+              		<span>avocate en droit pénal et public
+Avocat au Barreau de Marseille, Maître Célia GUENDOUZ défend vos intérêts en droit
+pénal et en droit public.
+Après avoir obtenu un Master I en Droit public et un MasterII Pratique des droits
+fondamentaux, elle a prêté serment en janvier 2017. Maître Célia GUENDOUZ exerce
+aujourd’hui avec rapidité et efficacité.
+Compétences :
+- Les atteintes à la personne humaine
+- Les crimes et délits contre les biens
+- Les infractions au droit routier.</span><br>
 					<form method="" action="">
 
 						<button type="button" class="btn btn-light" >Demandez votre devis</button>
