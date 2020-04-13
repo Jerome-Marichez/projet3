@@ -2261,7 +2261,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"http://109.10.93.242:8080/projet3/application/assets/front/images/phone_atlas_.png", id:"phone_atlas_"}
+		{src:"http://agdzavocat.ddns.net:8080/projet3/application/assets/front/images/phone_atlas_.png", id:"phone_atlas_"}
 	],
 	preloads: []
 };

@@ -104,7 +104,7 @@ class CI_Config {
 			}
 			else
 			{
-				$base_url = 'http://109.10.93.242:8080/';
+				$base_url = 'http://agdzavocat.ddns.net:8080/';
 			}
 
 			$this->set_item('base_url', $base_url);
