@@ -31,7 +31,6 @@ public function charger_bas_page() { $this->load->view('backend/bas_page_backend
 ////// PAGE CONNEXION LOGIN //////////////////
 public function index() {
 
-
 // $date = date("2020-04-10 10:46:00");
 //$this->rendezvous_model->cree_rendezvous_front("","","test","test2","0771651588","boby@yopmail.fr","59140","longuenesse","ma rue exemple",$date,1);
 //exit;
