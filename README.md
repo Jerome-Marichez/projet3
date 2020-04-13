@@ -25,7 +25,7 @@ BootStrap
 CodeInginiter 3.1.11 
 
 # PHP VERSION 
-PHP 5.5.30 (cli) (built: Sep 30 2015 13:50:53) 
+PHP 5.5.30 (cli) (built: Sep 30 2015 13:50:53) / Code Compatible PHP 7.2 
 
 # SERVEUR LOCAL
 XAMPP<br>
