@@ -21,7 +21,7 @@ exit; // Toujours mieux de stopper la suite du script si non autoriser. le heade
     <div class="col-md-12 lightgray">
       <ul class="nav nav-pills nav-stacked ">
 
-        <li class="padding"><a id="connexion" href="connexion" class="blue_lien_profile"><i class="fa fa-user-circle fa-1x"></i> <?php echo $prenom.' '.$nom; ?> </a></li>
+        <li class="padding"><a id="connexion" href="connexion" class="blue_lien_profile"><i class="fa fa-user-circle fa-1x"></i> <?php echo texte_responsive($prenom,$nom,14) ?> </a></li>
 
 <?php if ($isItAdmin == "admin")
 { ?>

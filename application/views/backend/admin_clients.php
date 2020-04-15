@@ -117,7 +117,7 @@ $date_tableau = html_escape($row->date);
 $client_ID_tableau = html_escape($row->client_id);
       ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="./client_delete/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
 <?php
-echo '<td><a href="./admin_show_client/'.$id_specific.'"</a>'.$nom_tableau.'</td>';
+echo '<td><a href="'.site_url('backend/login/admin_show_client/').$id_specific.'"</a>'.$nom_tableau.'</td>';
 echo '<td>';echo $email_tableau; echo '</td>';
 echo '<td>'; echo $date_tableau; echo '</td>';
 echo '<td>';  echo $client_ID_tableau; echo '</td>';
@@ -136,10 +136,12 @@ echo '<td>';  echo $client_ID_tableau; echo '</td>';
 
    </table>
 
+</div>
+
+
+
+<div class="col-md-9 text-center">
+
 <?php echo $liens; ?>
-
-
-
-
 
 </div>

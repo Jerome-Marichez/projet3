@@ -2,6 +2,8 @@
 // Des fonction en vracs qui peuvent etre utile dans plein de petit contexte
 
 
+
+
 // CREE LE TITRE HTML
 function titre_page_html()
 {
@@ -52,6 +54,27 @@ function site_link_base($chemin = "")
   return $ma_page_home;
 }
 
+
+
+
+// Retourner texte responsive avec une taille max pour un titre menu
+function texte_responsive($value1,$value2,$taillemax)
+{
+    $taillemax = intval($taillemax) - 3; // On récupere la taille max
+    $calcul = strlen($value1);
+    $calcul = $calcul + strlen($value2);
+      if ($calcul < $taillemax)
+      {
+        return $value1.' '.$value2;
+      }
+      else
+      {
+         $value1 = substr($value1,0,$taillemax - 3);
+         $value1 = $value1.'...';
+         return $value1;
+      }
+
+}
 
 // RETOURNE LA DATE OU HEURE UNIQUEMENT DEPUIS DATETIME MYSQL
 function date_formater($myvalue,$format)

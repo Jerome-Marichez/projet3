@@ -165,6 +165,7 @@ opacity: 0.7;
 .pagination>li>a
 {
 	border: 1px solid #0E02BC;
+	border-radius: 0px;
 }
 
 .pagination>.tag>a:hover, .pagination>.active>a, .pagination>.active>a:hover, .pagination>.next_tag>a:hover, .pagination>.prev_tag>a:hover
@@ -172,12 +173,11 @@ opacity: 0.7;
 	background-color: #0E02BC;
 	color: white;
 	border-color: #0E02BC;
-	border-radius: 0px;
 }
 
 .pagination>.prev_tag>a
 {
-		
+
 	border-left-color:  white;
 	border-top-color:  white;
 	border-bottom-color:  white;
@@ -330,11 +330,11 @@ opacity: 0.7;
 }
 .blue_lien_profile
 {
-		padding-top: 20px !important;
+	padding-top: 20px !important;
 	font-family: "Raleway";
 	font-weight: 600;
 	color: #0E02BC;
-	font-size: 28px;
+	font-size: 26px;
 /*	text-align: left;*/
 }
 .blue_lien

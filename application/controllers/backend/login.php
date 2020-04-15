@@ -723,7 +723,7 @@ public function admin_clients()
           $config = array();
           $config["base_url"] = base_url() . "/backend/login/admin_clients/";
           $config["total_rows"] = $this->client_model->count_client();
-          $config["per_page"] = 1;
+          $config["per_page"] = 3;
           $config["uri_segment"] = 4;
           $config['full_tag_open'] = '<ul class="pagination">';
           $config['full_tag_close'] = '</ul>';
@@ -739,7 +739,7 @@ public function admin_clients()
           $config['next_tag_close'] = '</li>';
           $config['last_tag_open'] = '<li class="tag">';
           $config['last_tag_close'] = '</li>';
-          $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link">';
+          $config['cur_tag_open'] = '<li class="page-item active"><a>';
           $config['cur_tag_close'] = '</a></li>';
           $config['num_tag_open'] = '<li class="tag">';
           $config['num_tag_close'] = '</li>';
