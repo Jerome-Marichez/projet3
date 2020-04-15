@@ -12,12 +12,22 @@ class Client_model extends CI_Model
 
 
 // RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS DE TOUT LES CLIENTS OU DUN ID SPECIFIC OU DUN EMAIL SPECIFIC
-  public function afficher_base_client($id =  '',$email ='')
+  public function afficher_base_client($id =  '',$email ='',$limit='',$debut ='')
   {
-
+    // FILTRE RECHERCHE EMAIL OU ID
     if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  }  if ($email != '') {$requete_resultat = $this->db->where('email',$email); }
+
+    // SI PAGINATION ACTIVER
+    if ($limit !=''){
+      $requete_resultat = $this->db->limit($limit, $debut);
+    }
+    // REQUETE CLASSIQUE AFFICHER BASE CLIENT
     $requete_resultat = $this->db->get('client');
+
+
     return $requete_resultat->result();
+
+
     $this->db->close();
 
   }

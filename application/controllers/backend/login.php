@@ -15,6 +15,7 @@ $this->load->helper('url');
 $this->load->helper('dossier_helper');
 $this->load->library('form_validation');
 $this->load->library('session');
+$this->load->library('pagination');
 $this->load->model('newsletter_model');
 $this->load->model('client_model');
 $this->load->model('dossier_model');
@@ -693,39 +694,56 @@ public function admin_show_client()
   }
 
 }
+
+
+public function client_delete()
+{
+
+    $segment = $this->uri->total_segments();
+    $derniersegment = $this->uri->segment($segment);
+
+    $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
+    autoriser_action($isItAdmin,'admin');
+
+
+
+    if(!empty($derniersegment) AND is_numeric($derniersegment))
+    {
+      $this->client_model->supprimer_client($derniersegment);
+      redirect('backend/login/admin_clients', 'refresh');
+    }
+
+}
+
 public function admin_clients()
 {
 
 
-  $segment = $this->uri->total_segments();
-  $derniersegment = $this->uri->segment($segment);
+///////////////////////////// PAGINATION SYSTMEM //////////////////////////////////////////
+          $config = array();
+          $config["base_url"] = base_url() . "/backend/login/admin_clients/";
+          $config["total_rows"] = $this->client_model->count_client();
+          $config["per_page"] = 1;
+          $config["uri_segment"] = 4;
 
-  $isItAdmin = isIt_Admin_or_Client($this->session->userdata['isConnected']['client_id']);
-  autoriser_action($isItAdmin,'admin');
+          $this->pagination->initialize($config);
 
+          $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 
+          $data["liens"] = $this->pagination->create_links();
 
-  if(!empty($derniersegment) AND is_numeric($derniersegment))
-  {
-    $this->client_model->supprimer_client($derniersegment);
-    redirect('backend/login/admin_clients', 'refresh');
-  }
-
-
-
-  $resultat = $this->client_model->afficher_base_client();
-  $data['tableau_client'] = $resultat;
+          $data['client'] = $this->client_model->afficher_base_client('','',$config["per_page"], $page);
 
 
+          $this->charger_haut_page();
 
-  $this->charger_haut_page();
-
-  $this->load->view('backend/menu_backend');
-  $this->load->view('backend/admin_clients', $data);
+          $this->load->view('backend/menu_backend');
+          $this->load->view('backend/admin_clients', $data);
 
 
-  $this->charger_bas_page();
+          $this->charger_bas_page();
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 }
 

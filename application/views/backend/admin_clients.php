@@ -108,14 +108,14 @@
 
 
 
-       foreach($tableau_client as $row)
+       foreach($client as $row)
        {
 $id_specific = html_escape($row->id);
 $nom_tableau = html_escape($row->nom);
 $email_tableau = html_escape($row->email);
 $date_tableau = html_escape($row->date);
 $client_ID_tableau = html_escape($row->client_id);
-      ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="./admin_clients/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
+      ?>   <tr class="supprimer_ligne_tableau_tr">   <td class="col-md-1 supprimer_ligne_tableau_td"><a href="./client_delete/<?php echo $id_specific; ?> "> <i class="fa fa-trash fa-2x"></i></a>   </td>
 <?php
 echo '<td><a href="./admin_show_client/'.$id_specific.'"</a>'.$nom_tableau.'</td>';
 echo '<td>';echo $email_tableau; echo '</td>';
@@ -132,9 +132,11 @@ echo '<td>';  echo $client_ID_tableau; echo '</td>';
        </tr>
 
      </tbody>
+
+
    </table>
 
-
+<?php echo $liens; ?>
 
 
 
