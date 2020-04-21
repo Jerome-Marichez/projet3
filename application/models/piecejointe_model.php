@@ -5,16 +5,22 @@
 class Piecejointe_model extends CI_Model
 
 {
+  // DATABASE DYNAMIC DETAILS
+  private  $table_piecejointe = "dossier";
+  private  $colonne_id_dossier = "id_dossier";
+  private  $colonne_piece_lien = "piece_lien";
+
+
          function ajouter_au_dossier($id_dossier,$piece_lien)
          {
 
 
            $data = array(
-             'id_dossier'=>$id_dossier,
-             'piece_lien'=>$piece_lien
+             $this->colonne_id_dossier=>$id_dossier,
+             $this->colonne_piece_lien=>$piece_lien
            );
            //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
-           $this->db->insert('piecejointe',$data);
+           $this->db->insert($this->table_piecejointe,$data);
 
            $this->db->close();
           }
@@ -25,13 +31,13 @@ class Piecejointe_model extends CI_Model
           //  $id_dossier = intval($id_dossier); // PAR MESURE DE SECURITE ON UTILISE INTVAL MAIS NORMALEMENT VIA LE CONTROLLER C DEJA CHECKED
 
             $data = array(
-              'id_dossier'=>$id_dossier,
-              'piece_lien'=>$piece_lien
+              $this->colonne_id_dossier=>$id_dossier,
+              $this->colonne_piece_lien=>$piece_lien
             );
 
             if (!empty($id_dossier))
             {
-              $this->db->delete('piecejointe', $data);
+              $this->db->delete($this->table_piecejointe, $data);
 
               return $piece_lien;
             }
@@ -44,10 +50,10 @@ class Piecejointe_model extends CI_Model
 
          {
 
-           $requete_resultat = $this->db->where('id_dossier',$id_dossier);
-          $requete_resultat = $this->db->get('piecejointe');
-          return $requete_resultat->result();
-          $this->db->close();
+            $requete_resultat = $this->db->where($this->colonne_id_dossier,$id_dossier);
+            $requete_resultat = $this->db->get($this->table_piecejointe);
+            return $requete_resultat->result();
+            $this->db->close();
 
           }
 
