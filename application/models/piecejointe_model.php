@@ -6,7 +6,7 @@ class Piecejointe_model extends CI_Model
 
 {
   // DATABASE DYNAMIC DETAILS
-  private  $table_piecejointe = "dossier";
+  private  $table_piecejointe = "piecejointe";
   private  $colonne_id_dossier = "id_dossier";
   private  $colonne_piece_lien = "piece_lien";
 
