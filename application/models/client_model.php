@@ -5,24 +5,29 @@
   // Voir lien: https://codeigniter.com/userguide2/database/active_record.html
 
 
+
 class Client_model extends CI_Model
 
 {
 
+// DATABASE DYNAMIC DETAILS 
+private  $table_client = "client";
+private  $colonne_id = "id";
+private  $colonne_email = "email";
 
 
 // RECUPERER ET AFFICHER LA BASE DE DONNES DES CLIENTS DE TOUT LES CLIENTS OU DUN ID SPECIFIC OU DUN EMAIL SPECIFIC
   public function afficher_base_client($id =  '',$email ='',$limit='',$debut ='')
   {
     // FILTRE RECHERCHE EMAIL OU ID
-    if ($id != '') {  $requete_resultat = $this->db->where('id',$id);  }  if ($email != '') {$requete_resultat = $this->db->where('email',$email); }
+    if ($id != '') {  $requete_resultat = $this->db->where($this->colonne_id,$id);  }  if ($email != '') {$requete_resultat = $this->db->where($this->colonne_email,$email); }
 
     // SI PAGINATION ACTIVER
     if ($limit !=''){
       $requete_resultat = $this->db->limit($limit, $debut);
     }
     // REQUETE CLASSIQUE AFFICHER BASE CLIENT
-    $requete_resultat = $this->db->get('client');
+    $requete_resultat = $this->db->get($this->table_client);
 
 
     return $requete_resultat->result();
@@ -40,19 +45,19 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
 
    $date = date("Y-m-d H:i:s"); // Certain type de date ne sont pas admis dans MYSQL ce format fonctionne en effet si le champ est DATE TIME
    $data = array(
-     'id'=>$id,
+     $this->colonne_id=>$id,
      'client_id'=> $client_id,
      'password'=>$password,
      'nom'=>$nom,
      'prenom'=>$prenom,
      'tel'=>$tel,
-     'email'=>$email,
+      $this->colonne_email=>$email,
      'code_postale'=>$code_postale,
      'ville'=>$ville,
      'adresse'=>$adresse,
      'date'=> $date);
    //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
-   $this->db->insert('client',$data);
+   $this->db->insert($this->table_client,$data);
 
    $this->db->close();
   }
@@ -62,7 +67,7 @@ public function cree_client($id = 'NULL',$client_id,$password,$nom,$prenom,$tel,
 public function count_client()
 {
 
-    $requete_resultat = $this->db->get('client');
+    $requete_resultat = $this->db->get($this->table_client);
     $combien = $requete_resultat->num_rows();
     return $combien;
 }
@@ -70,8 +75,8 @@ public function count_client()
 // Verifier si un email existe dans la table client
 public function check_email_account($email)
 {
-  $requete_resultat = $this->db->where('email',$email);
-  $requete_resultat = $this->db->get('client');
+  $requete_resultat = $this->db->where($this->colonne_email,$email);
+  $requete_resultat = $this->db->get($this->table_client);
   $combien = $requete_resultat->num_rows();
   if ($combien > 0){
        return true;
@@ -85,12 +90,12 @@ public function update_client_password($id,$password)
 {
 
   $data = array(
-               'id' => $id,
+               $this->colonne_id => $id,
                'password' => $password,
             );
 
-$requete_resultat = $this->db->where('id', $id);
-$requete_resultat = $this->db->update('client', $data);
+$requete_resultat = $this->db->where($this->colonne_id, $id);
+$requete_resultat = $this->db->update($this->table_client, $data);
 
 return $requete_resultat;
 $this->db->close();
@@ -102,10 +107,10 @@ $this->db->close();
 
 public function connexion_client($email,$password)
 {
-  $requete_resultat = $this->db->where('email',$email);
+  $requete_resultat = $this->db->where($this->colonne_email,$email);
   $requete_resultat = $this->db->where('password',$password);
 
-  $requete_resultat = $this->db->get('client');
+  $requete_resultat = $this->db->get($this->table_client);
   return $requete_resultat->result();
   $this->db->close();
 }
@@ -120,7 +125,7 @@ public function connexion_client($email,$password)
 
    if (!empty($id))
    {
-     $this->db->delete('client', array('id' => $id));
+     $this->db->delete($this->table_client, array($this->colonne_id => $id));
      $this->db->close();
      return $id;
    }
