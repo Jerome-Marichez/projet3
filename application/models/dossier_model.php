@@ -18,7 +18,7 @@ class Dossier_model extends CI_Model
   {
     if ($id != '') { $requete_resultat = $this->db->where($this->colonne_id,$id); }
     if ($email != '') { $requete_resultat = $this->db->where($this->colonne_email,$email); }
-    $requete_resultat = $this->db->get($this->colonne_dossier);
+    $requete_resultat = $this->db->get($this->table_dossier);
     return $requete_resultat->result();
     $this->db->close();
 
@@ -30,7 +30,7 @@ class Dossier_model extends CI_Model
 
     $requete_resultat = $this->db->where($this->colonne_id,$id);
     $requete_resultat = $this->db->where($this->colonne_email,$email);
-    $requete_resultat = $this->db->get($this->colonne_dossier);
+    $requete_resultat = $this->db->get($this->table_dossier);
     $combien = $requete_resultat->num_rows();
     if ($combien > 0){
          return true;
@@ -43,7 +43,7 @@ class Dossier_model extends CI_Model
 
 public function count_dossier($statut ='',$email ='')
 {
-    $this->db->from($this->colonne_dossier);
+    $this->db->from($this->table_dossier);
 
       if (!empty($statut)) {
         $this->db->where('statut',$statut);
@@ -66,7 +66,7 @@ public function update_dossier($id,$statut)
   );
 
   $this->db->where($this->colonne_id, $id);
-  $this->db->update($this->colonne_dossier, $data);
+  $this->db->update($this->table_dossier, $data);
 
 }
 
@@ -83,7 +83,7 @@ public function cree_dossier($id = 'NULL',$number_dossier,$email)
      'statut'=>'en-attente',
      'date'=> $date);
    //$this->load->database(); PLUS BESOIN CAR AUTOLOAD DE LA DATABASE DANS CONFIG
-   $this->db->insert($this->colonne_dossier,$data);
+   $this->db->insert($this->table_dossier,$data);
 
    $this->db->close();
   }
@@ -92,7 +92,7 @@ public function cree_dossier($id = 'NULL',$number_dossier,$email)
 public function supprimer_dossier($id)
 {
   $id = intval($id);
-  $this->db->delete($this->colonne_dossier, array($this->colonne_id => $id));
+  $this->db->delete($this->table_dossier, array($this->colonne_id => $id));
   $this->db->close();
   return $id;
 }
